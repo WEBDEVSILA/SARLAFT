@@ -1,0 +1,93 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Juridico/juridico10.shtml")
+Else 
+	
+	options:=OB Get($obWebVars;"option")
+	
+	If (options="add")
+		CREATE RECORD([Operaciones_Inter])
+		[Operaciones_Inter]No_Ident:=[Sarlaft]Documento_Numero
+		[Operaciones_Inter]Tipo_Producto:=OB Get($obWebVars;"tipoProd1")
+		[Operaciones_Inter]Iden_Num_Prod:=OB Get($obWebVars;"numProd1")
+		[Operaciones_Inter]Entidad:=OB Get($obWebVars;"entidad1")
+		[Operaciones_Inter]Monto:=OB Get($obWebVars;"monto1")
+		[Operaciones_Inter]Ciudad:=OB Get($obWebVars;"ciudad1")
+		[Operaciones_Inter]Pais:=OB Get($obWebVars;"pais1")
+		[Operaciones_Inter]Moneda:=OB Get($obWebVars;"moneda1";Is real)
+		
+		SAVE RECORD([Operaciones_Inter])
+		QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico9.shtml")
+	End if 
+	
+	
+	If (options="delete")
+		
+		delete:=OB Get($obWebVars;"eliminarReg")
+		QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+		QUERY SELECTION([Operaciones_Inter];[Operaciones_Inter]ID=delete)
+		If (Records in selection([Operaciones_Inter])=1)
+			DELETE RECORD([Operaciones_Inter])
+		End if 
+		QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico9.shtml")
+	End if 
+	
+	
+	If (options="0")
+		
+		If (OB Get($obWebVars;"monedaExtranjera")="si")
+			[Sarlaft]Transacciones_Moneda_Ext:=True
+			[Sarlaft]Trans_MonedaE_cual:=OB Get($obWebVars;"cualOperacion")
+		Else 
+			[Sarlaft]Transacciones_Moneda_Ext:=False
+			[Sarlaft]Trans_MonedaE_cual:=""
+		End if 
+		
+		[Sarlaft]Otras_Operaciones:=OB Get($obWebVars;"otrasOperaciones")
+		
+		If (OB Get($obWebVars;"productosExtranjero")="si")
+			[Sarlaft]ProductosFin_Exterior:=True
+		Else 
+			[Sarlaft]ProductosFin_Exterior:=False
+		End if 
+		
+		If (OB Get($obWebVars;"cuentasMonedaExtr")="si")
+			[Sarlaft]Cuentas_MonedaEx:=True
+		Else 
+			[Sarlaft]Cuentas_MonedaEx:=False
+		End if 
+		
+		C_TEXT($vPartName;$vPartMimeType;$vPartFileName;$vDestinationFolder)
+		C_BLOB($vPartContentBlob)
+		C_LONGINT($i)
+		C_OBJECT($obDoc)
+		
+		$vDestinationFolder:=Get 4D folder(Current resources folder)+"documentos_sarlaft"+Folder separator+String([Sarlaft]Documento_Numero)+Folder separator
+		
+		If (Test path name($vDestinationFolder)#Is a folder)
+			CREATE FOLDER($vDestinationFolder;*)
+		End if 
+		
+		For ($i;1;WEB Get body part count)
+			WEB GET BODY PART($i;$vPartContentBlob;$vPartName;$vPartMimeType;$vPartFileName)
+			
+			If ($vPartFileName#"")
+				$rutaDoc:=$vDestinationFolder+$vPartFileName
+				BLOB TO DOCUMENT($rutaDoc;$vPartContentBlob)
+				OB SET([Sarlaft]Ruta_Adjuntos;$vPartName;$rutaDoc)
+				OB SET([Sarlaft]Nombre_Adjuntos;$vPartName;$vPartFileName)
+			End if 
+			
+		End for 
+		
+		SAVE RECORD([Sarlaft])
+		QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico10.shtml")
+		
+	End if 
+End if 

@@ -1,0 +1,165 @@
+<!--INFORMACIÓN SOBRE RECLAMACIONES EN SEGUROS-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>		
+        <!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Reclamaciones en Seguros</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Reclamaciones en Seguros</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Información Sobre Reclamaciones en Seguros</h2>   
+                            </header>
+                            <div class="panel-body ajg-title-dark">
+                                <form class="form-bordered ajg-title-dark" method="POST" id="form-id" enctype="multipart/form-data" action="/Juridico/clausula_autorizacion">
+                                    <br>
+                                    <input type="hidden" value="0" id="option" name="option">
+                                    <div class="form-group">
+                                        <label class="col-sm-8 control-label" style="padding-right: 1cm" >
+                                            ¿Ha presentado reclamaciones o ha recibido indemnizaciones en seguros en los dos últimos años?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" id="radioSi" type="radio" onclick="makeRequiredJ('anyo','ramo','compañia','valor','resultado')" name="reclamacion" required  <!--4DIF ([Sarlaft]Reclamacion_Indem=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>   
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" onclick="unMakeRequiredJ('anyo','ramo','compañia','valor','resultado')" name="reclamacion"  <!--4DIF ([Sarlaft]Reclamacion_Indem=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>                                               
+                                    </div>
+                                    <input type="hidden" id="numReclamaciones" value="<!--4DTEXT Records in Selection([Reclamaciones])-->">
+                                    <div class="table-responsive">
+                                        <table class="table mb-none">
+            
+                                            <thead>
+                                                <tr class="ajg-title-dark">
+                                                    <th>Año</th>
+                                                    <th>Ramo</th>
+                                                    <th>Compañía</th>
+                                                    <th>Valor</th>
+                                                    <th>Resultado</th>   
+                                                    <th><p style="color: white">Opciones</p></th>                                                 
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                                    
+                                                <tr >                                                          
+                                                    <td>
+                                                        <input name="año1"  id="anyo" 
+                                                        onkeypress="if(this.value.length == 4) return false" 
+                                                        onfocusout="valMinLength(this,4)"
+                                                        type="number" class="form-control">
+                                                    </td>
+                                                    <td>                                                        
+                                                        <select name="ramo1" id="ramo" class="form-control">
+                                                            <option value=""></option>													
+                                                            <option value="Accidentes Personales">Accidentes Personales</option>
+                                                            <option value="Automoviles">Automoviles</option>
+                                                            <option value="Aviación - Casco">Aviación - Casco</option>
+                                                            <option value="Constructor">Constructor</option>
+                                                            <option value="Cumplimiento">Cumplimiento</option>
+                                                            <option value="Exequial">Exequial</option>
+                                                            <option value="Global Bancaria">Global Bancaria</option>
+                                                            <option value="Incendio y Terremoto">Incendio y Terremoto</option>
+                                                            <option value="Judicial">Judicial</option>
+                                                            <option value="Manejo">Manejo</option>
+                                                            <option value="Multiriesgo">Multiriesgo</option>
+                                                            <option value="Responsabilidad Civil">Responsabilidad Civil</option>
+                                                            <option value="Salud">Salud</option>
+                                                            <option value="Seguro Deposito">Seguro Deposito</option>
+                                                            <option value="Todo Riesgo">Todo Riesgo</option>
+                                                            <option value="Vida">Vida</option>
+                                                            <option value="Otro">Otro</option>
+                                                        </select>  
+                                                    </td>
+                                                    <td>
+                                                        <input name="compañia1" id="compañia" onkeyup="upperCase(this,true)" type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="valor1" id="valor" min="0"
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        type="number" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <select name="resultado1" id="resultado" class="form-control mb-md">
+                                                            <option></option>
+                                                            <option>Reclamación</option>
+                                                            <option>Indemnización</option>                                                            
+                                                        </select>
+                                                    </td>  
+                                                    <td><button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px" 
+                                                        <!--4DIF (Records in Selection([Reclamaciones])>=2)-->disabled<!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>                                                                                                                                                                     
+                                                </tr>
+                                                <input type="hidden" id="eliminarReg" name="eliminarReg">
+                                                <!--4DLOOP [Reclamaciones]-->
+                                                <tr >
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Reclamaciones]Año--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Reclamaciones]Ramo--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Reclamaciones]Compañia--></h4>
+                                                    </td>                                                   
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Reclamaciones]Valor--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Reclamaciones]Resultado--></h4>
+                                                    </td>                                                     
+                                                    <td><button type="button" onclick="del(<!--4DTEXT [Reclamaciones]ID-->)" class="btn ajg-button col-md-4 col-md-offset-4 btn-danger"  style="width:40px"><i class="fa  fa-trash-o"></i></button></td>                                                         
+                                                </tr>
+                                                <!--4DENDLOOP--> 
+                                            </tbody>
+                                        </table>                                                                                        
+                                    </div>                                                                         
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" class="btn ajg-button col-md-4" onclick="validateList('botonReclamaciones','anyo','ramo','compañia','valor','resultado')">Siguiente</button>
+                                        <button disabed type="submit" style="display:none" id="botonReclamaciones"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+        </section>
+        <script src="juridico10.js"></script>
+        <!--4DINCLUDE scripts.html-->
+	</body>
+</html>

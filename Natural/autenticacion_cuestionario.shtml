@@ -1,0 +1,96 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->	
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Autenticación</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Autenticación</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark ">
+							<header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Autenticación por Cuestionario</h1>   
+                            </header>
+                            <div class="panel-body ajg-title-dark" style="text-align: justify">
+								<input type="hidden"  id="questions" value="<!--4DTEXT OB Get(response;"result")-->">
+								<div class="col-md-2"></div>
+								<div class="col-md-8" style="margin: 0px">
+									<div id="alerta" style="width: 100%;background-color: red;border-radius: 5px; color: white; text-align: center;padding: 3px;display:none">
+										<h4>Por favor seleccione una opción</h4>
+									</div>
+									<br>
+									<h5 style="text-align:justify">Con el fin de autenticar su identidad a continuación aparecerá un conjunto de preguntas de selección múltiple. Tenga en cuenta que las preguntas aparecerán una por una y no hay posibilidad de retoceder.</h5>
+									<br>
+									<div style="display: flex; justify-content: space-between;">
+										<h4>Pregunta #<span id="numb">1</span></h4>
+										<h4><span id="count">1</span>/5</h4>
+									</div>
+									<div>
+										<h5 id="question"></h5>
+										<br>
+										<div id="answers"></div>
+									</div>
+									<br>
+									<br>
+									<div class="row" style="display:flex; justify-content: space-around;">
+										<button type="button" onclick="lastQuestion()" id="backbutton" style="display:none" class="btn ajg-button col-md-4 ">Anterior</button>
+										<button type="button" onclick="nextQuestion()" id="button" class="btn ajg-button col-md-4 ">Siguiente</button>
+										<button type="button" onclick="finalQuestion()"  style="display: none;" id="submitButton" class="btn ajg-button col-md-4" data-toggle="modal" data-target="#loading">Enviar</button>
+									</div>
+									<form action="/Natural/autenticar_cuestionario_envio" method="POST"  enctype="multipart/form-data"  style="display: none;" id="submitForm">
+										<input type="hidden" name="respuestas" id="respuestas">
+										<input type="hidden" name="application_id" value="<!--4DTEXT Ob Get(response;"application_id")-->">
+									</form>
+	
+								</div>
+								<div class="col-md-2"></div>
+							</div>
+							<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-body">
+											<h4 style="text-align: center" class="ajg-title-dark">Enviando Respuestas...</h4>
+										</div>
+										<img src="../img/loading.gif" class="load">																	
+									</div>
+								</div>
+							</div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		<script src="autenticacion_cuestionario.js"></script>
+		<!--4DINCLUDE scripts.html-->				
+	</body>
+</html>

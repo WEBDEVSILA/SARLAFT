@@ -1,0 +1,85 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->	
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Autenticación</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Autenticación</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="ajg-title-dark panel">
+							<header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Autenticación de Identidad</h1>   
+                            </header>
+                            <div class="panel-body ajg-title-dark" style="text-align: justify; ">
+								<h5 style="text-align: center;">Con el fin de verificar la identidad del usuario que diligencia este formulario se va a generar un código OTP que será enviado a un número de preferencia y deberá ser ingresado posteriormente.</h5>
+								<form action="/Juridico/autenticar_otp" style="padding: 0% 20% 5% 20%;" method="POST" enctype="multipart/form-data" class="form-bordered ajg-title-dark">
+									<br>
+									<p>Por favor seleccione el método por cual desea recibir el código y el número al cual lo va a recibir.</p>
+									<br>
+									<div class="row">
+										<label for="" class="col-md-4">Método</label>
+										<div class="col-md-8">
+											<select name="metodo" id="metodo" class="form-control" onchange="selectSMS(this)">
+												<option value="SMS">SMS</option>
+												<option value="Voice">Llamada</option>
+											</select>
+										</div>
+									</div>
+									<br>
+									<input type="hidden" name="application_id" value='<!--4DTEXT OB Get(response;"application_id")-->'>
+									<input type="hidden" name="mobile_phone_list" value='<!--4DTEXT OB Get(response;"mobile_phone_list")-->' id="mobile_phone_list">
+									<input type="hidden" name="land_line_list" value='<!--4DTEXT OB Get(response;"land_line_list")-->' id="land_line_list">
+									<input type="hidden" name="phone_type" id="phone_type">
+									<div class="row">
+										<label for="" class="col-md-4">Número</label>
+										<div class="col-md-8">
+											<select name="numeroSeleccionado" id="numeroSeleccionado" class="form-control" required onchange="phoneTpe(this)">
+												<option value=""></option>
+											</select>
+										</div>
+									</div>
+									<br>
+									<button type="submit" id="submitButton" data-toggle="modal" data-target="#loading" class="btn ajg-button col-md-4 col-md-offset-4">Enviar</button>	
+								</form>
+
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		
+		<!--4DINCLUDE scripts.html-->		
+		<script src="autenticacion_otp.js"></script>		
+	</body>
+</html>

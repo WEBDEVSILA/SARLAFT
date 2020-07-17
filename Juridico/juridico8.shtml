@@ -1,0 +1,78 @@
+<!--DECLARACIÓN DE ORIGEN DE FONDOS-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Declaración de Fondos</h2>
+						<div class="right-wrapper pull-right" style="transform: translateX(-10px)">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Declaración de Origen de Fondos</span></li>                                
+							</ol>
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Declaración de Origen de Fondos</h2>   
+                            </header>
+                            <div class="panel-body ajg-title-dark">
+                                <form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Juridico/operaciones_internacionales">
+                                    <h4>Declaro expresamente que:</h4>
+                                    <p>
+                                        1. La actividad, profesión u oficio de la compañía es lícita y se ejerce dentro del marco legal y los recursos de la misma no provienen
+                                        de actividades ilícitas de las contempladas en el Código Penal COlombiano.
+                                    </p>
+                                    <p>
+                                        2. La información suministrada en la solicitud y en este documento es veraz y verificable y la sociedad se compomente a actualizar anualmente.
+                                    </p>
+                                    <p>
+                                        3. Los recursos que se deriven del desarrollo de este contrato no se destinaran a la financiación del terrosismo, grupos terroristas o actividades
+                                        terroristas.
+                                    </p>
+                                    <p>
+                                        4. Los recursos que posee la compañía provienen de la(s) actividades descritas anteriormente.
+                                    </p>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="col-md-2 control-label" style="font-size:20px;">Origen de Fondos:</label>                                                                                        
+                                            <textarea name="origenFondos" required type="text" class="form-control" onkeyup="upperCase(this,true)" onchange="validateNA(this)" required><!--4DTEXT [Sarlaft]Origen_fondos--> </textarea>
+                                        </div>                                                                              
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="submit" class="btn ajg-button col-md-4 ">Siguiente</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+		</section>
+		<!--4DINCLUDE scripts.html-->				
+	</body>
+</html>

@@ -1,0 +1,190 @@
+<!--RESULTADO VALIDACIÓN-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->	
+		
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Validación</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Validación</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark">
+							<header class="panel-heading">
+								<!--#4DIF (OB Get(response;"proceso")="autenticado")-->     
+								<h1 class="panel-title text-center ajg-title-dark">Validación Exitosa</h1>  
+								<input type="hidden" id="proceso" value="<!--4DTEXT OB Get(response;"proceso")-->"> 
+								<form  action="/Natural/generar_formulario" method="POST"  enctype="multipart/form-data" id="generarForm">
+									<input type="hidden" id="proceso" name="application_id" value="<!--4DTEXT OB Get(response;"application_id")-->"> 
+								</form>
+								<!--#4DENDIF-->
+								<!--#4DIF (OB Get(response;"proceso")="firmando")-->     
+								<h1 class="panel-title text-center ajg-title-dark">Firmando Archivo</h1>  
+								<input type="hidden" id="proceso" value="<!--4DTEXT OB Get(response;"proceso")-->"> 
+								<form  action="/Natural/firma_formulario" method="POST"  enctype="multipart/form-data" id="generarForm">
+									<input type="hidden" id="proceso" name="application_id" value="<!--4DTEXT OB Get(response;"application_id")-->"> 
+								</form>
+								<!--#4DENDIF-->
+								<!--#4DIF (OB Get(response;"proceso")="finalizado")-->  
+								<h1 class="panel-title text-center ajg-title-dark">Proceso Finalizado</h1>   
+								<input type="hidden" id="proceso" value="<!--4DTEXT OB Get(response;"proceso")-->"> 
+								<!--#4DENDIF-->
+                            </header>
+                            <div class="panel-body ajg-title-dark" style="text-align: justify">
+								<!--#4DIF (OB Get(response;"proceso")="autenticado")-->  
+								<h4 style="text-align: center;margin-bottom: 20px;">Generando Sarlaft.</h4>
+								<h5 style="text-align: center;margin-bottom: 20px;">Se está creando el archivo para realizar la firma electrónica</h5>
+								<div style="display: flex; justify-content: center;">
+									<img src="../img/loading.gif" alt="loading" style="margin: auto;">
+								</div>
+								<!--#4DENDIF-->
+								<!--#4DIF (OB Get(response;"proceso")="firmando")-->  
+								<h4 style="text-align: center;margin-bottom: 20px;">Archivo generado exitosamente.</h4>
+								<h5 style="text-align: center;margin-bottom: 20px;">Se está realizando la firma electrónica del archivo. El proceso puede tardar unos minutos, agradecemos su paciencia.</h5>
+								<div style="display: flex; justify-content: center;">
+									<img src="../img/loading.gif" alt="loading" style="margin: auto;">
+								</div>
+								<!--#4DENDIF-->
+								<!--#4DIF (OB Get(response;"proceso")="finalizado")-->  
+								<h4 style="text-align: center;margin-bottom: 20px;">Archivo generado y firmado exitosamente.</h4>
+								<div style="display: flex; justify-content: center;">
+									<img height="70" width="70" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/1200px-Yes_Check_Circle.svg.png" alt="">
+								</div>
+								<div style="display: flex;justify-content: center;flex-direction: column;align-items: center;">
+									<p>Acontinuación puede descargar su Sarlaft en formato PDF y verificar que la información sea correcta.</p>
+									<p style="text-align: center;font-style: italic;margin: 10px;" class="col-sm-7"><span style="font-weight: bold">Nota:</span> Para visualizar la firma electrónica se recomienda hacer uso de un software de lectura de PDF como "Adobe Reader"</p>
+									<a  target="_blank" rel="noopener noreferrer" class="btn ajg-button col-sm-4" href="<!--4DTEXT OB Get(response;"ruta_pdf")-->">
+										Descargar Sarlaft
+									</a>
+                            	</div>
+								<br>
+								<form action="/LogIn" id="form-logOut" class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" style="display: flex;justify-content: center;">
+									<button type="submit" class="btn ajg-button col-md-4" style="color: white;">Finalizar y Salir <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+								</form>	
+								<!--#4DENDIF-->
+
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		<script>
+			
+			var proceso = document.getElementById('proceso');
+			setTimeout(() => {
+				if(proceso.value != 'finalizado'){
+					document.getElementById('generarForm').submit();
+				}
+			}, 1000);
+
+			
+			
+			
+			
+			function fileName(e){
+				if(ValidateSingleInput(e)){
+					document.getElementById('nombreArchivo').innerHTML ='Archivo: ' + e.files[0].name;
+					document.getElementById('nombreArchivo').style.display = 'block';
+				}
+			}
+			var _validFileExtensions = [".pdf"];    
+			function ValidateSingleInput(oInput) {
+				
+				if (oInput.type == "file") {
+					var sFileName = oInput.value;
+					if (sFileName.length > 0) {
+						var blnValid = false;
+						for (var j = 0; j < _validFileExtensions.length; j++) {
+							var sCurExtension = _validFileExtensions[j];
+							if (sFileName.substr(sFileName.length - sCurExtension.length, sCurExtension.length).toLowerCase() == sCurExtension.toLowerCase()) {
+								blnValid = true;
+								break;
+							}
+						}
+						if (!blnValid) {
+							alert("Formato incorrecto, las extensiones permitidas son: " + _validFileExtensions.join(", "));
+							oInput.value = "";
+							return false;
+						}
+					}
+				}
+				var fileSize = oInput.files[0].size/1000;
+				if(fileSize > 5000){
+					alert("El archivo excede el peso máximo");
+					oInput.value = "";
+					return false;
+				}
+				return true;
+			}
+		</script>
+		<!--4DINCLUDE scripts.html-->				
+	</body>
+</html>
+
+
+<!--
+
+
+	<!-4DIF ([Sarlaft]Ruta_PDF # "")->
+									<!-#4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"sarlaft")#"")->
+									<h4 style="text-align: center;margin-bottom: 20px;" ><i class="fa fa-check" aria-hidden="true"></i>Su formulario fue enviado satisfactoriamente.</h4>
+									<!-#4DELSE->
+									<h4 style="text-align: center;margin-bottom: 20px;">A continuación puede descargar su Sarlaft para realizar la firma y subir el archivo escaneado.</h4>
+									<!-#4DENDIF->
+									<form action="/Natural/sarlaft_firmado" method="POST"  enctype="multipart/form-data">
+										<div style="display: flex;flex-direction: column;justify-content: space-evenly;height: 200px;align-items: center;" class="row">
+											<a href="<!-4DTEXT [Sarlaft]Ruta_PDF->" target="_blank" rel="noopener noreferrer" class="btn ajg-button col-sm-4">1. Descargar PDF</a>
+											<label class="btn ajg-button col-sm-4 " for="inputfile">2. Cargar Sarlaft Firmado </label>                                                
+											<input type="file" class="form-control-file inputfile" required onchange="fileName(this)" id="inputfile" required name="sarlaft" >
+											<!-#4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"sarlaft")#"")->
+											<button type="submit" class="btn ajg-button col-md-4 ">3. Actualizar</button>
+											<h4 id="nombreArchivo" style="text-decoration: underline;"><span style="font-weight: bold;">Archivo:</span> <!-4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"sarlaft")-></h4>
+											<!-#4DELSE->
+											<button type="submit" class="btn ajg-button col-sm-4 ">3. Enviar</button>
+											<h4 style="display:none;" id="nombreArchivo"></h4>
+											<!-#4DENDIF->
+										</div>
+									</form>
+									<!-#4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"sarlaft")#"")->
+									<form action="/LogIn" id="form-logOut" class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" style="display: flex;justify-content: center;">
+										<button type="submit" class="btn btn-link col-md-4" style="margin-top: 50px;color: rgb(0,38,62);">Finalizar y Salir <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+									</form>	
+									<!-#4DENDIF->
+								<!-4DELSE->
+									<h4 style="text-align: center;margin-bottom: 20px;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>  Aun no se ha enviado toda la información, por favor regrese al formulario y finalice de diligenciar los datos.</h4>
+									<form action="/LogIn" id="form-logOut" class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" >
+										<button style="margin-top: 20px;" type="submit" class="btn ajg-button col-md-4 col-md-offset-4">Finalizar y Salir <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+									</form>								
+								<!-4DENDIF->
+-->

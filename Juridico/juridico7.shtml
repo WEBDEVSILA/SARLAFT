@@ -1,0 +1,126 @@
+<!--INFORMACIÓN FINANCIERA-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>		
+        <!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>
+                                    <i class="fa fa-home title"></i>
+								</li>
+                                <li><span style="color:white">Información Básica</span></li>
+                                <li><span style="padding-right: 1cm; color:white">Información Financiera</span></li>
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Información Financiera</h2>   
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered ajg-title-dark" id="formOri" method="POST" enctype="multipart/form-data" action="/Juridico/origen_fondos">                                                                                                               
+                                    <div class="row">
+                                        <h5 class="col-sm-4" style="margin-left: 14px;font-weight: bold;">* Valores en miles de pesos</h5>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Ingresos Mensuales</label>
+                                            <div class="col-md-8">
+                                                <input name="ingresosMensuales" id="ingresosMensuales" value="<!--4DTEXT [Sarlaft]Ingresos_Mensuales-->" required type="number" class="form-control" placeholder="Ingresos (Pesos)" required autocomplete="off">
+                                            </div>                                 
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-3 control-label">Egresos Mensuales</label>
+                                                <div class="col-sm-9">
+                                                    <input name="egresosMensuales" id="egresosMensuales" value="<!--4DTEXT [Sarlaft]Egresos_Mensuales-->" required type="number" class="form-control" placeholder="Egresos (Pesos)" required autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                    
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Activos</label>
+                                                <div class="col-sm-8">
+                                                    <input name="activos" id="activos" value="<!--4DTEXT [Sarlaft]Activos-->" type="number" required class="form-control" placeholder="Activos (Pesos)" required autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Pasivos</label>
+                                            <div class="col-md-8">
+                                                <input name="pasivos" id="pasivos" value="<!--4DTEXT [Sarlaft]Pasivo-->" type="number" required class="form-control" placeholder="Pasivos (Pesos)" required autocomplete="off">
+                                            </div>                                 
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-3 control-label">Patrimonio</label>
+                                                <div class="col-sm-9">
+                                                    <input name="patrimonio" id="patrimonio" value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" required class="form-control" placeholder="Patrimonio" required autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                    
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Otros Ingresos</label>
+                                                <div class="col-sm-8">
+                                                    <input name="otrosIngresos" value="<!--4DTEXT [Sarlaft]Otros_Ingresos-->" type="text" class="form-control" placeholder="Otros Ingresos" autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <label class="col-md-2 control-label">Concepto de Otros Ingresos</label>
+                                            <div class="col-md-10">
+                                                <input name="conceptoOtros" value="<!--4DTEXT [Sarlaft]Concepto_otros_Ingresos-->" type="text-area" class="form-control" placeholder="Concepto de Otros Ingresos" autocomplete="off">
+                                            </div>                                 
+                                        </div>                                                                              
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" onclick="validateCero('formOri','ingresosMensuales','egresosMensuales','activos','pasivos','patrimonio')"  class="btn ajg-button col-md-4 ">Siguiente</button>                                   
+                                    </div>
+                                                                        
+                                </form>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		<!--4DINCLUDE scripts.html-->	
+	</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">  		
+		<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>				
+		<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.js"></script>
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			    	<!--#4DINCLUDE panelConsulta.shtml-->
+				<!-- end: sidebar -->			
+				<section role="main" class="content-body">
+					<header class="page-header ajg-color-dark "  >
+                        <h2>Sarlaft</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title" style="padding-right: 1cm; color:white"></i>									
+								</li>								
+							</ol>
+												
+						</div>
+					</header>
+                    
+					<!-- start: page -->
+					<form class="form-bordered " id="search" method="POST" enctype="multipart/form-data" action="/Consulta/Consulta_Busqueda">                                    
+						<input type="text" hidden name="option" id="option">
+						<input type="text" hidden name="id" value="<!--4DTEXT [Users]ID-->">
+					</form>    
+                    <div class="ajg-panel ">
+						<div class="row top" style="align-items: center;">
+							<div class="col-sm-8">
+								<h3 class=" ajg-title-dark" >REGISTROS BLOQUEADOS</h3>   
+								
+							</div>    
+							<div class="col-sm-4">
+                                <h4 class=" ajg-title-dark" ># Registros Bloqueados: <!--4DTEXT String(bloqueados)--> </h4>
+							</div>						
+							<!--#4DENDIF-->    
+						</div>
+					</div>  
+					<form action="/Consulta/Detalles_Sarlaft" id="detallesSarlaft" method="POST" enctype="multipart/form-data">
+						<input type="hidden" id="tableID" name="tableID" value="">
+					</form>   
+					<div class="tabla1" id="tabla">
+						<section class="panel ajg-panel">
+							<div class="panel-body" >
+								<table id="table_id" class="datatable table table-striped table-bordered">					
+									<thead>
+										<tr>
+											<th>Nombre Razón Social</th>
+											<th>Nivel de Riesgo</th>
+											<th>Documento</th>
+											<th>Dirección<span style="color:white">_____________________</span></th>
+											<th>Tipo</th>
+											<th>Teléfono</th>
+											<th>Fecha</th>
+										</tr>
+									</thead>
+									<tbody>
+										<!--4DLOOP [Sarlaft]-->
+										<tr class="dataRow" >
+											<td style="display:flex; align-items: center;">
+												<a href="#"  style="color:black; margin: 0px 20px 0px 6px;" onclick="openView(<!--4DTEXT [Sarlaft]Documento_numero-->)">													
+													<i class="material-icons">
+														notes
+													</i>
+												</a>
+												<a href="#" style="color:black;" onclick="openView(<!--4DTEXT [Sarlaft]Documento_numero-->)">
+													<!--4DTEXT  [Sarlaft]Nombre_Razon_Social-->
+												</a>
+											</td>
+											<td><!--4DTEXT [Sarlaft]Nivel_Riesgo--></td>
+											<td><!--4DTEXT [Sarlaft]Tipo_Documento--> : <!--4DTEXT [Sarlaft]Documento_numero--> <!--4DTEXT [Sarlaft]DV--></td>
+											<!--#4DIF ([Sarlaft]Juridico_Natural = True)-->
+											<td><!--4DTEXT [Sarlaft]Direccin_Oficina--></td>	
+											<td>Jurídico</td>
+											<td><!--4DTEXT [Sarlaft]Telefono_Oficina--></td>
+											<td><!--4DTEXT [Sarlaft]Fecha_Diligenciamiento--></td>
+											<!--#4DELSE-->
+											<td><!--4DTEXT [Sarlaft]Direccion--></td>
+											<td>Natural</td>
+											<td><!--4DTEXT [Sarlaft]Telefono--></td>
+											<td><!--4DTEXT [Sarlaft]Fecha_Diligenciamiento--></td>
+											<!--#4DENDIF-->
+										</tr>					
+										<!--4DENDLOOP-->		
+									</tbody>
+								</table>								
+							</div>
+						</section>
+					</div>
+					<!-- end: page -->
+				</section>
+			</div>			
+		</section>
+		<script>
+			$(document).ready( function () {
+				$('#table_id').DataTable();
+			} );
+		</script>
+		
+		<script src="./consulta_inicio.js"></script>
+		<!--4DINCLUDE scripts.html-->
+		
+	</body>
+</html>

@@ -1,0 +1,169 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headIncludes.html-->
+        <script type='text/javascript' src='http://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.4.0/fabric.min.js'></script>
+
+        <style type='text/css'>
+            #sheet {
+                border:1px solid black;
+            }
+        </style>
+        <script type='text/javascript'>
+            window.onload=function(){
+              var canvas = new fabric.Canvas('sheet');
+              canvas.isDrawingMode = true;
+              canvas.freeDrawingBrush.width = 2;
+              canvas.freeDrawingBrush.color = "#000000";
+              canvas.allowTouchScrolling = false;
+              canvas.backgroundColor = "#ffffff";
+
+              if(window.screen.width < 500){
+                var newHeight = window.screen.height * 0.8;
+                canvas.setWidth(300);
+                canvas.setHeight(500);
+                
+              }else{
+                canvas.setHeight(200);
+                canvas.setWidth(500);
+              }
+              document.getElementById('clearButton').addEventListener('click',function(){
+                canvas.backgroundColor = "#ffffff";
+                canvas.clear();
+              });
+
+            }
+        </script>
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			       <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <h3 style="font-weight: bold" class="modal-title" id="exampleModalLabel"></h3>             
+                      </div>
+                      <div class="modal-body">
+                          <h4 style="text-align: center" class="ajg-title-dark">¿Esta seguro que desea salir?</h4>
+                          <p  style="text-align: center">Es posible que no se guarden todos los cambios realizados. </p>
+                      </div>
+                      <div class="modal-footer" style="display: flex; justify-content: center;">
+                          <button type="button" style="width:100px;" id="logOut" class="btn btn-primary ajg-dark-button">Si</button>
+                          <button type="button" style="width:100px;" class="btn " data-dismiss="modal">No</button>
+                      </div>
+                  </div>
+              </div>
+              </div>
+              <input type="text" hidden value="<!--4DTEXT [Clientes]Identificacion-->" name="ident">
+              <aside id="sidebar-left" class="sidebar-left ajg-color-dark">
+                  <div class="sidebar-header">
+                      <div class="sidebar-title" style="color:white">
+                          Navegación
+                      </div>
+                      <div class="sidebar-toggle hidden-xs" style="background-color: rgb(0,38,62);color:white;" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                          <i class="fa fa-bars" style="color:white" aria-label="Toggle sidebar"></i>
+                      </div>
+                  </div>
+
+                  <div class="nano">
+                      <div class="nano-content ajg-color-dark">
+                          <nav id="menu" class="nav-main" role="navigation">
+                              <ul class="nav nav-main">
+                                  <li>
+                                      <a class="ajg-dark-button">
+                                          <i class="fa fa-user" aria-hidden="true"></i>
+                                          <span><!--4DTEXT [Clientes]Nombre_Razon_Social--></span>
+                                      </a>
+                                  </li>	
+                                  <!--<li>
+                                      <a href="#"  class="ajg-dark-button">
+                                          <i class="fa fa-user" aria-hidden="true"></i>
+                                          <span>Perfil</span>
+                                      </a>
+                                  </li>-->   
+                                  <li>
+                                      <a href="#"  data-toggle="modal" data-target="#exampleModal" class="ajg-dark-button" >
+                                          <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                          <span>Salir</span>
+                                      </a>
+                                  </li>	
+                                  <script>
+                                      document.getElementById("logOut").addEventListener("click",function(){
+                                          console.log("Salir");
+                                          document.getElementById("form-logOut").submit();
+                                      });
+                                  </script>                      
+                                  <li class="hidden">
+                                      <form action="/LogIn" id="form-logOut" method="POST" enctype="multipart/form-data"></form> 
+                                  </li>																																																																			
+                              </ul>
+                          </nav>																															
+                      </div>				
+                  </div>	
+
+              </aside>
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header ajg-color-dark " >
+            <h2>Firma Digital</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                  <i class="fa fa-home title"></i>									
+								</li>
+								<li><span style="padding-right: 1cm; color:white">Creación Sarlaft</span></li>
+							</ol>
+												
+						</div>
+					</header>
+          <div style="margin-top:20px; display: flex; justify-content: space-between; flex-direction: column; align-items: center;">
+            <canvas id="sheet""></canvas>
+            <div style="margin: 10px;">
+              <button class="btn btn-danger" id="clearButton" type="button">Borrar</button>
+              <button class="btn btn-success" id="clearButton" type="button">Enviar</button>
+            </div>
+          </div>
+				</section>
+			</div>
+
+			
+        </section>
+        <script src="../octopus/assets/vendor/jquery/jquery.js"></script>
+        <script src="../octopus/assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+        <script src="../octopus/assets/vendor/bootstrap/js/bootstrap.js"></script>
+        <script src="../octopus/assets/vendor/nanoscroller/nanoscroller.js"></script>
+        <script src="../octopus/assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="../octopus/assets/vendor/magnific-popup/magnific-popup.js"></script>
+        <script src="../octopus/assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+            <script src="../octopus/assets/vendor/dropzone/dropzone.js"></script>
+            
+    
+        <!-- Specific Page Vendor -->
+        <script src="../octopus/assets/vendor/select2/select2.js"></script>
+        <script src="../octopus/assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+        <script src="../octopus/assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>               
+    
+            
+        <!-- Theme Base, Components and Settings -->
+        <script src="../octopus/assets/javascripts/theme.js"></script>
+        
+        <!-- Theme Custom -->
+        <script src="../octopus/assets/javascripts/theme.custom.js"></script>
+        
+        <!-- Theme Initialization Files -->
+        <script src="../octopus/assets/javascripts/theme.init.js"></script>
+    
+        <script src="../funcionesAuxiliares.js"></script>
+	</body>
+</html>

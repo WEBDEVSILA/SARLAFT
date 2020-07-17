@@ -1,0 +1,186 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="font-weight: bold" class="modal-title" id="exampleModalLabel"></h3>             
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center" class="ajg-title-dark">¿Esta seguro que desea salir?</h4>
+                <p  style="text-align: center">Es posible que no se guarden todos los cambios realizados. </p>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: center;">
+                <button type="button" style="width:100px;" id="logOut" class="btn btn-primary ajg-dark-button">Si</button>
+                <button type="button" style="width:100px;" class="btn " data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<input type="text" hidden value="<!--4DTEXT [Clientes]Identificacion-->" name="ident">
+<aside id="sidebar-left" class="sidebar-left ajg-color-dark">
+        <div class="sidebar-header">
+            <div class="sidebar-title" style="color:white">
+                Navegación
+            </div>
+            <div class="sidebar-toggle hidden-xs" style="background-color: rgb(0,38,62);color:white;" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                <i class="fa fa-bars" style="color:white" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+    
+        <div class="nano">
+            <div class="nano-content ajg-color-dark">
+                <nav id="menu" class="nav-main" role="navigation">
+                    <ul class="nav nav-main">
+                        <li>
+                            <a class="ajg-dark-button" >
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span><!--4DTEXT [Clientes]Nombre_Razon_Social--></span>
+                            </a>
+                        </li>	
+                        <!--<li>
+                            <a href="#"  class="ajg-dark-button">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span>Perfil</span>
+                            </a>
+                        </li>-->
+                        <li class="nav-parent nav-active" id="light-list">
+                            <a  class="ajg-dark-button">
+                                <i class="fa fa-copy" aria-hidden="true"></i>
+                                <span>Formulario</span>
+                            </a>
+                            <ul class="nav nav-children text-white" style="background-color: white">
+                                <li>                                    
+                                    <form action="/Juridico/formulario_inicio"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">1. Inicio</button>
+                                    </form> 
+                                </li>
+                                <li class="nav-parent">
+                                    <a>2. Información Básica</a>
+                                    
+                                    <ul class="nav nav-children">
+                                        <li>
+                                            <form action="/Juridico/datos_basicos"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;">Datos Básicos</button>
+                                            </form>                                            
+                                        </li>
+                                        <li>                                           
+                                            <form action="/Juridico/representante_legal"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;">Representante Legal</button>
+                                            </form> 
+                                        </li>   
+                                        <li>
+                                            <form action="/Juridico/accionistas"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;">Accionistas</button>
+                                            </form>                                           
+                                        </li>
+                                        <li>                                            
+                                            <form action="/Juridico/personas_expuestas"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;text-align: left">Personas Expuestas Publicamente</button>
+                                            </form> 
+                                        </li> 
+                                        <li>                                            
+                                            <form action="/Juridico/accionistas_beneficiarios"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;text-align: left">Accionistas y Beneficiarios Finales</button>
+                                            </form> 
+                                        </li>
+                                        <li>                                            
+                                            <form action="/Juridico/informacion_financiera"  method="POST" enctype="multipart/form-data" style="background-color: white">
+                                                <input type="hidden" name="panel" value="true">
+                                                <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 70px;">Información Financiera</button>
+                                            </form> 
+                                        </li>                         
+
+                                    </ul>
+                                </li>
+                                <li>                                    
+                                    <form action="/Juridico/origen_fondos"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">3. Origen de Fondos</button>
+                                    </form>
+                                </li>
+                                <li>                                   
+                                    <form action="/Juridico/operaciones_internacionales"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">4. Operaciones Internacionales</button>
+                                    </form>
+                                </li>
+                                <li>                                    
+                                    <form action="/Juridico/reclamaciones_seguros"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">5. Reclamaciones en seguros</button>
+                                    </form>
+                                </li>
+                                <li>                                   
+                                    <form action="/Juridico/clausula_autorizacion"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">6. Cláusula de Autorización</button>
+                                    </form>
+                                </li> 
+                                <li>
+                                    <!--<form action="/Juridico/imprimir_formulario"  method="POST" enctype="multipart/form-data">
+                                        <input type="hidden" name="panel" value="true">
+                                        <button type="submit" class="btn btn-link ajg-title-dark" style="margin-left: 45px;">7. Imprimir Formulario </button>
+                                    </form>-->
+                                </li>                                                        
+                            </ul>
+                        </li>  
+                        <!--<li>
+                            <a href="#" id="save" class="ajg-dark-button" >
+                                <i class="fa fa-save" aria-hidden="true"></i>
+                                <span>Guardar</span>
+                            </a>
+                        </li>	--> 
+                        <li class="nav-parent">
+                            <a class="ajg-dark-button">
+                                <i class="fa fa-question-circle" aria-hidden="true"></i>
+                                <span>Instructivo</span>
+                            </a>
+                            
+                            <ul class="nav nav-children" style="background-color: white">
+                                <li>                                           
+                                    <a href="../img/Instructivo Sarlaft Clientes.pdf#page=12" target="_blank" class="btn btn-link ajg-title-dark" style="background-color: white; color:rgb(0,38,62);margin-left: -210px;">
+                                        PDF
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="../img/Instructivo Cliente Juridico.mp4" 
+                                        target="_blank" 
+                                        class="btn btn-link ajg-title-dark" 
+                                        style="background-color: white;color:rgb(0,38,62);margin-left: -200px;">
+                                        Video
+                                    </a>                                           
+                                </li>                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"  data-toggle="modal" data-target="#exampleModal" class="ajg-dark-button" >
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <span>Salir</span>
+                            </a>                           
+                        </li>	
+                        <li class="hidden">
+                            <form action="/LogIn" id="form-logOut" method="POST" enctype="multipart/form-data"></form> 
+                        </li>
+
+                        <script>
+                            document.getElementById("logOut").addEventListener("click",function(){
+                                console.log("Salir");
+                                document.getElementById("form-logOut").submit();
+                            });                          
+                        </script>                      
+                        
+                    </ul>
+                </nav>																															
+            </div>				
+        </div>	
+    
+    </aside>

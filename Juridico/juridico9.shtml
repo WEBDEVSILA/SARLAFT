@@ -1,0 +1,324 @@
+<!--ACTIVIDADES EN OPERACIONES INTERNACIONALES-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>	
+        <!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Operaciones Internacionales</h2>
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Actividades en Operaciones Internacionales</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Actividades en Operaciones Internacionales</h2>   
+                            </header>
+                            <div class="panel-body ajg-title-dark">
+                                <form class="form-bordered ajg-title-dark" id="form-id" method="POST" id="form-id" enctype="multipart/form-data" action="/Juridico/reclamaciones_seguros">
+                                    <input type="hidden" value="0" id="option" name="option">
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Realiza Transacciones en Moneda Extranjera?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" onclick="makeRequired('cualOperacion')" name="monedaExtranjera" required <!--4DIF ([Sarlaft]Transacciones_Moneda_Ext=True)-->checked<!--4DENDIF-->/>
+                                            <label >Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="monedaExtranjera" onclick="unMakeRequired('cualOperacion')" <!--4DIF ([Sarlaft]Transacciones_Moneda_Ext=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>    
+                                        <div class="col-sm-6">                                        
+                                            <div  class="form-group">
+                                                <label class="col-md-3 control-label">Cuál</label>
+                                                <div class="col-md-9">
+                                                    <select name="cualOperacion" id="cualOperacion" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]Trans_MonedaE_cual--></option>
+                                                        <option>Importaciones</option>
+                                                        <option>Exportaciones</option>
+                                                        <option>Inversiones</option>
+                                                        <option>Transferencias</option>
+                                                        <option>Otras</option>
+                                                    </select>
+                                                </div>
+                                            </div>                                            
+                                        </div>        
+                                    </div>
+                                    
+                                    <div  class="form-group">
+                                        <label class="col-sm-4 control-label">Indique Otras Operaciones</label>
+                                        <div class="col-sm-8" style="transform:translateX(-20px)">
+                                            <input name="otrasOperaciones" type="text" class="form-control" value="<!--4DTEXT [Sarlaft]Otras_Operaciones-->">
+                                        </div>                                 
+                                    </div>                                                                               
+                                
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Posee productos Financieros en el Exterior?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="productosExtranjero" required <!--4DIF ([Sarlaft]ProductosFin_Exterior=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="productosExtranjero" <!--4DIF ([Sarlaft]ProductosFin_Exterior=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>                                             
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Posee Cuentas en Moneda Extranjera?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="Si" type="radio" name="cuentasMonedaExtr" required <!--4DIF ([Sarlaft]Cuentas_MonedaEx=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="cuentasMonedaExtr" <!--4DIF ([Sarlaft]Cuentas_MonedaEx=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>                                                  
+                                    </div>
+
+                                    <div class="table-responsive">
+                                        <table class="table mb-none">
+                                            <thead>
+                                                <tr class="ajg-title-dark">
+                                                    <th>Tipo de producto</th>
+                                                    <th>Identificación o Número del Producto</th>
+                                                    <th>Entidad <span style="color: white;">___________________</span></th>
+                                                    <th>Monto</th>
+                                                    <th>Ciudad</th>
+                                                    <th>País</th>                                                            
+                                                    <th>Moneda</th>
+                                                    <th><p style="color: white">Opciones</p></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                                    
+                                                <tr >                                                          
+                                                    <td>
+                                                        <input name="tipoProd1" id="tipoProd" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="numProd1" id="numProd"                                                         
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="entidad1" id="entidad" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        type="text" class="form-control">
+                                                    </td>                                                   
+                                                    <td>
+                                                        <input name="monto1" id="monto" min="0"
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        type="number" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="ciudad1" id="ciudad" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        type="text" class="form-control">
+                                                    </td> 
+                                                    <td>
+                                                        <input name="pais1" id="pais" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="moneda1" id="moneda" 
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        type="number" class="form-control">
+                                                    </td>
+                                                    <td><button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px" 
+                                                        <!--4DIF (Records in Selection([Operaciones_Inter])>=4)-->disabled<!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>
+                                                </tr>
+                                                <input type="hidden" id="eliminarReg" name="eliminarReg">
+                                                <!--4DLOOP [Operaciones_Inter]-->
+                                                <tr >
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Operaciones_Inter]Tipo_Producto--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Operaciones_Inter]Iden_Num_Prod--></textarea>
+                                                    </td>
+                                                    <td>
+                                                        <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Operaciones_Inter]Entidad--></textarea>
+                                                    </td>                                                   
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Operaciones_Inter]Monto--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Operaciones_Inter]Ciudad--></textarea>
+                                                    </td> 
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Operaciones_Inter]Pais--></h4>
+                                                    </td>
+                                                    <td>
+                                                        <h4 type="text" class="form-control" ><!--4DTEXT [Operaciones_Inter]Moneda--></h4>
+                                                    </td>
+                                                    
+                                                    <td><button type="button" onclick="del(<!--4DTEXT [Operaciones_Inter]ID-->)" class="btn ajg-button col-md-4 col-md-offset-4 btn-danger"  style="width:40px"><i class="fa  fa-trash-o"></i></button></td>                                                         
+                                                </tr>
+                                                <!--4DENDLOOP-->                                                                                  
+                                            </tbody>
+                                        </table>                                                                                        
+                                    </div>                                     
+                                    <br>
+                                    <div >
+                                        <h4 style="font-weight:bold; text-align:center">DOCUMENTOS REQUERIDOS</h4>
+                                        <p style="font-weight: bold;">NOTA: Formato PDF no mayor a 5 mb.</p>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- Fotocopia del documento de identidad del representante legal, ampliada al 150%.</p>                                                
+                                            </div>
+                                            <div class="col-md-6">
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"documentoIdentidad")="")-->
+                                                    <input type="file" class="form-control-file " required name="documentoIdentidad" id="documentoIdentidad" onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                        <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"documentoIdentidad")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="documentoIdentidad" id="documentoIdentidad" onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                            </div>   
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- Certificado de existencia y representación legal expedido por la autoridad competente no mayor a 30 días.</p>                                                
+                                            </div>
+                                            <div class="col-md-6">                                                
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"certificado")="")-->
+                                                <input type="file" class="form-control-file " required name="certificado" id="certificado" onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                        <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"certificado")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="certificado" id="certificado" onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                            </div>  
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- RUT</p>
+                                            </div>
+                                            <div class="col-md-6">                                                
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"rut")="")-->
+                                                <input type="file" class="form-control-file " required name="rut" id="rut" onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                            <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"rut")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="rut" id="rut" onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                                
+                                            </div>
+                                        </div> 
+                                        <br>   
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- Declaración de Renta</p>
+                                            </div>
+                                            <div class="col-md-6">                                                
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"declaracion")="")-->
+                                                    <input type="file" class="form-control-file " name="declaracion"  onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                            <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"declaracion")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="declaracion"  onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                                
+                                            </div>
+                                        </div>    
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- Estados Financieros del Último Año</p>
+                                            </div>
+                                            <div class="col-md-6">                                                
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"estados")="")-->
+                                                <input type="file" class="form-control-file " name="estados"  onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                            <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"estados")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="estados"  onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                                
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" class="btn ajg-button col-md-4" onclick="operInter('documentoIdentidad','certificado','rut')">Siguiente</button>
+                                        <button disabled style="display:none" type="submit" id="submitButton" data-toggle="modal" data-target="#loading" ></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-body">
+                                            <h4 style="text-align: center" class="ajg-title-dark">Subiendo Archivos...</h4>
+                                        </div>
+                                        <img src="../img/loading.gif" class="load">																	
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+        </section>
+        <script src="juridico9.js"></script>
+        <!--4DINCLUDE scripts.html-->
+	</body>
+</html>

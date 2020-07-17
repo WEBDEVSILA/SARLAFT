@@ -1,0 +1,17 @@
+$obWebVars:=WEB_Get_Vars 
+$user:=OB Get($obWebVars;"username")
+$password:=OB Get($obWebVars;"pwd")
+
+QUERY([Users];[Users]e_Mail=$user)
+QUERY SELECTION([Users];[Users]Password=$password)
+
+
+If (Records in selection([Users])=1)
+	ALL RECORDS([Sarlaft])
+	WEB SEND FILE("Consulta/consulta_inicio.shtml")
+Else 
+	estado:=True
+	errTxt:="Usuario o contraseña incorrectos."
+	WEB SEND FILE("consulta.shtml")
+End if 
+

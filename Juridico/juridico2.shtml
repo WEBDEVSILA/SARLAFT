@@ -1,0 +1,297 @@
+<!--DATOS BÁSICOS-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>		
+								</li>
+                                <li><span style="color:white">Información Básica</span></li>
+                                <li><span style="padding-right: 1cm; color:white">Datos Básicos</span></li>
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" style="color:rgb(0,38,62);">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Datos Básicos</h2>   
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered" id="form-id" method="POST" enctype="multipart/form-data" action="/Juridico/representante_legal">
+                                    <div class="row">                                        
+                                        <div class="col-sm-7">
+                                            <div class="form-group">
+                                                <label class="col-md-3 control-label" >Nombre o Razón Social</label>                                                
+                                                <div class="col-md-9">
+                                                    <input name="razonSocial" value="<!--4DTEXT [Sarlaft]Nombre_Razon_Social-->" type="text" class="form-control"
+                                                        placeholder="Nombre - Razón Social" data-container=".row" data-toggle="popover" data-trigger="hover" onkeyup="upperCase(this,true)" onchange="validateNA(this)"
+                                                        data-placement="top" data-content="Nombre" required autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-5">
+                                            <label class="col-md-4 control-label">Tipo de Documento</label>
+                                            <div class="col-md-8">
+                                                <select name="tipoDoc" class="form-control mb-md">
+                                                    <option <!--4DIF ([Sarlaft]Tipo_Documento="NIT")-->checked<!--4DENDIF-->>NIT</option>
+                                                    <option <!--4DIF ([Sarlaft]Tipo_Documento="Otro sin NIT")-->checked<!--4DENDIF-->>Otro sin NIT</option>                                                
+                                                </select>  
+                                            </div>    
+                                        </div>                                    
+                                    </div>
+                                    <br>                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">NIT</label>
+                                            <div class="col-md-8">
+                                                <input name="nit" value="<!--4DTEXT [Sarlaft]Documento_Numero-->" readonly type="number" class="form-control" placeholder="NIT " autocomplete="off" style="background-color:white">
+                                            </div>                                 
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div  class="form-group">
+                                                <label class="col-sm-3 control-label">DV</label>
+                                                <div class="col-sm-9">
+                                                    <input name="dv" value="<!--4DTEXT [Sarlaft]DV-->" type="number" class="form-control" placeholder="DV" autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                    
+                                        <div class="col-sm-5">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Oficina Principal</label>
+                                                <div class="col-sm-8">
+                                                    <input name="oficinaPrincipal"  value="<!--4DTEXT [Sarlaft]Direccin_Oficina-->" type="text" class="form-control" placeholder="Dirección" autocomplete="off">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                    </div>
+                                    <br>                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Tipo de Empresa</label>
+                                                <div class="col-md-8">
+                                                    <select name="tipoEmpresa" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]Tipo_Empresa--></option>
+                                                        <option>Mixta</option>
+                                                        <option>Oficina de Representación</option>
+                                                        <option>Privada</option>
+                                                        <option>Pública</option>
+                                                        <option>Sin Ánimo de Lucro</option>
+                                                        <option>Sociedad Extranjera</option>
+                                                    </select>  
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-sm-1 control-label">CIIU</label>
+                                                <div class="col-sm-11">
+                                                    <select name="ciiuDescripcion" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]CIIU--></option>
+                                                        <option>Agricultura, ganadería, caza, silvicultura y pesca</option>
+                                                        <option>Explotación de minas y canteras</option>
+                                                        <option>Industrias manufactureras</option>
+                                                        <option>Suministro de electricidad, gas, vapor y aire acondicionado</option>
+                                                        <option>Distribución de agua; evaluación y tratamiento de aguas residuales, gestión de desechos y actividades de saneamiento ambiental</option>
+                                                        <option>Construcción</option>
+                                                        <option>Comercio al por mayor y al por menor; reparación de vehículos automotores y motocicletas</option>
+                                                        <option>Transporte y Almacenamiento</option>
+                                                        <option>Alojamiento y servicios de comida</option>
+                                                        <option>Información y comunicaciones</option>
+                                                        <option>Actividades financieras y de seguros</option>
+                                                        <option>Actividades Inmobiliarias</option>
+                                                        <option>Actividades profesionales, científicas y técnicas</option>
+                                                        <option>Actividades de servicios administrativos y de apoyo</option>
+                                                        <option>Administración pública y defensa; planes de seguridad social de afiliación obligatoria</option>
+                                                        <option>Educación</option>
+                                                        <option>Actividades de ateción de la salud humana y de asistencia social</option>
+                                                        <option>Actividades artísticas,de entretenimiento y recreación </option>
+                                                        <option>Otras actividades de servicios</option>
+                                                        <option>Actividades de los hogares en calidad de empleadores; actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio</option>
+                                                        <option>Actividades de organizaciones y entidades extrateritoriales</option>
+                                                    </select>
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                    </div>
+                                    <br>  
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label ">CIIU (cod)</label>
+                                                <div class="col-md-8 ">                                                    
+                                                    <input type="number" id="codCiiu1" class="form-control" name="ciiuCodigo" required 
+                                                    onchange="validateCIIU(this,'ciiu1')" onkeyup="validateErase(this,'ciiu1')"
+                                                    onKeyPress="if(this.value.length==4) return false;" min=1 max=9999
+                                                    onkeydown="return validateArrowKey(event)"    
+                                                    value=<!--4DTEXT Number([Sarlaft]CIIU_Codigo)-->>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-md-2 control-label">Descripción</label>
+                                                <div class="col-md-10">
+                                                    <input id="ciiu1" type="text" class="form-control" placeholder="" disabled style="background-color:white">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <br>    
+                                    <br>                        
+                                    <div class="row">                                        
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Sector</label>
+                                            <div class="col-md-8">
+                                                <select name="sector" class="form-control mb-md" >
+                                                    <option><!--4DTEXT [Sarlaft]Sector--></option>
+                                                    <option>Agropecuadio</option>
+                                                    <option>Comercio</option>
+                                                    <option>Construcción</option>
+                                                    <option>Financiero</option>
+                                                    <option>Industrial</option>
+                                                    <option>Minero y Energético</option>
+                                                    <option>Servicios</option>
+                                                    <option>Solidario</option>
+                                                    <option>Transporte</option>
+                                                </select>  
+                                            </div>
+                                        </div>                                                                                
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Departamento</label>
+                                                <div class="col-sm-8" style="padding-left: 0.5cm">
+                                                    <select name="departamento" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]Depto_Oficina--></option>
+                                                        <!--#4DINCLUDE ../departamentos.shtml-->
+                                                    </select>
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Ciudad</label>
+                                                <div class="col-md-8">
+                                                    <input name="ciudadOficina" list="listaCiudades" onkeyup="upperCase(this,false)" value="<!--4DTEXT [Sarlaft]Ciudad_Oficina-->" type="text" class="form-control" placeholder="Ej: Bogota " autocomplete="off">                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Teléfono</label>
+                                                <div class="col-md-8">
+                                                    <input name="telefonoOficina" id="telOficina" value="<!--4DTEXT [Sarlaft]Telefono_oficina-->" 
+                                                    onkeypress="if(this.value.length == 10) return false" 
+                                                    onkeyup="replaceSpecialCharactersNumber(this)"                                                    
+                                                    onfocusout="valMinLength(this,7,'notiTel')" 
+                                                    type="number" class="form-control" placeholder="Teléfono " autocomplete="off">
+                                                    <h6 style="color:red; display:none;" id="notiTel">Longitud mínima de 7 dígitos</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">E-mail</label>
+                                                <div class="col-md-8">
+                                                    <input name="email" value="<!--4DTEXT [Sarlaft]EMail-->" type="email" class="form-control" placeholder="email" autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>                                                                                                    
+                                    </div>                                                                        
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Sucursal o Agencia: Dirección</label>
+                                                <div class="col-md-8">
+                                                    <!--<input name="sucursalOficina"  value="<!--4DTEXT [Sarlaft]Direccion_Sucursal-->" type="text" class="form-control" placeholder="Dirección " autocomplete="off">-->
+                                                    <select name="sucursalOficina" id="sucursalOficina" onchange="enableFields(this,'departamento','ciudadSucursal','telefono')" class="form-control">
+                                                        <option value="<!--4DTEXT [Sarlaft]Direccion_Sucursal-->"><!--4DTEXT [Sarlaft]Direccion_Sucursal--></option>
+                                                        <option value="N/A">N/A</option>
+                                                        <option value="Otra">Otra</option>                                                        
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Departamento</label>
+                                                <div class="col-sm-8">
+                                                    <select name="departamento" id="departamento" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]Departamento_Sucursal--></option>
+                                                        <!--#4DINCLUDE ../departamentos.shtml-->
+                                                    </select>
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                        
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Ciudad</label>
+                                                <div class="col-md-8">
+                                                    <input name="ciudadSucursal" id="ciudadSucursal" list="listaCiudades" onkeyup="upperCase(this,false)" value="<!--4DTEXT [Sarlaft]Ciudad_SUcursal-->" type="text" class="form-control" placeholder="Ej: " autocomplete="off">
+                                                    <datalist id="listaCiudades">                                                                             
+                                                        <!--4DINCLUDE ../listadoCiudades.shtml-->
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Teléfono</label>
+                                                <div class="col-md-8">
+                                                    <input name="telefono" id="telefono" value="<!--4DTEXT [Sarlaft]Telefono_Sucursal-->" type="number" class="form-control" placeholder="Ej: " autocomplete="off">
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" onclick="validateFields('telOficina-7')" class="btn ajg-button col-md-4 ">Siguiente</button>                                                              
+                                        <button type="submit" style="display:none" id="submitButton"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>        
+        <!--4DINCLUDE scripts.html-->
+        <script src="juridico2.js"></script>
+	</body>
+</html>

@@ -1,0 +1,12 @@
+$obWebVars:=WEB_Get_Vars 
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Natural/natural5.shtml")
+Else 
+	QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+	[Sarlaft]Origen_fondos:=OB Get($obWebVars;"origenFondos")
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Natural/natural5.shtml")
+	
+End if 

@@ -1,0 +1,45 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	
+	WEB SEND FILE("Juridico/juridico7.shtml")
+Else 
+	options:=OB Get($obWebVars;"option")
+	
+	If (options="add")
+		CREATE RECORD([Acci_Benef_Finales])
+		[Acci_Benef_Finales]No_Ident:=[Sarlaft]Documento_Numero
+		[Acci_Benef_Finales]Nume_ID:=OB Get($obWebVars;"numID1";Is real)
+		[Acci_Benef_Finales]Nombre:=OB Get($obWebVars;"nombre1")
+		[Acci_Benef_Finales]Razon_Social_Sociedad:=OB Get($obWebVars;"razonSocial1")
+		[Acci_Benef_Finales]Tipo_Ident:=OB Get($obWebVars;"tipoID1")
+		[Acci_Benef_Finales]ID_Reciente:=OB Get($obWebVars;"id1";Is real)
+		[Acci_Benef_Finales]Porcent_Participacion:=OB Get($obWebVars;"porcentPart1";Is real)
+		
+		SAVE RECORD([Acci_Benef_Finales])
+		QUERY([Acci_Benef_Finales];[Acci_Benef_Finales]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico6.shtml")
+	End if 
+	
+	
+	If (options="delete")
+		
+		delete:=OB Get($obWebVars;"eliminarReg")
+		QUERY([Acci_Benef_Finales];[Acci_Benef_Finales]No_Ident=[Sarlaft]Documento_Numero)
+		QUERY SELECTION([Acci_Benef_Finales];[Acci_Benef_Finales]ID=delete)
+		If (Records in selection([Acci_Benef_Finales])=1)
+			DELETE RECORD([Acci_Benef_Finales])
+		End if 
+		QUERY([Acci_Benef_Finales];[Acci_Benef_Finales]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico6.shtml")
+	End if 
+	
+	
+	If (options="0")
+		  //SAVE RECORD([Sarlaft])
+		
+		WEB SEND FILE("Juridico/juridico7.shtml")
+	End if 
+	
+End if 

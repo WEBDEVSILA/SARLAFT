@@ -1,0 +1,35 @@
+<?xml version=\"1.0\" encoding=\"utf-8\"?>
+<DCRequest xmlns=\"http://transunion.com/dc/extsvc\">
+    <Authentication type=\"OnDemand\">
+        <UserId></UserId>
+        <Password></Password>
+    </Authentication>
+    <RequestInfo>
+        <ExecutionMode>NewWithContext</ExecutionMode>
+        <SolutionSetId>133</SolutionSetId>
+        <ExecuteLatestVersion>true</ExecuteLatestVersion>
+    </RequestInfo>
+    <Fields>
+        <Field key=\"PrimaryApplicant\">
+            <![CDATA[<Applicant><IdNumber>1016052399</IdNumber></Applicant>]]>
+        </Field>
+    </Fields>
+</DCRequest>
+
+<?xml version="1.0"?>
+<DCResponse>
+    <Status>Success</Status>
+    <Authentication>
+        <Status>Success</Status>
+        <Token>10df911f-6c8a-4936-948b-33ce408f3097</Token>
+    </Authentication>
+    <ResponseInfo>
+        <ApplicationId>1096220</ApplicationId>
+        <SolutionSetInstanceId>b8ab5af7-68ea-45e8-8be0-4f06416e14d3</SolutionSetInstanceId>
+        <CurrentQueue>SignErrorQueue</CurrentQueue>
+    </ResponseInfo>
+    <ContextData>
+        <Field key="Msg_DocumentToSign">The communication object, System.ServiceModel.Channels.ServiceChannel, cannot be used for communication because it is in the Faulted state.</Field>
+        <Field key="ApplicationId"></Field>
+    </ContextData>
+</DCResponse>

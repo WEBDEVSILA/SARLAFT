@@ -1,0 +1,160 @@
+<!--ACCIONISTAS Y BENEFICIARIOS FINALES-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headincludes.html-->		
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->   
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white">Información Básica</span></li>
+                                <li><span style="padding-right: 1cm; color:white">Accionistas y Beneficiarios Finales</span></li>
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Accionistas y Beneficiarios Finales</h2>   
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered" method="POST" enctype="multipart/form-data" action="/Juridico/informacion_financiera" id="form-id">                                                                           
+                                    <input type="hidden" value="0" id="option" name="option">
+                                    <div class="panel-body">                                            
+                                        <h4 class="ajg-title-dark" style="font-weight:bold">Conocimiento ampliado de Accionistas y Beneficiarios Finales</h4>                                           
+                                        <br>                                                                                                                   
+                                        <div class="table-responsive">
+                                            <table class="table mb-none">
+                
+                                                <thead>
+                                                    <tr class="ajg-title-dark">
+                                                        <th>Numero ID</th>
+                                                        <th>Nombre <span style="color: white;">_____________________________</span></th>
+                                                        <th>Nombre/Razón Social de la Sociedad de la que es Accionista</th>
+                                                        <th>Tipo ID</th>
+                                                        <th>ID</th>
+                                                        <th>% Participación</th>   
+                                                        <th><p style="color: white">Opciones</p></th>                                                             
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                                    
+                                                    <tr>
+                                                        <td>
+                                                            <input name="numID1" id="numId" 
+                                                            onkeypress="if(this.value.length == 10) return false" 
+                                                            onkeyup="replaceSpecialCharactersNumber(this)"                                                    
+                                                            onfocusout="valMinLength(this,1,'')"
+                                                            type="text" class="form-control" >
+                                                            
+                                                        </td>
+                                                        <td>
+                                                            <input name="nombre1" id="nombre" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" >
+                                                        </td>
+                                                        <td>
+                                                            <input name="razonSocial1" id="razonSocial" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" >
+                                                        </td>
+                                                        <td>
+                                                            <select name="tipoID1" id="tipoID" class="form-control mb-md" >
+                                                                <option value=""></option>
+                                                                <option value="C.C.">C.C.</option>
+                                                                <option value="NIT">NIT</option>
+                                                                <option value="Otro sin NIT">Otro sin NIT</option>                                                                    
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input name="id1" id="id1" 
+                                                            onkeypress="if(this.value.length == 10) return false" 
+                                                            onkeyup="replaceSpecialCharactersNumber(this)"                                                    
+                                                            onfocusout="valMinLength(this,5,'notiNumero')"
+                                                            type="text" class="form-control" >
+                                                            <h6 style="color:red; display:none" id="notiNumero">Longitud mínima de 5 dígitos</h6>
+                                                        </td>
+                                                        <td>
+                                                            <input name="porcentPart1" id="porcentP" type="number" min="0" max="100" 
+                                                            onKeyPress="if(this.value.length == 2 || this.value.length == 3){ this.value=100; return false;}" 
+                                                            onkeyup="replaceSpecialCharactersNumber(this)"
+                                                            class="form-control" >
+                                                        </td>    
+                                                        <td><button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px"
+                                                            <!--4DIF (Records in Selection([Acci_Benef_Finales])>=7)-->disabled<!--4DENDIF--> ><i class="fa fa-plus"></i></button> </td>                                                                                                                   
+                                                    </tr>
+                                                    <input type="hidden" id="eliminarReg" name="eliminarReg">
+                                                    <!--4DLOOP [Acci_Benef_Finales]-->
+                                                    <tr >
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]Nume_ID--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]Nombre--></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]Razon_Social_Sociedad--></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]Tipo_Ident--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]ID_Reciente--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Acci_Benef_Finales]Porcent_Participacion--></h4>
+                                                        </td>                                                         
+                                                        <td><button type="button" onclick="del(<!--4DTEXT [Acci_Benef_Finales]ID-->)" class="btn ajg-button col-md-4 col-md-offset-4 btn-danger"  style="width:40px"><i class="fa  fa-trash-o"></i></button></td>                                                         
+                                                    </tr>
+                                                    <!--4DENDLOOP-->  
+                                                
+                                                </tbody>
+                                            </table>                                                                                        
+                                        </div>                                     
+                                    
+                                    </div>                                                                                    
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" class="btn ajg-button col-md-4 " onclick="validateList('botonAccionistasBenef','numId','nombre','razonSocial','tipoID','id1','porcentP')">Siguiente</button>
+                                        <button disabled style="display: none;" type="submit" id="botonAccionistasBenef"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+        </section>
+        <script src="juridico6.js"></script>
+        <!--4DINCLUDE scripts.html-->
+	</body>
+</html>

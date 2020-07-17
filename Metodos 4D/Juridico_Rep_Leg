@@ -1,0 +1,28 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	
+	WEB SEND FILE("Juridico/juridico3.shtml")
+Else 
+	[Sarlaft]Nombre_Razon_Social:=OB Get($obWebVars;"razonSocial")
+	[Sarlaft]Tipo_Documento:=OB Get($obWebVars;"tipoDoc")
+	[Sarlaft]Documento_Numero:=OB Get($obWebVars;"nit")
+	[Sarlaft]DV:=OB Get($obWebVars;"dv")
+	[Sarlaft]Direccin_Oficina:=OB Get($obWebVars;"oficinaPrincipal")
+	[Sarlaft]Tipo_Empresa:=OB Get($obWebVars;"tipoEmpresa")
+	[Sarlaft]CIIU:=OB Get($obWebVars;"ciiuDescripcion")
+	[Sarlaft]CIIU_Codigo:=OB Get($obWebVars;"ciiuCodigo")
+	[Sarlaft]Sector:=OB Get($obWebVars;"sector")
+	[Sarlaft]Depto_Oficina:=OB Get($obWebVars;"departamento")
+	[Sarlaft]Ciudad_Oficina:=OB Get($obWebVars;"ciudadOficina")
+	[Sarlaft]Telefono_oficina:=OB Get($obWebVars;"telefonoOficina")
+	[Sarlaft]EMail:=OB Get($obWebVars;"email")
+	[Sarlaft]Direccion_Sucursal:=OB Get($obWebVars;"sucursalOficina")
+	[Sarlaft]Departamento_Sucursal:=OB Get($obWebVars;"departamento")
+	[Sarlaft]Ciudad_SUcursal:=OB Get($obWebVars;"ciudadSucursal")
+	[Sarlaft]Telefono_Sucursal:=OB Get($obWebVars;"telefono")
+	  //[Sarlaft]:=OB Get($obWebVars;"")
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Juridico/juridico3.shtml")
+End if 

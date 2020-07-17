@@ -1,0 +1,208 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->	
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Autenticación</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Autenticación</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark ">
+							<header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Verificación de Identidad NO Existosa</h1>   
+                            </header>
+							<div class="panel-body ajg-title-dark" style="text-align: center">
+                                <!--#4DIF (Ob Get(response;"code")="103") | (Ob Get(response;"code")="104")-->
+                                <!--RESPUESTA VERIFICACIÓN NO EXITOSA-->
+                                <br>
+                                <h4 style="font-weight: bold;">No se encontró información del usuario ingresado.</h4>
+                                <br>
+                                <p>Por favor verifique que sus datos básicos sean correctos y se encuentren actualizados.</p>
+                                <p>Si este mensaje sigue apareciendo por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <button type="button" id="backButton" class="btn ajg-button col-md-4 col-md-offset-4">Regresar</button>	
+                                <script>
+                                    var boton = document.getElementById('backButton');
+                                    boton.addEventListener("click",function() {
+                                        window.history.back();
+                                    }
+                                    ,false);
+                                </script>
+                                <br>
+                                <!--#4DENDIF-->
+                                 <!--#4DIF (Ob Get(response;"code")="105")-->
+                                 <!--VERIFICACIÓN FALIDA POR ESTADO DE DOCUMENTO-->
+                                 <br>
+                                 <h4><!--4DTEXT Ob Get(response;"description")--></h4>
+                                 <h4>Verificación de identidad fallida. </h4>
+                                 <p>Si este mensaje sigue apareciendo por favor pongase en contacto con su asesor. </p>
+                                 <br>
+                                 <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+                                 <br>
+                                 <!--#4DENDIF-->
+                                <!--#4DIF (Ob Get(response;"code")="101")-->
+                                <!--RESPUESTA CLIENTE BLOQUEADO-->
+                                <br>
+                                <h3>Usuario bloqueado por seguridad</h3>
+                                <br>
+                                <h5>Descripción: <!--4DTEXT Ob Get(response;"description")--></h5>
+                                <p>Por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+
+                                <!--#4DENDIF-->
+                                <!--#4DIF (Ob Get(response;"code")="100")-->
+                                <!--EXCEDIÓ NÚMERO DE INTENTOS-->
+                                <br>
+                                <h4>Código Invalido. Ha excedido el número de intentos.</h4>
+                                <p>Por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+                                <!--#4DENDIF-->
+
+                                 <!--#4DIF (Ob Get(response;"code")="401")-->
+                                <!--EXCEDIÓ NÚMERO DE INTENTOS-->
+                                <br>
+                                <h4>Falló el cuestionario.</h4>
+                                <p>Por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+                                <!--#4DENDIF-->
+                                <!--#4DIF (Ob Get(response;"code")="111")-->
+                                <br>
+                                <h4>Parece que ocurrió un error de comunicación</h4>
+                                <p>Por favor intente nuevamente haciendo uso de otro número o método de contacto.</p>
+                                <p>Si este mensaje sigue apareciendo por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="backButton" class="btn ajg-button col-md-4 col-md-offset-4">Regresar</button>	
+                                    <script>
+                                        var boton = document.getElementById('backButton');
+                                        boton.addEventListener("click",function() {
+                                            window.history.go(-2);
+                                        }
+                                        ,false);
+                                    </script>
+                                </div>
+
+                                <!--#4DENDIF-->
+
+                                <!--#4DIF (Ob Get(response;"code")="122")-->
+                                <br>
+                                <h4>Parece que ocurrió un error de comunicación</h4>
+                                <p>Al parece hubo un error en la firma del documento, por favor vuelva a intentar.</p>
+                                <p>Si este mensaje sigue apareciendo por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <form action="/Natural/formulario_inicio" id="form-start" class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" style="display: flex;justify-content: center;">
+                                        <button type="submit"  class="btn ajg-button col-md-4 col-md-offset-4">Regresar</button>	
+                                    </form>
+                                </div>
+
+                                <!--#4DENDIF-->
+                                <!--#4DIF (Ob Get(response;"code")="99")-->
+                                <br>
+                                <h4>Autenticación Rechazada</h4>
+                                <p>Por favor verifique que todos sus datos esten correctos e intente nuevamente. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+
+                                <!--#4DENDIF-->
+                                <!--#4DIF (Ob Get(response;"code")="404")-->
+                                <br>
+                                <h4>Parece que ocurrió un error</h4>
+                                <p>Por favor intente nuevamente o pruebe más tarde.</p>
+                                <p>Si este mensaje sigue apareciendo por favor pongase en contacto con su asesor. </p>
+                                <br>
+                                <div style="padding: 0% 20% 5% 20%;">
+                                    <button type="button" id="exitButton"  class="btn ajg-button col-md-4 col-md-offset-4">Salir</button>	
+                                    <script>
+                                        document.getElementById("exitButton").addEventListener("click",function(){
+                                            console.log("Salir");
+                                            document.getElementById("form-logOut").submit();
+                                        });
+                                    </script> 
+                                </div>
+
+                                <!--#4DENDIF-->
+								
+							</div>
+							
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		
+		<!--4DINCLUDE scripts.html-->				
+	</body>
+</html>

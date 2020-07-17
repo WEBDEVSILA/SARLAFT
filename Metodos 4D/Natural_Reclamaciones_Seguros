@@ -1,0 +1,50 @@
+$obWebVars:=WEB_Get_Vars 
+
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Natural/natural6.shtml")
+Else 
+	
+	If (OB Get($obWebVars;"monedaExtranjera")="si")
+		[Sarlaft]Transacciones_Moneda_Ext:=True
+		[Sarlaft]Trans_MonedaE_cual:=OB Get($obWebVars;"cualOperacion")
+	Else 
+		[Sarlaft]Transacciones_Moneda_Ext:=False
+		[Sarlaft]Trans_MonedaE_cual:=""
+	End if 
+	
+	[Sarlaft]Otras_Operaciones:=OB Get($obWebVars;"otrasOperaciones")
+	
+	
+	If (OB Get($obWebVars;"productosExtranjero")="si")
+		[Sarlaft]ProductosFin_Exterior:=True
+	Else 
+		[Sarlaft]ProductosFin_Exterior:=False
+	End if 
+	
+	If (OB Get($obWebVars;"cuentasMonedaExtr")="si")
+		[Sarlaft]Cuentas_MonedaEx:=True
+	Else 
+		[Sarlaft]Cuentas_MonedaEx:=False
+	End if 
+	
+	QUERY([Operaciones_Inter];[Operaciones_Inter]No_Ident=[Sarlaft]Documento_Numero)
+	
+	If (Records in selection([Operaciones_Inter])<1)
+		CREATE RECORD([Operaciones_Inter])
+		[Operaciones_Inter]No_Ident:=[Sarlaft]Documento_Numero
+	End if 
+	[Operaciones_Inter]Tipo_Producto:=OB Get($obWebVars;"tipoProd1")
+	[Operaciones_Inter]Iden_Num_Prod:=OB Get($obWebVars;"numProd1")
+	[Operaciones_Inter]Entidad:=OB Get($obWebVars;"entidad1")
+	[Operaciones_Inter]Monto:=OB Get($obWebVars;"monto1")
+	[Operaciones_Inter]Ciudad:=OB Get($obWebVars;"ciudad1")
+	[Operaciones_Inter]Pais:=OB Get($obWebVars;"pais1")
+	[Operaciones_Inter]Moneda:=OB Get($obWebVars;"moneda1";Is real)
+	SAVE RECORD([Operaciones_Inter])
+	
+	SAVE RECORD([Sarlaft])
+	QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+	
+	WEB SEND FILE("Natural/natural6.shtml")
+End if 

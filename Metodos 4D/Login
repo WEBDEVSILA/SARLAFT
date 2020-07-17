@@ -1,0 +1,39 @@
+$obWebVars:=WEB_Get_Vars 
+$user:=OB Get($obWebVars;"username")
+$pwd:=OB Get($obWebVars;"pwd")
+
+QUERY([Clientes];[Clientes]Identificacion=$user)
+QUERY SELECTION([Clientes];[Clientes]Clave_Usuario=$pwd)
+
+If (Records in selection([Clientes])=1)
+	QUERY([Sarlaft];[Sarlaft]Documento_Numero=[Clientes]Identificacion)
+	If (Records in selection([Sarlaft])=1)
+		
+		If ([Clientes]Juridica_Natural)
+			WEB SEND FILE("Juridico/juridico1.shtml")
+		Else 
+			WEB SEND FILE("Natural/natural1.shtml")
+		End if 
+		
+		  //WEB SEND FILE("#")
+	Else 
+		
+		CREATE RECORD([Sarlaft])
+		[Sarlaft]Documento_Numero:=[Clientes]Identificacion
+		[Sarlaft]Nombres:=[Clientes]P_Nombre+" "+[Clientes]S_Nombre
+		[Sarlaft]Primer_Apellido:=[Clientes]P_Apellido
+		[Sarlaft]Segundo_Apellido:=[Clientes]S_Apellido
+		SAVE RECORD([Sarlaft])
+		
+		If ([Clientes]Juridica_Natural)
+			WEB SEND FILE("Juridico/juridico1.shtml")
+		Else 
+			WEB SEND FILE("Natural/natural1.shtml")
+		End if 
+		  //WEB SEND FILE("#")
+	End if 
+	
+Else 
+	errTxt:="Usuario o contraseña incorrectos."
+	WEB SEND FILE("login.shtml")
+End if 

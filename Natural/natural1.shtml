@@ -1,0 +1,307 @@
+<!--INICIO / FORMULARIO DE CONOCIMIENTO DEL CLIENTE PERSONA NATURAL-SECTOR ASEGURADOR-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headIncludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			        <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header ajg-color-dark " >
+                        <h2>Creación Sarlaft</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+								<li><span style="padding-right: 1cm; color:white">Creación Sarlaft</span></li>
+							</ol>
+												
+						</div>
+					</header>
+                    
+                    <!--#4DIF ([Sarlaft]Manejo_Datos=False)-->
+                    <div class="manejoDatos" id="manejoDatos">
+                        <div class="manejoHeader">
+                            <h3 class="text-center ajg-title-dark">Bienvenido al portal de manejo de Formulario de conocimiento del cliente de <span style="font-weight: bold;">ARTHUR J. GALLAGHER CORREDORES DE SEGUROS S.A.</span></h3>
+                        </div>
+                        
+                        <div class="manejoContenido ajg-title-dark" style="text-align: justify;" id="informacion">
+                            <h3 class="text-center ajg-title-dark" style="font-weight: bold;">Manejo de Datos</h3>
+                            <br>
+                            <p>Gallagher le informa que sus datos son tratados conforme a la política de tratamiento de datos de Gallagher, la cual puede consultarla en nuestra página web <a href="#">www.ajg.com</a> .</p>
+                            <br>
+                            <p>Sus datos personales y sensibles son utilizados para los siguientes fines: </p>
+                            <ul>
+                                <li>Llevar a cabo los procesos administrativos, comerciales, contables, operativos y financieros establecidos por Gallagher.</li>
+                                <li>Adelantar los trámites y servicios que tiene a cargo, en ejercicio de sus funciones y objeto social. </li>
+                                <li>Atender Preguntas Quejas y Reclamos – PQRS -. </li>
+                                <li>Ejecución y/o cumplimiento de los contratos o convenios que tiene con terceros para la ejecución de las actividades propias de su objeto social. </li>
+                                <li>Para compartir información con aliados comerciales o corporativos, para el ofrecimiento de servicios o de bienes relacionados con la ejecución de las actividades comprendidas dentro del objeto de Gallagher.</li>
+                                <li>Transferencia y transmisión de datos a terceros dentro y fuera de Colombia con quienes realice convenios o alianzas relacionadas con su objeto o sus actividades, o con quienes contrate estudios o les encargue el Tratamiento de Datos. </li>
+                            </ul>
+                            <br>
+                            <p>Usted como titular podrá ejercer sus derechos de conocer, actualizar, rectificar y suprimir sus datos personales y sensibles enviando su solicitud mediante los canales dispuestos en la Política de Tratamiento de Datos.</p>
+                            <br>
+                            <p>Usted garantiza que cuenta con las autorizaciones necesarias por parte de los terceros titulares, para la trasferencia, transmisión y manejo de datos de la información de éstos que llegare a suministrar a GALLAGHER, conforme a la normatividad vigente, de tal manera que al momento de la trasferencia y/o transmisión de los datos, se encuentre autorizado a entregar la información de cada uno de los terceros que suministra GALLAGHER.</p>
+                            <br>
+                            <p>Leído lo anterior, autoriza de manera previa, explícita e inequívoca a Gallagher para el tratamiento de los datos personales y sensibles suministrados y para que de acuerdo con su política de tratamiento de información personal,
+                                conserve su información y la de terceros que haya entregado dentro de la base de datos que para el efecto ha sido dispuesta y que haga uso de la misma para los precisos fines definidos en dicha política, esto dando cumplimiento de lo previsto en la Ley 1581 
+                                del 2012 y el Decreto 1377 de 2013. Así como la autorización para suministrar, transferir su información y la de terceros que llegare a entregarle, a sociedades matrices, subordinadas o filiales o parte del Grupo empresarial al que pertenece
+                                y/o a terceras personas naturales o jurídicas, con la misma finalidad, así como compartir, entregar, trasladar y/o transferir los datos personales con terceros con quien GALLAGHER sostenga relaciones comerciales.</p>
+                            <br>
+                            <div style="display:flex;justify-content: center">
+                                <div class="checkbox-custom chekbox-primary">
+                                    <input value="Aceptar" type="checkbox" id="aceptar"/>
+                                    <label for="aceptar">Aceptar</label>
+                                </div> 
+                            </div>
+                            <br>
+                            <div style="display: flex;justify-content: center;">
+                                <button class="btn ajg-button col-md-4" onclick="validateManejo()" type="button">Continuar</button>
+                            </div>
+                            <div class="divBlank"></div>
+                        </div>
+                        <div class="manejoContenido ajg-title-dark" id="mensajeRechazo" style="display: none;justify-content: center;flex-direction: column;align-items: center;">
+                            <h2>Por favor pongase en contacto con su asesor comercial.</h2>
+                            <form action="/LogIn" id="form-logOut" method="POST" enctype="multipart/form-data" >
+                                <button style="margin-top: 20px;" type="submit" class="btn ajg-button ">Finalizar y Salir <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </div>
+                    <!--#4DENDIF-->
+					<!-- start: page -->
+					<h3 class="text-center ajg-title-dark">FORMULARIO DE CONOCIMIENTO DEL CLIENTE PERSONA NATURAL-SECTOR ASEGURADOR</h3>                    
+                    <br>
+                    <section class="panel">
+                        <div class="panel-body" style="margin: 20px;">
+                            <h4 class="text-center ajg-title-dark">Bienvenido al portal de manejo de Formulario de conocimiento del cliente de <span style="font-weight: bold;">ARTHUR J. GALLAGHER CORREDORES DE SEGUROS S.A.</span></h4>
+                            <h4 class="text-center ajg-title-dark">A través de esta plataforma podrá diligenciar de manera efectiva la información solicitada en el formulario.
+                                Ingrese y descubra la nueva experiencia digital que hemos desarrollado para usted.</h4>                            
+                        </div>
+                    </section>
+                    <div>
+                        <br>
+                        <section class="panel" style="color:rgb(0,38,62);">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title">Inicio</h2>
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered " method="POST" enctype="multipart/form-data" action="/Natural/datos_basicos">                                    
+                                    <input value="Aceptar" type="checkbox" name="aceptarManejoDatos" id="aceptarEnvio" style="display:none" <!--4DIF ([Sarlaft]Manejo_Datos)-->checked<!--4DENDIF-->/>
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <div class="form-group ">
+                                                <label class="control-label">Fecha Diligenciamiento</label>      
+                                                <!--4DIF ([Sarlaft]Fecha_Diligenciamiento=!00-00-00!)-->
+                                                <input type="date" class="form-control" id="inputDate" name="fechaDiligenciamiento" value="<!--4DTEXT Substring(String(Current date;ISO date);1;10)-->"> 
+                                                <!--4DELSE-->
+                                                    <input type="date" class="form-control" id="inputDate" name="fechaDiligenciamiento" value="<!--4DTEXT Substring(String([Sarlaft]Fecha_Diligenciamiento;ISO date);1;10)-->"> 
+                                                <!--4DENDIF-->
+                                            </div>   
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="control-label" >Ciudad</label>
+                                                <select name="ciudadDiligenciamiento" id="inputCiudad" onchange="sucursalChange()" class="form-control" required>
+                                                    <option value=""></option>
+                                                    <option value="BOGOTÁ"  <!--#4DIF ([Sarlaft]Ciudad_Diligenciamiento = "BOGOTÁ")-->selected<!--#4DENDIF-->>BOGOTÁ</option>
+                                                    <option value="BARRANQUILLA" <!--#4DIF ([Sarlaft]Ciudad_Diligenciamiento = "BARRANQUILLA")-->selected<!--#4DENDIF-->>BRRANQUILLA</option>
+                                                    <option value="CALI" <!--#4DIF ([Sarlaft]Ciudad_Diligenciamiento = "CALI")-->selected<!--#4DENDIF-->>CALI</option>
+                                                    <option value="CARTAGENA" <!--#4DIF ([Sarlaft]Ciudad_Diligenciamiento = "CARTAGENA")-->selected<!--#4DENDIF-->>CARTAGENA</option>
+                                                    <option value="MEDELLÍN" <!--#4DIF ([Sarlaft]Ciudad_Diligenciamiento = "MEDELLÍN")-->selected<!--#4DENDIF-->>MEDELLÍN</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="control-label" >Sucursal</label>                                                
+                                                <select name="sucursal" id="inputSucursal" class="form-control" required>
+                                                    <option value=""></option>
+                                                    <option value="BOGOTÁ"  <!--#4DIF ([Sarlaft]Sucursal = "BOGOTÁ")-->selected<!--#4DENDIF-->>BOGOTÁ</option>
+                                                    <option value="BARRANQUILLA" <!--#4DIF ([Sarlaft]Sucursal = "BARRANQUILLA")-->selected<!--#4DENDIF-->>BARRANQUILLA</option>
+                                                    <option value="CALI" <!--#4DIF ([Sarlaft]Sucursal = "CALI")-->selected<!--#4DENDIF-->>CALI</option>
+                                                    <option value="CARTAGENA" <!--#4DIF ([Sarlaft]Sucursal = "CARTAGENA")-->selected<!--#4DENDIF-->>CARTAGENA</option>
+                                                    <option value="MEDELLÍN" <!--#4DIF ([Sarlaft]Sucursal = "MEDELLÍN")-->selected<!--#4DENDIF-->>MEDELLÍN</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <div class="form-group">
+                                                <label class="control-label" >Tipo Solicitud</label>                                                
+                                                <select name="tipoSolicitud" id="tipoSolicitud" class="form-control" required>
+                                                    <option value=""></option>
+                                                    <option value="Actualización"  <!--#4DIF ([Sarlaft]Tipo_Solicitud = "Actualización")-->selected<!--#4DENDIF-->>Actualización</option>
+                                                    <option value="Vinculación" <!--#4DIF ([Sarlaft]Tipo_Solicitud = "Vinculación")-->selected<!--#4DENDIF-->>Vinculación</option>
+                                                    <option value="Renovación" <!--#4DIF ([Sarlaft]Tipo_Solicitud = "Renovación")-->selected<!--#4DENDIF-->>Renovación</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <br>      
+
+                                    <div class="row">
+                                        <!--<div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label class="control-label">Tipo Solicitud</label>                                                
+                                                <select class="form-control mb-md" readonly name="tipoSolicitud">
+                                                    <option id="actualizacion" <!-4DIF ([Sarlaft]Tipo_Solicitud="actualizacion")->selected<!-4DENDIF->>Actualización</option>
+                                                    <option value="renovacion" <!-4DIF ([Sarlaft]Tipo_Solicitud="renovacion")->selected<!-4DENDIF->>Renovación</option>
+                                                    <option value="vinculacion" <!-4DIF ([Sarlaft]Tipo_Solicitud="vinculacion")->selected<!-4DENDIF->>Vinculación</option>
+                                                </select>                                                
+                                            </div>     
+                                        </div>-->
+                                    </div>                                                                                                                
+                                    <div class="panel text-center ajg-color" style="border-radius: 10px">
+                                        <p >EN EL EVENTO QUE EL POTENCIAL CLIENTE NO CUENTE CON LA INFORMACIÓN SOLICITADA EN ESTE FORMULARIO, DEBERÁ CONSIGNAR DICHA CIRCUNSTANCIA EN EL ESPACIO CORRESPONDIENTE.</p>  
+                                    </div>  
+
+                                    <div class="form-group">
+                                        <div class="row padre" id="claseVinculacion">
+                                            <label class="col-sm-3 control-label">Clase de la Vinculación</label>
+                                            <div class="checkbox-custom chekbox-primary col-sm-1" >
+                                                <input value="Tomador" type="checkbox" name="tomador" id="tomador" <!--4DIF ([Sarlaft]Clase_VInculacion_Tomador)-->checked<!--4DENDIF-->/>
+                                                <label>Tomador</label>
+                                            </div>
+                                            <div class="checkbox-custom chekbox-primary col-sm-1">
+                                                <input value="Asegurador" type="checkbox" name="asegurador" id="asegurador" <!--4DIF ([Sarlaft]Clase_Vinculacion_Asegurado)-->checked<!--4DENDIF-->/>
+                                                <label>Asegurador</label>
+                                            </div>                                            
+                                            <div class="checkbox-custom chekbox-primary col-sm-1">
+                                                <input value="Beneficiario" type="checkbox" name="beneficiario" id="beneficiario" <!--4DIF ([Sarlaft]Clase_Vinculacion_Benef)-->checked<!--4DENDIF-->/>
+                                                <label>Beneficiario</label>
+                                            </div>
+                                            <div class="checkbox-custom chekbox-primary col-sm-1">
+                                                <input value="Afianzado" type="checkbox" name="afianzado" id="afianzado" <!--4DIF ([Sarlaft]Clase_Vinculacion_Afianzado)-->checked<!--4DENDIF-->/>
+                                                <label>Afianzado</label>
+                                            </div>                                            
+                                            <div class="checkbox-custom chekbox-primary col-sm-1">
+                                                <input value="Proveedor" type="checkbox" name="proveedor" id="proveedor" <!--4DIF ([Sarlaft]Clase_Vinculacion_Proveedor)-->checked<!--4DENDIF-->/>
+                                                <label>Proveedor</label>
+                                            </div>
+                                            <div class="checkbox-custom chekbox-primary col-sm-1">
+                                                <input value="Intermediario" type="checkbox" name="intermediario" id="intermediario"<!--4DIF ([Sarlaft]Clase_Vinculacion_Inter)-->checked<!--4DENDIF-->/>
+                                                <label>Intermediario</label>
+                                            </div>
+                                            <div class="col-sm-3  ">
+                                                <label class="col-sm-2">Otro</label>
+                                                <div class="col-sm-6">
+                                                    <input type="text" class="form-control input-sm" name="otroVinculacion" id="otro" value="<!--4DTEXT [Sarlaft]Clase_Vinculacion_Otro-->"/>
+                                                </div>
+                                            </div>
+                                        </div>                                                                                    
+                                    </div>   
+                                    <div class="panel text-center ajg-color" style="border-radius: 10px">
+                                        <p>INDIQUE LOS VÍNCULOS EXISTENTES ENTRE TOMADOR, ASEGURADO, AFIANZADO Y BENEFICIARIO: (INDIVIDUALIZACIÓN DEL PRODUCTO).</p>  
+                                    </div>  
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <label class="col-sm-4 control-label">Tomador - Asegurado</label>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="awesome" name="TomaASeg" type="radio" value="familiar" required <!--4DIF ([Sarlaft]Tomador_Asegurado_Familiar)-->checked<!--4DENDIF-->/>
+                                                <label >Familliar</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="very-awesome" name="TomaASeg" type="radio" value="comercial" <!--4DIF ([Sarlaft]Tomador_Asegurado_Comercial)-->checked<!--4DENDIF-->/>
+                                                <label >Comercial </label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="TomaASeg" type="radio" value="laboral" <!--4DIF ([Sarlaft]Tomador_Asegurado_Laboral)-->checked<!--4DENDIF-->/>
+                                                <label >Laboral</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="TomaASeg" type="radio" value="otro" <!--4DIF ([Sarlaft]Tomador_Asegurado_Otra)-->checked<!--4DENDIF-->/>
+                                                <label for="ultra-awesome">Otro</label>
+                                            </div>
+                                            <div class="col-sm-2">                                                    
+                                                <label class="control-label col-sm-3 " >Cual: </label>  
+                                                <div class="col-sm-9 ">
+                                                    <input type="text" class="form-control input-sm "  name="otroTomadorA" value="<!--4DTEXT [Sarlaft]Tomador_Asegurado_Cual-->">                                                                                                    
+                                                </div>                                              
+                                            </div>
+                                        </div>                                    
+                                        <br>
+                                        <div class="row">
+                                            <label class="col-sm-4 control-label">Tomador - Beneficiario</label>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="awesome" name="TomaBenef" type="radio" value="familiar" required <!--4DIF ([Sarlaft]Tomador_Benef_Familiar)-->checked<!--4DENDIF--> />
+                                                <label for="awesome">Familliar</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="very-awesome" name="TomaBenef" type="radio" value="comercial" <!--4DIF ([Sarlaft]Tomador_Benef_Comercial)-->checked<!--4DENDIF-->/>
+                                                <label for="very-awesome">Comercial </label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="TomaBenef" type="radio" value="laboral" <!--4DIF ([Sarlaft]Tomador_Benef_Laboral)-->checked<!--4DENDIF-->/>
+                                                <label for="ultra-awesome">Laboral</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="TomaBenef" type="radio" value="otro" <!--4DIF ([Sarlaft]Tomador_Benef_Otra)-->checked<!--4DENDIF-->/>
+                                                <label for="ultra-awesome">Otro</label>
+                                            </div>
+                                            <div class="col-sm-2">                                                    
+                                                <label class="control-label col-sm-3" >Cual: </label>  
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control input-sm " name="otroTomadorB" value="<!--4DTEXT [Sarlaft]Tomador_Benef_Cual-->">                                                                                                    
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                        <br>
+                                        <div class="row">
+                                            <label class="col-sm-4 control-label">Asegurado - Beneficiario</label>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="awesome" name="AsegBenef" type="radio" value="familiar" required <!--4DIF ([Sarlaft]Asegura_Benef_Familiar)-->checked<!--4DENDIF-->/>
+                                                <label for="awesome">Familliar</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="very-awesome" name="AsegBenef" type="radio" value="comercial" <!--4DIF ([Sarlaft]Asegura_Benef_Comercial)-->checked<!--4DENDIF-->/>
+                                                <label for="very-awesome">Comercial </label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="AsegBenef" type="radio" value="laboral" <!--4DIF ([Sarlaft]Asegura_Benef_Laboral)-->checked<!--4DENDIF-->/>
+                                                <label for="ultra-awesome">Laboral</label>
+                                            </div>
+                                            <div class="radio-custom radio-primary col-sm-1">
+                                                <input id="ultra-awesome" name="AsegBenef" type="radio" value="otro" <!--4DIF ([Sarlaft]Asegura_Benef_Otra)-->checked<!--4DENDIF-->/>
+                                                <label for="ultra-awesome">Otro</label>
+                                            </div>
+                                            <div class="col-sm-2">                                                    
+                                                <label class="control-label col-sm-3" >Cual: </label>  
+                                                <div class="col-sm-9">
+                                                    <input type="text" class="form-control input-sm "  name="otroAseguradoB" value="<!--4DTEXT [Sarlaft]Asegura_Benef_Cual-->">                                                                                                    
+                                                </div>                                              
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button class="btn ajg-button col-md-4" onclick="validateVinculacion()" type="button">Siguiente</button>                                    
+                                        <button type="submit" style="display:none" id="submitButton"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+        </section>
+        <script src='Natural/natural1.js'></script>
+        <script src='natural1.js'></script>
+        <!--4DINCLUDE scripts.html-->
+	</body>
+</html>

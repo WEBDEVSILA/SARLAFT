@@ -1,0 +1,51 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Accionistas];[Accionistas]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Juridico/juridico4.shtml")
+Else 
+	[Sarlaft]Primer_Apellido:=OB Get($obWebVars;"primerApellido")
+	[Sarlaft]Segundo_Apellido:=OB Get($obWebVars;"segundoApellido")
+	[Sarlaft]Nombres:=OB Get($obWebVars;"nombre")
+	[Sarlaft]Tipo_doc_RepLegal:=OB Get($obWebVars;"tipoDocRep")
+	[Sarlaft]Numero_Replegal:=OB Get($obWebVars;"numDocRep")
+	[Sarlaft]Fecha_Expedicion:=OB Get($obWebVars;"fechaExpedicion";Is date)
+	[Sarlaft]Lugar_Expedicion:=OB Get($obWebVars;"lugarExped")
+	[Sarlaft]Fecha_Nacimiento:=OB Get($obWebVars;"fechaNacim";Is date)
+	[Sarlaft]Lugar_Nacimiento:=OB Get($obWebVars;"lugarNacim")
+	[Sarlaft]Nacinalidad1:=OB Get($obWebVars;"nacionalidad1")
+	[Sarlaft]Nacionalidad2:=OB Get($obWebVars;"nacionalidad2")
+	[Sarlaft]EMail_RepLegal:=OB Get($obWebVars;"emailRep")
+	[Sarlaft]Ciudad_RepLegal:=OB Get($obWebVars;"ciudadRep")
+	[Sarlaft]Direccion_RepLegal:=OB Get($obWebVars;"direccionRep")
+	[Sarlaft]Depto_RepLegal:=OB Get($obWebVars;"deptoRep")
+	[Sarlaft]Pais_RepLegal:=OB Get($obWebVars;"paisRep")
+	[Sarlaft]Telefono_RepLegal:=OB Get($obWebVars;"telefonoRep")
+	[Sarlaft]Celular:=OB Get($obWebVars;"celularRep")
+	
+	
+	If (OB Get($obWebVars;"perPublic")="si")
+		[Sarlaft]Persona_PPE:=True
+	Else 
+		[Sarlaft]Persona_PPE:=False
+	End if 
+	
+	If (OB Get($obWebVars;"recPublic")="si")
+		[Sarlaft]Recursos_Publicos:=True
+	Else 
+		[Sarlaft]Recursos_Publicos:=False
+	End if 
+	If (OB Get($obWebVars;"obligTrib")="si")
+		[Sarlaft]Tributa_otro_Pais:=True
+		[Sarlaft]Tributa_Otro_pais_cual:=OB Get($obWebVars;"otroOblig")
+	Else 
+		[Sarlaft]Tributa_otro_Pais:=False
+		[Sarlaft]Tributa_Otro_pais_cual:=""
+	End if 
+	
+	
+	SAVE RECORD([Sarlaft])
+	QUERY([Accionistas];[Accionistas]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Juridico/juridico4.shtml")
+End if 

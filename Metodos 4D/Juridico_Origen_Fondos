@@ -1,0 +1,19 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	
+	WEB SEND FILE("Juridico/juridico8.shtml")
+Else 
+	
+	[Sarlaft]Ingresos_Mensuales:=OB Get($obWebVars;"ingresosMensuales";Is real)
+	[Sarlaft]Egresos_Mensuales:=OB Get($obWebVars;"egresosMensuales";Is real)
+	[Sarlaft]Activos:=OB Get($obWebVars;"activos";Is real)
+	[Sarlaft]Pasivo:=OB Get($obWebVars;"pasivos";Is real)
+	[Sarlaft]Patrimonio:=OB Get($obWebVars;"patrimonio";Is real)
+	[Sarlaft]Otros_Ingresos:=OB Get($obWebVars;"otrosIngresos";Is real)
+	[Sarlaft]Concepto_otros_Ingresos:=OB Get($obWebVars;"conceptoOtros")
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Juridico/juridico8.shtml")
+End if 

@@ -1,0 +1,98 @@
+{"Resultado":"Con coincidencias - 11427783"}
+{
+    "JSON": {
+        "content": [
+            {
+                "id": 135070568,
+                "codigoLista": "SFCCO",
+                "nombreLista": "Reporte de Sanciones en Firme",
+                "infoListId": 1360,
+                "idRegistro": 180882,
+                "fechaIngreso": 1579525152000,
+                "fechaModificacion": 1579525152000,
+                "link": "https://www.superfinanciera.gov.co/publicacion/20708 ",
+                "nombres": "JAIME  HERNANDEZ BOHORQUEZ",
+                "primerApellidoORazonSocial": "JAIME  HERNANDEZ BOHORQUEZ",
+                "idIdentfy": "11427783",
+                "direccionPais": "COLOMBIA",
+                "noticiaMedio": "SUPERINTENDENCIA FINANCIERA",
+                "noticiaSeccion": "REPORTE DE SANCIONES",
+                "noticiaTitulo": "Reporte de Sanciones desde el año 2000",
+                "noticiaFuente": "INTERNET",
+                "noticiaResumen": "Se muestran la sanciones de los últimos 20 años",
+                "noticiaDelito": "LLAMADO DE ATENCIÓN - OTROS",
+                "code": "SFCCO"
+            }
+        ],
+        "pageable": {
+            "sort": {
+                "sorted": true,
+                "unsorted": false,
+                "empty": false
+            },
+            "pageNumber": 0,
+            "pageSize": 10,
+            "offset": 0,
+            "paged": true,
+            "unpaged": false
+        },
+        "searchId": "fe49dbda-912f-4ece-84fe-6729e5735bdb",
+        "totalElements": 1,
+        "totalPages": 1,
+        "last": true,
+        "first": true,
+        "size": 10,
+        "number": 0,
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "numberOfElements": 1,
+        "empty": false
+    },
+    "Contenido de respuesta": {
+        "EDITOR_CONFIG": {
+            "text": "{\"content\":[{\"id\":135070568,\"codigoLista\":\"SFCCO\",\"nombreLista\":\"Reporte de Sanciones en Firme\",\"infoListId\":1360,\"idRegistro\":180882,\"fechaIngreso\":1579525152000,\"fechaModificacion\":1579525152000,\"link\":\"https://www.superfinanciera.gov.co/publicacion/20708 \",\"nombres\":\"JAIME  HERNANDEZ BOHORQUEZ\",\"primerApellidoORazonSocial\":\"JAIME  HERNANDEZ BOHORQUEZ\",\"idIdentfy\":\"11427783\",\"direccionPais\":\"COLOMBIA\",\"noticiaMedio\":\"SUPERINTENDENCIA FINANCIERA\",\"noticiaSeccion\":\"REPORTE DE SANCIONES\",\"noticiaTitulo\":\"Reporte de Sanciones desde el año 2000\",\"noticiaFuente\":\"INTERNET\",\"noticiaResumen\":\"Se muestran la sanciones de los últimos 20 años\",\"noticiaDelito\":\"LLAMADO DE ATENCIÓN - OTROS\",\"code\":\"SFCCO\"}],\"pageable\":{\"sort\":{\"sorted\":true,\"unsorted\":false,\"empty\":false},\"pageNumber\":0,\"pageSize\":10,\"offset\":0,\"paged\":true,\"unpaged\":false},\"searchId\":\"fe49dbda-912f-4ece-84fe-6729e5735bdb\",\"totalElements\":1,\"totalPages\":1,\"last\":true,\"first\":true,\"size\":10,\"number\":0,\"sort\":{\"sorted\":true,\"unsorted\":false,\"empty\":false},\"numberOfElements\":1,\"empty\":false}",
+            "mode": "application/json"
+        }
+    }
+}
+{"Resultado":"Sin coincidencias"}
+{
+    "JSON": {
+        "content": [],
+        "pageable": {
+            "sort": {
+                "sorted": true,
+                "unsorted": false,
+                "empty": false
+            },
+            "pageNumber": 0,
+            "pageSize": 10,
+            "offset": 0,
+            "paged": true,
+            "unpaged": false
+        },
+        "searchId": "d3af6838-ded3-4437-8ab8-ff186d20b479",
+        "totalElements": 0,
+        "totalPages": 0,
+        "last": true,
+        "first": true,
+        "size": 10,
+        "number": 0,
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "numberOfElements": 0,
+        "empty": true
+    },
+    "Contenido de respuesta": {
+        "EDITOR_CONFIG": {
+            "text": "{\"content\":[],\"pageable\":{\"sort\":{\"sorted\":true,\"unsorted\":false,\"empty\":false},\"pageNumber\":0,\"pageSize\":10,\"offset\":0,\"paged\":true,\"unpaged\":false},\"searchId\":\"d3af6838-ded3-4437-8ab8-ff186d20b479\",\"totalElements\":0,\"totalPages\":0,\"last\":true,\"first\":true,\"size\":10,\"number\":0,\"sort\":{\"sorted\":true,\"unsorted\":false,\"empty\":false},\"numberOfElements\":0,\"empty\":true}",
+            "mode": "application/json"
+        }
+    }
+}

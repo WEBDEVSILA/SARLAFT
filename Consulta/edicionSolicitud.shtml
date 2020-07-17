@@ -1,0 +1,385 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->
+		<!--<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">-->
+		<script src='https://code.jquery.com/jquery-3.4.1.js' integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			        <!--#4DINCLUDE panelConsulta.shtml-->
+				<!-- end: sidebar -->			
+				<section role="main" class="content-body">
+					<header class="page-header ajg-color-dark "  >
+                        <h2>Sarlaft</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title" style="padding-right: 1cm; color:white"></i>									
+								</li>								
+							</ol>												
+						</div>
+					</header>
+					
+					<!--#4DIF (creado=True)-->
+					<div class="ajg-panel" style="background-color: #47a447;">
+						<div class="row " style="display: flex; align-items: center">
+							<div class="col-sm-6">	
+								<h4 style="color:white; margin: 20px 0px 20px 20px;" ><i class="fa fa-check"></i>  Creación éxitosa </h4>
+							</div>								
+						</div>
+					</div>
+					<!--#4DENDIF-->
+					<!--#4DIF (modificado=True)-->
+					<div class="ajg-panel" style="background-color: #47a447;">
+						<div class="row " style="display: flex; align-items: center">
+							<div class="col-sm-6">	
+								<h4 style="color:white; margin: 20px 0px 20px 20px;" ><i class="fa fa-check"></i>  Modificación éxitosa </h4>
+							</div>								
+						</div>
+					</div>
+					<!--#4DENDIF-->
+					<!--#4DIF (duplicado = True)-->
+					 <div class="ajg-panel" style="background-color: red;">
+						<div class="row " style="display: flex; align-items: center">
+							<div class="col-sm-6">	
+								<h4 style="color:white; margin: 20px 0px 20px 20px;" ><i class="fa fa-times"></i> No fue posible modificar la identificación - Identificación Duplicada </h4>
+							</div>								
+						</div>
+					</div>
+					<!--#4DENDIF-->
+
+					<!--#4DIF (correo=True)-->
+					<div class="ajg-panel" style="background-color: #47a447;">
+						<div class="row " style="display: flex; align-items: center">
+							<div class="col-sm-6">	
+								<h4 style="color:white; margin: 20px 0px 20px 20px;" ><i class="fa fa-check"></i>  Envío exitoso de correo a <!--4DTEXT  [Clientes]Email--></h4>
+							</div>								
+						</div>
+					</div>
+					<!--#4DENDIF-->
+					<form action="/Consulta/Reenviar_Correo" method="POST" id="reenvio"></form>
+					<form action="/Consulta/Eliminar_Solicitud" enctype="multipart/form-data"  method="post" id="eliminar">
+						<input type="hidden" name="idSolicitud" value="<!--4DTEXT [Clientes]ID-->">
+					</form>
+					<!-- start: page -->
+					<form class="form-bordered " id="search" method="POST" enctype="multipart/form-data" action="/Consulta/Solicitudes">
+						
+						<input type="text" hidden name="id" value="<!--4DTEXT [Users]ID-->">					
+						<div class="ajg-panel ">
+							<div class="row top">
+								<div class="col-sm-6 ">
+									<h3 class=" ajg-title-dark" >SOLICITUD # <!--4DTEXT [Clientes]ID--></h3>
+									<button type="button" onclick="reenviarCorreo()" data-toggle="modal" data-target="#loading" class="btn ajg-button">Reenviar Correo</button>
+									<button type="button"  data-toggle="modal" data-target="#modificarSolicitud" class="btn ajg-button">Modificar</button>
+									<button type="button" style="display: none;" data-toggle="modal" data-target="#eliminarSolicitud" class="btn ajg-button">Eliminar Solicitud</button>
+								</div>		
+								<div class="col-md-4">
+									<h5 class="ajg-title-dark">Usuario Creación: <!--4DTEXT [Clientes]Usuario_Creacion--></h5>
+									<h5 class="ajg-title-dark">Sucursal: <!--4DTEXT [Clientes]Sucursal --></h5>
+								</div>															
+							</div>
+							
+							<div class="panel-body ajg-title-dark">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label ">Tipo de Cliente: </label>
+											<div class="col-md-8" >
+												<!--#4DIF ([Clientes]Juridica_Natural = True)-->
+												<p class="form-control">JURÍDICO</p>
+												<!--#4DELSE-->
+												<p class="form-control">NATURAL</p>
+												<!--#4DENDIF-->
+											</div>    								  
+										</div>
+									</div>
+								</div>																						
+								<div class="row">
+									<div class="col-sm-6 " >									
+										<div class="form-group">
+											<label class="col-md-4 control-label ">Ramo:</label>
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Ramo--></p>
+											</div>
+										</div>
+									</div>
+								</div>
+								<br>								
+								<div class=" top">
+									<div class="col">
+										<h4 class="ajg-title-dark" style="font-weight: bold;">Datos Básicos</h4>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label class="col-md-3 control-label " >Nombre o Razón Social:</label>                                                
+											<div class="col-md-9">
+												<p class="form-control"><!--4DTEXT [Clientes]Nombre_Razon_Social--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>	
+								<br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label " >Primer Nombre:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]P_Nombre--></p>
+											</div>								  
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label " >Segundo Nombre:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]S_Nombre--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label " >Primer Apellido:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]P_Apellido--></p>
+											</div>								  
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label " >Segundo Apellido:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]S_Apellido--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label ">Tipo de Documento:</label>
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Tipo_Documento--></p>
+											</div>    								  
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label " >Número:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Identificacion--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>							
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label class="col-md-3 control-label " >País:</label>                                                
+											<div class="col-md-9">
+												<p class="form-control"><!--4DTEXT [Clientes]Pais--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label class="col-md-3 control-label " >Departamento:</label>                                                
+											<div class="col-md-9">
+												<p class="form-control"><!--4DTEXT [Clientes]Departamento--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-8">
+										<div class="form-group">
+											<label class="col-md-3 control-label " >Ciudad:</label>                                                
+											<div class="col-md-9">
+												<p class="form-control"><!--4DTEXT [Clientes]Ciudad--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>							
+								<div class=" top">
+									<div class="col">
+										<h4 class="ajg-title-dark" style="font-weight: bold;">Datos Adicionales</h4>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col-sm-12">
+										<div  class="form-group">
+											<label class="col-md-2 control-label ">Dirección:</label>
+											<div class="col-md-10">
+												<p class="form-control"><!--4DTEXT [Clientes]Oficina_Principal_DIr--></p>
+											</div>                                 
+										</div>                                                    
+									</div>  																	
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label" >Teléfono:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Telefono--></p>
+											</div>								  
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label" >Email:</label>
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Email--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label" >Tipo de Empresa:</label>                                                
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Tipo_Empresa--></p>
+											</div>								  
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-group">
+											<label class="col-md-4 control-label" >Sector:</label>
+											<div class="col-md-8">
+												<p class="form-control"><!--4DTEXT [Clientes]Sector--></p>
+											</div>								  
+										</div>
+									</div>
+								</div>
+								<br>		
+								<button type="submit"  class="btn ajg-button col-md-4 col-md-offset-4">Regresar</button>
+								<br>
+							</div>				
+						</div>
+					</form>
+					<!-- end: page -->
+				</section>
+			</div>			
+		</section>		
+		<!-- Modal Modificar Solicitud -->
+		<div class="modal fade" id="modificarSolicitud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document" style="min-width:80%">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 style="font-weight: bold; color: #00263e;" class="modal-title" id="exampleModalLabel">Modificación de Solicitud</h3>
+					</div>
+					<div class="modal-body">
+						<!--#4DIF (modificable=True)-->
+						<form action="/Consulta/Modificar_Solicitud" enctype="multipart/form-data" method="post">
+							<input type="hidden" name="idSolicitud" value="<!--4DTEXT [Clientes]ID-->">
+							<div style="display: flex; justify-content: center;">
+								<div class="form-group col-md-8">
+									<label class="col-md-4 control-label" >Documento Identificación</label>                                                
+									<div class="col-md-8">
+										<input name="identificacion" type="number" class="form-control" id="numDoc"
+										onkeypress="if(this.value.length == 10) return false" 
+										onkeyup="replaceSpecialCharactersNumber(this)"                                                    
+										onfocusout="valMinLength(this,5,'notiNumero')"
+										value="<!--4DTEXT [Clientes]Identificacion-->" required>
+										<h6 style="color:red; display:none" id="notiNumero">Longitud mínima de 5 dígitos</h6>
+									</div>								  
+								</div>
+							</div>
+							<br>
+							<div style="display: flex; justify-content: center;">
+								<div class="form-group col-md-8">
+									<label class="col-md-4 control-label" >Email</label>
+									<div class="col-md-8">
+										<input name="email" type="email" class="form-control" value="<!--4DTEXT [Clientes]Email-->" required>
+									</div>								  
+								</div>
+							</div>
+							<br>
+							<br>
+							<div class="modal-footer" style="display: flex; justify-content: center;">
+								<button type="submit" onclick="modificarSolicitud()" style="width:100px;" class="btn btn-primary ajg-dark-button" >Confirmar</button>
+								<button type="button" style="width:100px;" class="btn " data-dismiss="modal" id="cancelar">Cancelar</button>
+							</div>	
+						</form>
+						<!--#4DELSE-->
+						<div style="display: flex; justify-content: center;">
+							<br>
+							<h4>No es posible modificar el registro, el cliente ya ingresó al sistema.</h4>
+							<br>
+						</div>
+						<!--#4DENDIF-->
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>                
+		<!-- Fin Modal Modificar Solicitud -->		
+
+		<!-- Modal Eliminar Solicitud -->
+		<div class="modal fade" id="eliminarSolicitud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document" style="min-width:80%">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h3 style="font-weight: bold; color: #00263e;" class="modal-title" id="exampleModalLabel"></h3>
+					</div>
+					<div class="modal-body">																				                                                                                                                   							                                                                                    
+						<h4 style="text-align: center;">¿Está seguro que desea eliminar esta solicitud?</h4>
+						<div class="modal-footer" style="display: flex; justify-content: center;">
+							<button type="button" onclick="eliminarSolicitud()" style="width:100px;" class="btn btn-primary ajg-dark-button" >Confirmar</button>
+							<script>
+								function eliminarSolicitud(){
+									document.getElementById('eliminar').submit();
+								}
+							</script>
+							<button type="button" style="width:100px;" class="btn " data-dismiss="modal" id="cancelar">Cancelar</button>
+						</div>
+						
+					</div>
+					<br>
+				</div>
+			</div>
+		</div>                
+		<!-- Fin Modal Eliminar Solicitud -->	
+
+		<!-- Modal Envío Correo-->
+		<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+		aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h4 style="text-align: center" class="ajg-title-dark">Enviando correo.</h4>
+						<h5 style="text-align: center">Esto puede tardar unos minutos...</p>
+					</div>
+					<img src="../img/loading.gif" class="load">
+				</div>
+			</div>
+		</div>
+		<!-- Modal Fin Envío Correo-->
+		<br>
+		<br>
+		<script src="../funcionesAuxiliares.js"></script>		
+		<script src="nuevaSolicitud.js"></script>
+		<!--4DINCLUDE scripts.html-->	
+	</body>
+</html>

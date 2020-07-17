@@ -1,0 +1,153 @@
+$obWebVars:=WEB_Get_Vars 
+
+If (OB Get($obWebVars;"panel")="true")
+	WEB SEND FILE("Natural/natural2.shtml")
+Else 
+	
+	
+	[Sarlaft]Fecha_Diligenciamiento:=OB Get($obWebVars;"fechaDiligenciamiento";Is date)
+	[Sarlaft]Ciudad_Diligenciamiento:=OB Get($obWebVars;"ciudadDiligenciamiento")
+	[Sarlaft]Sucursal:=OB Get($obWebVars;"sucursal")
+	[Sarlaft]Tipo_Solicitud:=OB Get($obWebVars;"tipoSolicitud")
+	
+	If (OB Get($obWebVars;"tomador")#"")
+		[Sarlaft]Clase_VInculacion_Tomador:=True
+	Else 
+		[Sarlaft]Clase_VInculacion_Tomador:=False
+	End if 
+	
+	If (OB Get($obWebVars;"asegurador")#"")
+		[Sarlaft]Clase_Vinculacion_Asegurado:=True
+	Else 
+		[Sarlaft]Clase_Vinculacion_Asegurado:=False
+	End if 
+	
+	If (OB Get($obWebVars;"beneficiario")#"")
+		[Sarlaft]Clase_Vinculacion_Benef:=True
+	Else 
+		[Sarlaft]Clase_Vinculacion_Benef:=False
+	End if 
+	
+	If (OB Get($obWebVars;"afianzado")#"")
+		[Sarlaft]Clase_Vinculacion_Afianzado:=True
+	Else 
+		[Sarlaft]Clase_Vinculacion_Afianzado:=False
+	End if 
+	
+	If (OB Get($obWebVars;"proveedor")#"")
+		[Sarlaft]Clase_Vinculacion_Proveedor:=True
+	Else 
+		[Sarlaft]Clase_Vinculacion_Proveedor:=False
+	End if 
+	
+	If (OB Get($obWebVars;"intermediario")#"")
+		[Sarlaft]Clase_Vinculacion_Inter:=True
+	Else 
+		[Sarlaft]Clase_Vinculacion_Inter:=False
+	End if 
+	
+	[Sarlaft]Clase_Vinculacion_Otro:=OB Get($obWebVars;"otroVinculacion")
+	
+	  //** TOMADOR ASEGURADO **//
+	If (OB Get($obWebVars;"TomaASeg")="familiar")
+		[Sarlaft]Tomador_Asegurado_Familiar:=True
+		[Sarlaft]Tomador_Asegurado_Comercial:=False
+		[Sarlaft]Tomador_Asegurado_Laboral:=False
+		[Sarlaft]Tomador_Asegurado_Otra:=False
+		[Sarlaft]Tomador_Asegurado_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaASeg")="comercial")
+		[Sarlaft]Tomador_Asegurado_Familiar:=False
+		[Sarlaft]Tomador_Asegurado_Comercial:=True
+		[Sarlaft]Tomador_Asegurado_Laboral:=False
+		[Sarlaft]Tomador_Asegurado_Otra:=False
+		[Sarlaft]Tomador_Asegurado_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaASeg")="laboral")
+		[Sarlaft]Tomador_Asegurado_Familiar:=False
+		[Sarlaft]Tomador_Asegurado_Comercial:=False
+		[Sarlaft]Tomador_Asegurado_Laboral:=True
+		[Sarlaft]Tomador_Asegurado_Otra:=False
+		[Sarlaft]Tomador_Asegurado_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaASeg")="otro")
+		[Sarlaft]Tomador_Asegurado_Familiar:=False
+		[Sarlaft]Tomador_Asegurado_Comercial:=False
+		[Sarlaft]Tomador_Asegurado_Laboral:=False
+		[Sarlaft]Tomador_Asegurado_Otra:=True
+		[Sarlaft]Tomador_Asegurado_Cual:=OB Get($obWebVars;"otroTomadorA")
+	End if 
+	
+	  //** TOMADOR BENEFICIARIO **//
+	If (OB Get($obWebVars;"TomaBenef")="familiar")
+		[Sarlaft]Tomador_Benef_Familiar:=True
+		[Sarlaft]Tomador_Benef_Comercial:=False
+		[Sarlaft]Tomador_Benef_Laboral:=False
+		[Sarlaft]Tomador_Benef_Otra:=False
+		[Sarlaft]Tomador_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaBenef")="comercial")
+		[Sarlaft]Tomador_Benef_Familiar:=False
+		[Sarlaft]Tomador_Benef_Comercial:=True
+		[Sarlaft]Tomador_Benef_Laboral:=False
+		[Sarlaft]Tomador_Benef_Otra:=False
+		[Sarlaft]Tomador_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaBenef")="laboral")
+		[Sarlaft]Tomador_Benef_Familiar:=False
+		[Sarlaft]Tomador_Benef_Comercial:=False
+		[Sarlaft]Tomador_Benef_Laboral:=True
+		[Sarlaft]Tomador_Benef_Otra:=False
+		[Sarlaft]Tomador_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"TomaBenef")="otro")
+		[Sarlaft]Tomador_Benef_Familiar:=False
+		[Sarlaft]Tomador_Benef_Comercial:=False
+		[Sarlaft]Tomador_Benef_Laboral:=False
+		[Sarlaft]Tomador_Benef_Otra:=True
+		[Sarlaft]Tomador_Benef_Cual:=OB Get($obWebVars;"otroTomadorB")
+	End if 
+	
+	  //** ASEGURADOR BENEFICIARIO **//
+	If (OB Get($obWebVars;"AsegBenef")="familiar")
+		[Sarlaft]Asegura_Benef_Familiar:=True
+		[Sarlaft]Asegura_Benef_Comercial:=False
+		[Sarlaft]Asegura_Benef_Laboral:=False
+		[Sarlaft]Asegura_Benef_Otra:=False
+		[Sarlaft]Asegura_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"AsegBenef")="comercial")
+		[Sarlaft]Asegura_Benef_Familiar:=False
+		[Sarlaft]Asegura_Benef_Comercial:=True
+		[Sarlaft]Asegura_Benef_Laboral:=False
+		[Sarlaft]Asegura_Benef_Otra:=False
+		[Sarlaft]Asegura_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"AsegBenef")="laboral")
+		[Sarlaft]Asegura_Benef_Familiar:=False
+		[Sarlaft]Asegura_Benef_Comercial:=False
+		[Sarlaft]Asegura_Benef_Laboral:=True
+		[Sarlaft]Asegura_Benef_Otra:=False
+		[Sarlaft]Asegura_Benef_Cual:=""
+	End if 
+	
+	If (OB Get($obWebVars;"AsegBenef")="otro")
+		[Sarlaft]Asegura_Benef_Familiar:=False
+		[Sarlaft]Asegura_Benef_Comercial:=False
+		[Sarlaft]Asegura_Benef_Laboral:=False
+		[Sarlaft]Asegura_Benef_Otra:=True
+		[Sarlaft]Asegura_Benef_Cual:=OB Get($obWebVars;"otroAseguradoB")
+	End if 
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Natural/natural2.shtml")
+	
+End if 

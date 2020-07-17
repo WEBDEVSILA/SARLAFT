@@ -1,0 +1,187 @@
+<!--PERSONAS EXPUESTAS PÚBLICAMENTE-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+	    <!--4DINCLUDE headincludes.html-->		
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+                
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white">Información Básica</span></li>
+                                <li><span style="padding-right: 1cm; color:white">Personas Expuestas Públicamente</span></li>
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Personas Expuestas Públicamente</h2>   
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered" method="POST" id="form-id" enctype="multipart/form-data" action="/Juridico/accionistas_beneficiarios">                                                                           
+                                    <input type="hidden" value="0" id="option" name="option">
+                                    <div class="panel-body">                                            
+                                        <h4 class="ajg-title-dark" style="font-weight:bold">Conocimiento mejorado de Personas Expuestas Públicamente</h4>
+                                        <p class="ajg-title-dark">
+                                            En cumplimiento de Decreto 1674, se relacionan los siguiente campos en caso de ser considerado como persona 
+                                            políticamente expuesta o vínculado:
+                                        </p>
+                                        <div class="ajg-title-dark">
+                                            <h5 style="font-weight: bold;">Vinculo/Relación*: </h5>
+                                            <p><span style="font-weight: bold;">1. </span>Representante Legal</p>
+                                            <p><span style="font-weight: bold;">2. </span>Miembro de la Junda Directiva</p>
+                                            <p><span style="font-weight: bold;">3. </span>Accionista</p>
+                                        </div>
+                                        <br>                                       
+
+                                            <div class="table-responsive">
+                                                <table class="table mb-none">
+                
+                                                <thead>
+                                                    <tr class="ajg-title-dark">
+                                                        <th>Vínculo / Relación *</th>
+                                                        <th>Nombre<span style="color: white;">_________________________</span></th>
+                                                        <th>Tipo ID</th>
+                                                        <th>No de ID</th>
+                                                        <th>Nacionalidad</th>
+                                                        <th>Entidad <span style="color: white;">_____</span></th>
+                                                        <th>Cargo<span style="color: white;">_________________</span></th>
+                                                        <th>Fecha Desvinculación</th>
+                                                        <th style="color:white">Opciones</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>                                                    
+                                                    <tr >
+                                                        <td>
+                                                            <select name="vinculo1" id="vinculo" class="form-control mb-md" >
+                                                                <option value=""></option>
+                                                                <option value="1">1</option>
+                                                                <option value="2">2</option>
+                                                                <option value="3">3</option>                                                                   
+                                                            </select>
+                                                        </td>
+                                                        <td>                                                            
+                                                            <input name="nombre1" id="nombre" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" autocomplete="off" >
+                                                        </td>
+                                                        <td>
+                                                            <select name="tipoID1" id="tipoID" class="form-control mb-md" >
+                                                                <option value=""></option>
+                                                                <option value="C.C.">C.C.</option>
+                                                                <option value="C.E.">C.E.</option>
+                                                                <option value="NUIP">NUIP</option>
+                                                                <option value="Pasaporte">Pasaporte</option>
+                                                                <option value="R.C.">R.C.</option>
+                                                            </select>
+                                                        </td>
+                                                        <td>
+                                                            <input name="numID1" id="numID" 
+                                                            onkeyup="replaceSpecialCharactersNumber(this)"
+                                                            onkeypress="if(this.value.length == 10) return false"
+                                                            onfocusout="valMinLength(this,5,'notiNumero')"
+                                                            type="number" class="form-control" autocomplete="off" >
+                                                            <h6 style="color:red; display:none" id="notiNumero">Longitud mínima de 5 dígitos</h6>
+                                                        </td>
+                                                        <td>
+                                                            <input name="nacionalidad1" id="nacionalidad" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" autocomplete="off" >
+                                                        </td>
+                                                        <td>
+                                                            <input name="entidad1" id="entidad" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" autocomplete="off" >
+                                                        </td>
+                                                        <td>
+                                                            <input name="cargo1" id="cargo" 
+                                                            onkeyup="upperCase(this,true)"
+                                                            onchange="validateNA(this)"
+                                                            type="text" class="form-control" autocomplete="off" >
+                                                        </td>                                                           
+                                                        <td>
+                                                            <input name="fechaDesvinculacion1" id="fechaDesvinc" type="date" class="form-control" >
+                                                        </td> 
+                                                        <td> <button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px"
+                                                            <!--4DIF (Records in Selection([Perso_Expuest_Public])>=8)-->disabled<!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>
+                                                    </tr>
+                                                    <input type="hidden" name="eliminarReg" id="eliminarReg">
+                                                    <!--4DLOOP [Perso_Expuest_Public]-->
+                                                    <tr>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Vinculo_Relacion--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Nombre--></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Tipo_Ident--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]No_ID--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Nacionalidad--></h4>
+                                                        </td>
+                                                        <td>
+                                                            <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Entidad--></textarea>
+                                                        </td>
+                                                        <td>
+                                                            <textarea rows="1" readonly style="background-color: white;" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Cargo--></textarea>
+                                                        </td>                                                           
+                                                        <td>
+                                                            <h4 type="text" class="form-control" ><!--4DTEXT [Perso_Expuest_Public]Fecha_Desvinculacion--></h4>
+                                                        </td>                                                     
+                                                        <td> <button type="button" onclick="del(<!--4DTEXT [Perso_Expuest_Public]ID-->)" class="btn ajg-button col-md-4 col-md-offset-4 btn-danger"  style="width:40px"><i class="fa  fa-trash-o"></i></button></td>  
+                                                    </tr>
+                                                    <!--4DENDLOOP-->
+                                                </tbody>
+                                            </table>                                                                                        
+                                        </div>                                     
+                                    
+                                    </div>                                                                                    
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button class="btn ajg-button col-md-4" type="button" onclick="validateList('botonPersonasExpuestas','vinculo','nombre','tipoID','numID','nacionalidad','entidad','cargo','fechaDesvinc')">Siguiente</button>
+                                        <button disabled style="display: none;" type="submit" id="botonPersonasExpuestas"></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>			
+		</section>
+        <!--4DINCLUDE scripts.html-->
+        <script src="juridico5.js"></script>
+	</body>
+</html>

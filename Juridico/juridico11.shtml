@@ -1,0 +1,196 @@
+<!--CLAUSULA DE AUTORIZACIÓN-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headincludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+				<!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelJuridico.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Cláusula de Autorización</h2>
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white; padding-right: 1cm;">Cláusula de Autorización</span></li>                                
+							</ol>
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark ">
+                            <header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Cláusula de Autorización</h1>   
+							</header>
+							<form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Juridico/autenticar">
+								<div class="panel-body ajg-title-dark" style="text-align: justify">
+									<h3 class="center">AUTORIZACIÓN</h3>
+									<p>
+										Para efectos de la presente autorización, entiéndase por LA ASEGURADORA y/o cualquier sociedad controlada, directa 
+										o indirectamente, por la misma sociedad(es) matriz de la(s) sociedad(es) referenciadas y con la(s) que se suscriban contrato(s) de seguros.
+									</p>
+									<p>
+										Así mismo, entiendase como INTERMEDIARIO DE SEGUROS la(s) sociedad(s) <span style="font-weight: bold;">AJG GALLAGHER</span>, y/o cualquier sociedad controlada, directa o 
+										indirectamente, por la misma sociedad matriz de la(s) sociedad(es) antes mencionada(s).
+									</p>
+									<p>
+										Dirección <!--4DTEXT [Sarlaft]Sucursal --> 
+									</p>
+									
+									<p>
+										Autorizo expresa e inequívocamente a usar mis datos personales con fines comerciales en los términos que trata la consideración 4 de la 
+										Cláusula de Autorización del presente documento, la cual leí y comprendí cabalmente. 
+									</p>
+									<div style="display:flex;justify-content: center">
+										<div class="radio-custom radio-primary " style="margin-right: 20px">
+											<input value="si" type="radio" id="lecturaSi" name="lecturaACabalidad" required <!--4DIF ([Sarlaft]Autorizacion_Uso_Datos=True)-->checked<!--4DENDIF-->/>
+											<label >Si</label>
+										</div>
+										<div class="radio-custom radio-primary" style="margin-left:20px">
+											<input value="no" type="radio" id="lecturaNo" name="lecturaACabalidad" <!--4DIF ([Sarlaft]Autorizacion_Uso_Datos=False)-->checked<!--4DENDIF-->/>
+											<label>No</label>
+										</div>    
+									</div>
+									<br>
+									<p>Declaro expresamente:</p>
+									<p>
+										<span style="font-weight: bold">I.</span> Que para efectos de acceder a la prestación de servicios por parte de 
+										<span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>, suministramos nuestros datos para todos 
+										los fines precontractuales y contractuales que compnde la actividad aseguradora.
+									</p>
+									<p>
+										<span style="font-weight: bold">II.</span> Que <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>
+										me han informado, de manera expresa: 
+									</p>
+									<p>
+										1. <span style="font-weight: bold">FINALIDAD DEL TRATAMIENTO DE DATOS PERSONALES:</span>
+										Nuestros datos serán trratados por LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS, para las siguientes finalidads: 
+										i) El trámite de nuestra solicitud de vinculación como consumidor financiero, deudos, contraparte contractual y/o proveedor 
+										ii) El proceso de negociación de contratos con LA ASEGURADORA, incluyendo la determinación de primas y la selección de riesgos. 
+										iii) La ejecución y el cumplimiento de los contratos que celebre.
+										iv) El control y la prevención del fraude.
+										v) La liquidación y pago de siniestros.
+										vi) todo lo que involucre la gestión del seguro contratado. 
+										vii) Controlar el cumplimiento de requisitos para acceder al Sistema General de Seguridad Social Integral.
+										viii) La elaboración de estudios técnicos-actuariales, estadisticas, encuestas, análisis de tendencias del mercado y, en general, estudios de técnica aseguradora.
+										ix) Envío de información relativa a la educación financiera, encuestas de satisfacción de clientes u pfertas comerciales de seguros, así como de otros servicios inherentes a la actividad aseguradora.
+										x) Realización de encuestas sobre satisfacción de los servicios prestados por LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS,
+										xi) Intercambio o remisión de información en visrtud de tratados y acuerdos internacionales e intergubernamentales suscritos por Colombia,
+										xii) La prevención y control del lavado de activos y la financiación del terrosismo y la 
+										xiii) Consulta, almacenamiento, administración, transferencia, procesamiento y reporte de información a las Centrales de Información o bases de datos debidamente constituidas referentes al comportamiento crediticio, financiero y comercial.
+									</p>
+									<p>
+										2. El tratamiento podrá ser realizado directamente por las citadas sociedades o por los encargados del tratamiento que ellas consideren necesarios.
+									</p>
+									<p>
+										3. <span style="font-weight: bold">USUARIOS DE LA INFORMACIÓN: </span> Que los datos podrán ser compartidos, transmitidos, entregados, transferidos o divulgados para las finalidades mencionadas, a:
+										i) Las personas jurídicas que tienen la calidad de filiales, subsidiarias o vinculadas de <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS Y REASEGUROS.</span>
+										ii) Los operadores necesarios para el cumplimiento derechos y obligaciones de los contratos celebrados con <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>,
+											tales como: ajustadores, call centers, investigadores, compañías de asistencia, abogados externos, entre otros.
+										iii) <span style="font-weight: bold">LOS INTERMEDIARIOS DE SEGUROS</span> que intervengan en el proceso de celebración, ejecución y terminación del contrato de seguro.
+										iv) Las personas con las cuales <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span> adelante gestiones para efectos de celebrar contratos de Coaseguro o Reaseguro.
+										v) <span style="font-weight: bold"> FASECOLDA, INVERFAS S.A. y el INIF,</span> personas jurídicas que administran bases de datos para efectos de prevención y control de fraudes, 
+											la selección de riesgos, y control de requisitos para acceder al Sistema General de Seguridad Social Integral, así como la elaboración de estudios estadísticos actuariales.
+									</p>
+									<p>
+										4. <span style="font-weight: bold"> TRANSFERENCIA INTERNACIONAL DE INFORMACIÓN A TERCEROS PAÍSES:</span> Que en ciertas situaciones es necesario realizar transefencias internacionales de mis datos para cumplir las finalidades del tratamiento.
+									</p>
+									<p>
+										5. <span style="font-weight: bold"> DATOS PERSONALES DE NIÑAS, NIÑOS Y ADOLESCENTES: </span>Que son facultativas las respues a las preguntas sobre datos de niñas, niños y adolescentes.
+											En consecuencia, no hemos sido obligados a responerlas.
+									</p>
+									<p>
+										6. <span style="font-weight: bold"> DERECHOS DEL TITULAR DE LA INFORMACIÓN:</span> Que como titular de la información, nos asisten los derechos previstos en la Ley 1266 de 2008.
+											En especial, el derecho a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre nosotros.
+									</p>
+									<p>
+										7. <span style="font-weight: bold">RESPONSABLES Y ENCARGADOS DEL TRATAMIENTO DE LA INFORMACIÓN: </span>Que los responsables del tratamiento de la información son 
+										<span style="font-weight: bold"> LAS ASEGURADORAS Y/O LOS INTERMEDIARIOS,</span> cuyos datos de contacto se incluyeron en el encabezado de esta autorización.
+										En todo caso, los encargados del Tratamiento de los datos que se comparta, transfieran, transmitan, entreguen o divulguen, en desarrollo de lo previsto en el literal v) del numeral 3 anterior, seran:
+										<p >
+											a) FASECOLDA cuya dirección es Carrera 7 No. 26 - 20 Pisos 11 y 12, email: fasecolda@fasecolda.com Tel. 3443080 de la ciudad de Bogotá D.C.
+										</p>
+										<p>
+											b) INVERFAS S.A. cuya dirección es Carrera 7 No. 26 - 20 Piso 11, email: inverfas@fasecolda.com Tel. 3443080 de la ciudad de Bogotá D.C.
+										</p>
+										<p>
+											c) INIF - Instituto Nacional de Investigación y Prevención del Fraude al Seguro cuya dirección es Carrera 13 No. 37 - 43, piso 8, email: directoroperativo@inif.com.co Tel. 2320105 de la ciudad de Bogotá D.C.
+										</p>
+									</p>
+									<p>
+										Autorizo expresamente e inequivocamente a Fasecolda, inverfas S.A.e INIF, para que traten mis datos personales en términos descritos en el numeral v del numeral 3 denominado "usuarios de la información",
+										especialmente para efectos de prevención y control de fraudes, la selección de riesgos, y control de requisitos para acceder al Sistema General de Seguridad Social Integral, así como la elaboración de estudios estadísticos técnicos-actuariales	
+									</p>
+									<div style="display:flex;justify-content: center">
+										<div class="radio-custom radio-primary " style="margin-right: 20px">
+											<input value="si" type="radio" id="autSi" name="autorizacion" required
+											<!--4DIF ([Sarlaft]Autorizacion_Usuario_Info=True)-->checked<!--4DENDIF-->/>
+											<label>Si</label>
+										</div>
+										<div class="radio-custom radio-primary" style="margin-left:20px">
+											<input value="no" type="radio" id="autNo" name="autorizacion"
+											<!--4DIF ([Sarlaft]Autorizacion_Usuario_Info=False)-->checked<!--4DENDIF-->/>
+											<label>No</label>
+										</div>    
+									</div>
+									<br>
+									<p>
+										Para efectos de la verificación especificada de las políticas internas sobre el tratamiento de datos personales, como titular de la información acudiré a las páginas web de los responsables 
+										y encargados que estoy autorizando en el presente escrito.
+									</p>
+									<p>
+										<span style="font-weight: bold">III. AUTORIZACIÓN:</span> De manera expresa, AUTORIZAMOS el Tratamiento de los datos y, de ser necesario, la transferencia nacional e internacional de los mismos,
+										por las personas, para las finalidades y en los términos que nos fueron informados en este documento.
+									</p>
+									<p>
+										<span style="font-weight: bold">IV. CERTIFICACIÓN:</span> Manifestamos que la información suministrada por nosotros para las finalidades señaladas en este documento, puede contener datos personales 
+										de empleados, proveedores, colaboradores o clientes de la compañía, por lo cual certificamos de manera expresa que la misma, ha sido:
+										i) obtenida de acuerdo con lo previsto en la legislación aplicable, particularmente en la Ley 1581 de 2012 y ii) que, existen las autorizaciones necesarias de acuerdo con lo previsto en la legislación aplicable, 
+											para el tratamiento y circulación de esta Base de Datos por parte de <span style="font-weight: bold"> LA(S) ASEGURADORA(S) Y/O LOS INTERMEDIARIOS </span>señalados en este documento.
+									</p>
+									<br>
+									<div style="display: flex;justify-content: center;">
+										<button type="submit" id="submitButton" class="btn ajg-button col-md-4 " >Validar Identidad</button>	
+									</div>
+									<br>
+								</div>
+							</form>
+                        </section>
+						
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+			<div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+			aria-hidden="true">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-body">
+							<h4 style="text-align: center" class="ajg-title-dark">Cargando Sarlaft...</h4>
+						</div>
+						<img src="../img/loading.gif" class="load">																	
+					</div>
+				</div>
+			</div>
+			
+		</section>
+		<script src="juridico11.js"></script>
+		<!--4DINCLUDE scripts.html-->			
+	</body>
+</html>

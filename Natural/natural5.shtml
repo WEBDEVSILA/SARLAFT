@@ -1,0 +1,194 @@
+<!--ACTIVIDADES EN OPERACIONES INTERNACIONALES-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+				    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Operaciones Internacionales</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Actividades en Operaciones Internacionales</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Actividades en Operaciones Internacionales</h2>   
+                            </header>
+                            <div class="panel-body ajg-title-dark">
+                                <form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Natural/reclamaciones_seguros">
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Realiza Transacciones en Moneda Extranjera?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" onclick="makeRequired('cualOperacion')" type="radio" name="monedaExtranjera" required  <!--4DIF ([Sarlaft]Transacciones_Moneda_Ext=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" onclick="unMakeRequired('cualOperacion')" type="radio" name="monedaExtranjera"   <!--4DIF ([Sarlaft]Transacciones_Moneda_Ext=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>    
+                                        <div class="col-sm-6">                                        
+                                            <div  class="form-group">
+                                                <label class="col-md-3 control-label">Cuál</label>
+                                                <div class="col-md-9">
+                                                    <select name="cualOperacion"  id="cualOperacion" class="form-control mb-md">
+                                                        <!--#4DIF ([Sarlaft]Trans_MonedaE_cual = "")-->
+                                                        <option></option>
+                                                        <!--4DELSE-->
+                                                        <option><!--4DTEXT [Sarlaft]Trans_MonedaE_cual--></option>
+                                                        <option></option>
+                                                        <!--4DENDIF-->
+                                                        <option>Exportaciones</option>
+                                                        <option>Giros</option>
+                                                        <option>Importaciones</option>
+                                                        <option>Pago de Servicios</option>
+                                                        <option>Prestamos</option>
+                                                        <option>Transferencias</option>
+                                                        <option>Otras</option>
+                                                    </select>
+                                                </div>
+                                            </div>                                            
+                                        </div>        
+                                    </div>
+                                    
+                                    <div  class="form-group">
+                                        <label class="col-sm-4 control-label">Indique Otras Operaciones</label>
+                                        <div class="col-sm-8" style="transform:translateX(-20px)">
+                                            <input name="otrasOperaciones" type="text" class="form-control" value="<!--4DTEXT [Sarlaft]Otras_Operaciones-->">
+                                        </div>                                 
+                                    </div>                                                                               
+                                
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Posee productos Financieros en el Exterior?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="productosExtranjero" required <!--4DIF [Sarlaft]ProductosFin_Exterior=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="productosExtranjero"  <!--4DIF [Sarlaft]ProductosFin_Exterior=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>                                             
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-sm-4 control-label" style="padding-right: 1cm" >
+                                            ¿Posee Cuentas en Moneda Extranjera?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="cuentasMonedaExtr" required <!--4DIF [Sarlaft]Cuentas_MonedaEx=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="cuentasMonedaExtr" <!--4DIF [Sarlaft]Cuentas_MonedaEx=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>                                                  
+                                    </div>
+                                    
+                                                                  
+                                    <div class="table-responsive">
+                                        <table class="table mb-none">
+            
+                                            <thead>
+                                                <tr class="ajg-title-dark">
+                                                    <th>Tipo de producto</th>
+                                                    <th>Identificación o Número del Producto</th>
+                                                    <th>Entidad</th>
+                                                    <th>Monto</th>
+                                                    <th>Ciudad</th>
+                                                    <th>País</th>                                                            
+                                                    <th>Moneda</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>                                                    
+                                                <tr >                                                          
+                                                    <td>
+                                                        <input name="tipoProd1" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Tipo_Producto-->" type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="numProd1" 
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Iden_Num_Prod-->" type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="entidad1" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Entidad-->" type="text" class="form-control">
+                                                    </td>                                                   
+                                                    <td>
+                                                        <input name="monto1" 
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Monto-->" type="number" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="ciudad1" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Ciudad-->" type="text" class="form-control">
+                                                    </td> 
+                                                    <td>
+                                                        <input name="pais1" 
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Pais-->" type="text" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input name="moneda1" 
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        value="<!--4DTEXT [Operaciones_Inter]Moneda-->" type="number" class="form-control">
+                                                    </td>                                                                                                                       
+                                                </tr>                                                                                                                                       
+                                            </tbody>
+                                        </table>                                                                                        
+                                    </div>                                     
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="submit" class="btn ajg-button col-md-4">Siguiente</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                        
+                        
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+        <!--4DINCLUDE scripts.html-->
+	</body>
+</html>

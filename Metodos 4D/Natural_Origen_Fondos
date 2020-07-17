@@ -1,0 +1,44 @@
+$obWebVars:=WEB_Get_Vars 
+If (OB Get($obWebVars;"panel")="true")
+	WEB SEND FILE("Natural/natural4.shtml")
+Else 
+	[Sarlaft]Prod_Serv_Comerc:=OB Get($obWebVars;"productoServicio")
+	[Sarlaft]Ingresos_Mensuales:=OB Get($obWebVars;"ingresosMensuales";Is real)
+	[Sarlaft]Egresos_Mensuales:=OB Get($obWebVars;"egresosMensuales";Is real)
+	[Sarlaft]Activos:=OB Get($obWebVars;"activos";Is real)
+	[Sarlaft]Pasivo:=OB Get($obWebVars;"pasivos";Is real)
+	[Sarlaft]Patrimonio:=OB Get($obWebVars;"patrimonio";Is real)
+	[Sarlaft]Otros_Ingresos:=OB Get($obWebVars;"otrosIngresos";Is real)
+	[Sarlaft]Concepto_otros_Ingresos:=OB Get($obWebVars;"conceptoIngresos")
+	
+	
+	If (OB Get($obWebVars;"perPublic")="si")
+		[Sarlaft]Persona_PPE:=True
+	Else 
+		[Sarlaft]Persona_PPE:=False
+	End if 
+	
+	If (OB Get($obWebVars;"vinculoPerExp")="si")
+		[Sarlaft]Vinculo_con_PPE:=True
+	Else 
+		[Sarlaft]Vinculo_con_PPE:=False
+	End if 
+	
+	If (OB Get($obWebVars;"recursosPublicos")="si")
+		[Sarlaft]Recursos_Publicos:=True
+	Else 
+		[Sarlaft]Recursos_Publicos:=False
+	End if 
+	
+	If (OB Get($obWebVars;"obligTribut")="si")
+		[Sarlaft]Tributa_otro_Pais:=True
+		[Sarlaft]Tributa_Otro_pais_cual:=OB Get($obWebVars;"otroOblig")
+	Else 
+		[Sarlaft]Tributa_otro_Pais:=False
+		[Sarlaft]Tributa_Otro_pais_cual:=""
+	End if 
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Natural/natural4.shtml")
+	
+End if 

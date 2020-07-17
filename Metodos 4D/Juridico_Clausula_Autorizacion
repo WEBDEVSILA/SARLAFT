@@ -1,0 +1,51 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	
+	WEB SEND FILE("Juridico/juridico11.shtml")
+Else 
+	
+	options:=OB Get($obWebVars;"option")
+	
+	If (options="add")
+		CREATE RECORD([Reclamaciones])
+		[Reclamaciones]No_Ident:=[Sarlaft]Documento_Numero
+		[Reclamaciones]Año:=OB Get($obWebVars;"año1";Is real)
+		[Reclamaciones]Ramo:=OB Get($obWebVars;"ramo1")
+		[Reclamaciones]Compañia:=OB Get($obWebVars;"compañia1")
+		[Reclamaciones]Valor:=OB Get($obWebVars;"valor1";Is real)
+		[Reclamaciones]Resultado:=OB Get($obWebVars;"resultado1")
+		
+		SAVE RECORD([Reclamaciones])
+		QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico10.shtml")
+	End if 
+	
+	
+	If (options="delete")
+		
+		delete:=OB Get($obWebVars;"eliminarReg")
+		QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+		QUERY SELECTION([Reclamaciones];[Reclamaciones]ID=delete)
+		If (Records in selection([Reclamaciones])=1)
+			DELETE RECORD([Reclamaciones])
+		End if 
+		QUERY([Reclamaciones];[Reclamaciones]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico10.shtml")
+	End if 
+	
+	
+	If (options="0")
+		
+		If (OB Get($obWebVars;"reclamacion")="si")
+			[Sarlaft]Reclamacion_Indem:=True
+		Else 
+			[Sarlaft]Reclamacion_Indem:=False
+		End if 
+		
+		SAVE RECORD([Sarlaft])
+		WEB SEND FILE("Juridico/juridico11.shtml")
+	End if 
+	
+End if 

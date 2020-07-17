@@ -1,0 +1,113 @@
+C_TEXT($1;$2;$3;$4)
+ARRAY TEXT($noms;0)
+ARRAY TEXT($vals;0)
+C_OBJECT($obWebVars)
+$rqt:=$1
+errTxt:=""
+estado:=False
+
+$obWebVars:=WEB_Get_Vars 
+Case of 
+		
+	: ($rqt="/inicio")
+		errTxt:=""
+		estado:=False
+		Login 
+		
+	: ($rqt="/formulario_inicio")
+		If (Records in selection([Sarlaft])=1)
+			WEB GET VARIABLES($noms;$vals)
+			$pos:=Find in array($noms;"seleccion")
+			
+			If ($vals{$pos}="juridico")
+				WEB SEND FILE("Juridico/juridico1.shtml")
+			Else 
+				WEB SEND FILE("Natural/natural1.shtml")
+			End if 
+		Else 
+			WEB SEND FILE("login.shtml")
+		End if 
+		
+		
+	: ($rqt="/Juridico@")
+		
+		If (Records in selection([Sarlaft])=1)
+			WEB GET VARIABLES($noms;$vals)
+			Case of 
+				: ($rqt="/Juridico/formulario_inicio")
+					WEB SEND FILE("Juridico/juridico1.shtml")
+				: ($rqt="/Juridico/datos_basicos")
+					
+					Juridico_Datos_Basicos 
+				: ($rqt="/Juridico/representante_legal")
+					Juridico_Rep_Leg 
+				: ($rqt="/Juridico/accionistas")
+					Juridico_Accionistas 
+				: ($rqt="/Juridico/personas_expuestas")
+					Juridico_Per_Exp 
+				: ($rqt="/Juridico/accionistas_beneficiarios")
+					Juridico_Acc_Benef 
+				: ($rqt="/Juridico/informacion_financiera")
+					Juridico_Info_Fin 
+				: ($rqt="/Juridico/origen_fondos")
+					Juridico_Origen_Fondos 
+				: ($rqt="/Juridico/operaciones_internacionales")
+					Juridico_Op_Inter 
+				: ($rqt="/Juridico/reclamaciones_seguros")
+					Juridico_Reclamaciones 
+				: ($rqt="/Juridico/clausula_autorizacion")
+					Juridico_Clausula_Autorizacion 
+				: ($rqt="/Juridico/imprimir_formulario")
+					
+					If (Records in selection([Sarlaft])=1)
+						Juridico_Imprimir 
+					Else 
+						UNLOAD RECORD([Sarlaft])
+						UNLOAD RECORD([Clientes])
+						WEB SEND FILE("login.shtml")
+					End if 
+					
+			End case 
+		Else 
+			WEB SEND FILE("./login.shtml")
+		End if 
+		
+	: ($rqt="/Natural@")
+		If (Records in selection([Sarlaft])=1)
+			Case of 
+				: ($rqt="/Natural/formulario_inicio")
+					WEB SEND FILE("Natural/natural1.shtml")
+				: ($rqt="/Natural/datos_basicos")
+					Natural_Datos_Basicos 
+				: ($rqt="/Natural/datos_basicos2")
+					Natural_Datos_Basicos2 
+				: ($rqt="/Natural/origen_fondos")
+					Natural_Origen_Fondos 
+				: ($rqt="/Natural/operaciones_internacionales")
+					Natural_Op_Inter 
+				: ($rqt="/Natural/reclamaciones_seguros")
+					Natural_Reclamaciones_Seguros 
+				: ($rqt="/Natural/clausula_autorizacion")
+					Natural_Clausula_Autorizacion 
+				: ($rqt="/Natural/imprimir_formulario")
+					Natural_Imprimir_Formulario 
+					
+			End case 
+		Else 
+			WEB SEND FILE("./login.shtml")
+		End if 
+	: ($rqt="/LogIn")
+		UNLOAD RECORD([Sarlaft])
+		UNLOAD RECORD([Clientes])
+		WEB SEND FILE("login.shtml")
+		
+	: ($rqt="/Consulta")
+		WEB SEND FILE("consulta.shtml")
+		
+	: ($rqt="/Inicio_Consulta")
+		Consulta_Login 
+		
+	: ($rqt="/LogOut")
+		UNLOAD RECORD([Users])
+		WEB SEND FILE("consulta.shtml")
+End case 

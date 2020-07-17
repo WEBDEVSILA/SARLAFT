@@ -1,0 +1,47 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Perso_Expuest_Public];[Perso_Expuest_Public]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Juridico/juridico5.shtml")
+Else 
+	options:=OB Get($obWebVars;"option")
+	
+	If (options="add")
+		CREATE RECORD([Accionistas])
+		[Accionistas]No_Ident:=[Sarlaft]Documento_Numero
+		[Accionistas]Tipo_ID:=OB Get($obWebVars;"tipoId1")
+		[Accionistas]Numero_ID:=OB Get($obWebVars;"numId1";Is real)
+		[Accionistas]Nombre:=OB Get($obWebVars;"nombre1")
+		[Accionistas]Porcent_Participacion:=OB Get($obWebVars;"porcent1")
+		[Accionistas]Persona_Juridica_Cotiza_Bolsa:=OB Get($obWebVars;"cotizaBolsa1")
+		[Accionistas]Persona_Publica_Expuesta:=OB Get($obWebVars;"publicamenteExpuesta1")
+		[Accionistas]Sujeto_Tributacion:=OB Get($obWebVars;"tributOtroPais1")
+		
+		SAVE RECORD([Accionistas])
+		QUERY([Accionistas];[Accionistas]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico4.shtml")
+	End if 
+	
+	
+	If (options="delete")
+		
+		delete:=OB Get($obWebVars;"eliminarReg")
+		QUERY([Accionistas];[Accionistas]No_Ident=[Sarlaft]Documento_Numero)
+		QUERY SELECTION([Accionistas];[Accionistas]ID=delete)
+		If (Records in selection([Accionistas])=1)
+			DELETE RECORD([Accionistas])
+		End if 
+		QUERY([Accionistas];[Accionistas]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico4.shtml")
+	End if 
+	
+	
+	If (options="0")
+		  //SAVE RECORD([Sarlaft])
+		QUERY([Perso_Expuest_Public];[Perso_Expuest_Public]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico5.shtml")
+	End if 
+	
+	
+End if 

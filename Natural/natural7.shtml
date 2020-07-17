@@ -1,0 +1,217 @@
+<!--CLÁUSULA DE AUTORIZACIÓN-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->		
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+				<!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Cláusula de Autorización</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white; padding-right: 1cm;">Cláusula de Autorización</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark ">
+                            <header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Cláusula de Autorización</h1>   
+							</header>
+							<form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Natural/autenticar">
+								<div class="panel-body ajg-title-dark" style="text-align: justify">
+									<h3 class="center">CONSIDERACIONES</h3>
+									<p>
+										1. Que los datos personales solicitados en el presente formulario de conocimiento del cliente son recogidos atendiendo las disposiciones e 
+										instrucciones de la Superintendencia Financiera de Colombia y los estándares internacionales para prevenir y controlar el lavado de activos y la
+										financiación del terrorismo.
+									</p>
+									<p>
+										2. Que conforme con lo dispuesto por la literal b) del artículo 2 de la Ley 1581 de 2012, las disposiciones que buscan la protección de datos personales 
+										y que se encuentran contenidos en dicha disposición, no son aplicables a la base de datos y archivos que tengan por finalidad la prevención, detección,
+										monitoreo y control del lavado de activos y el financiamiento del terrorismo, por lo que en principio su utilización no requeriría de una autorización de su 
+										titular, la cual proviene de la ley.
+									</p>
+									<p>
+										3. Que los datos personales adicionales para el estudio técnico del riesgo asegurable y reasegurable se tratarán observando las leyes 1581 de 2012 y 1266 de 2008 segun el caso.
+									</p>
+									<p>
+										4. Que los datos también serán tratados para fines comerciales, razón por la cual procedo a emitir la siguiente: 										
+									</p>
+
+									<h3 class="center">AUTORIZACIÓN</h3>
+									<p>
+										Para efectos de la presente autorización, entiéndase por LA ASEGURADORA y/o cualquier sociedad controlada, directa 
+										o indirectamente, por la misma sociedad(es) matriz de la(s) sociedad(es) referenciadas y con la(s) que se suscriban contrato(s) de seguros.
+									</p>
+									<p>
+										Así mismo, entiendase como INTERMEDIARIO DE SEGUROS la(s) sociedad(es) <span style="font-weight:bold">AJG GALLAGHER</span>, 
+									</p>
+									<p>
+										Dirección <!--4DTEXT [Sarlaft]Sucursal -->,
+									</p>
+									<p>
+										y/o cualquier sociedad controlada, directa o indirectamente, por la misma sociedad matriz de la(s) sociedad(es) antes mencionada(s).
+									</p>
+									<p>
+										Autorizo expresa e inequívocamente a usar mis datos personales con fines comerciales en los términos que trata la consideración 4 de la 
+										Cláusula de Autorización del presente documento, la cual leí y comprendí cabalmente. 
+									</p>
+									<div style="display:flex;justify-content: center">
+										<div class="radio-custom radio-primary " style="margin-right: 20px">
+											<input value="si" type="radio"  name="lecturaACabalidad" required <!--4DIF [Sarlaft]Autorizacion_Uso_Datos=True)-->checked<!--4DENDIF-->/>
+											<label>Si</label>
+										</div>
+										<div class="radio-custom radio-primary" style="margin-left:20px">
+											<input value="no" type="radio" name="lecturaACabalidad"  <!--4DIF [Sarlaft]Autorizacion_Uso_Datos=False)-->checked<!--4DENDIF-->/>
+											<label>No</label>
+										</div>    
+									</div>
+									<br>
+									<p>Declaro expresamente:</p>
+									<p>
+										<span style="font-weight: bold">I.</span> Que para efectos de acceder a la prestación de servicios por parte de 
+										<span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>, suministro mis datos para todos 
+										los fines precontractuales y contractuales que compnde la actividad aseguradora.
+									</p>
+									<p>
+										<span style="font-weight: bold">II.</span> Que <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>
+										me han informado, de manera expresa: 
+									</p>
+									<p>
+										1. <span style="font-weight: bold">FINALIDAD DEL TRATAMIENTO DE DATOS PERSONALES:</span>
+										Mis datos serán trratados por LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS, para las siguientes finalidads: 
+										i) El trámite de mi solicitud de vinculación como consumidor financiero, deudor, contraparte contractual y/o proveedor 
+										ii) El proceso de negociación de contratos con LA ASEGURADORA, incluyendo la determinación de primas y la selección de riesgos. 
+										iii) La ejecución y el cumplimiento de los contratos que celebre.
+										iv) El control y la prevención del fraude.
+										v) La liquidación y pago de siniestros.
+										vi) todo lo que involucre la gestión del seguro contratado. 
+										vii) Controlar el cumplimiento de requisitos para acceder al Sistema General de Seguridad Social Integral.
+										viii) La elaboración de estudios técnicos-actuariales, estadisticas, encuestas, análisis de tendencias del mercado y, en general, estudios de técnica aseguradora.
+										ix) Envío de información relativa a la educación financiera, encuestas de satisfacción de clientes u pfertas comerciales de seguros, así como de otros servicios inherentes a la actividad aseguradora.
+										x) Realización de encuestas sobre satisfacción de los servicios prestados por LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS,
+										xi) Intercambio o remisión de información en visrtud de tratados y acuerdos internacionales e intergubernamentales suscritos por Colombia,
+										xii) La prevención y control del lavado de activos y la financiación del terrosismo y la 
+										xiii) Consulta, almacenamiento, administración, transferencia, procesamiento y reporte de información a las Centrales de Información o bases de datos debidamente constituidas referentes al comportamiento crediticio, financiero y comercial.
+									</p>
+									<p>
+										2. El tratamiento podrá ser realizado directamente por las citadas sociedades o por los encargados del tratamiento que ellas consideren necesarios.
+									</p>
+									<p>
+										3. <span style="font-weight: bold">USUARIOS DE LA INFORMACIÓN: </span> Que los datos podrán ser compartidos, transmitidos, entregados, transferidos o divulgados para las finalidades mencionadas, a:
+										i) Las personas jurídicas que tienen la calidad de filiales, subsidiarias o vinculadas de <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS Y REASEGUROS.</span>
+										ii) Los operadores necesarios para el cumplimiento derechos y obligaciones de los contratos celebrados con <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span>,
+											tales como: ajustadores, call centers, investigadores, compañías de asistencia, abogados externos, entre otros.
+										iii) <span style="font-weight: bold">LOS INTERMEDIARIOS DE SEGUROS</span> que intervengan en el proceso de celebración, ejecución y terminación del contrato de seguro.
+										iv) Las personas con las cuales <span style="font-weight: bold">LA ASEGURADORA Y/O EL INTERMEDIARIO DE SEGUROS</span> adelante gestiones para efectos de celebrar contratos de Coaseguro o Reaseguro.
+										v) <span style="font-weight: bold"> FASECOLDA, INVERFAS S.A. y el INIF,</span> personas jurídicas que administran bases de datos para efectos de prevención y control de fraudes, 
+											la selección de riesgos, y control de requisitos para acceder al Sistema General de Seguridad Social Integral, así como la elaboración de estudios estadísticos actuariales.
+									</p>
+									<p>
+										4. <span style="font-weight: bold"> TRANSFERENCIA INTERNACIONAL DE INFORMACIÓN A TERCEROS PAÍSES:</span> Que en ciertas situaciones es necesario realizar transefencias internacionales de mis datos para cumplir las finalidades del tratamiento.
+									</p>
+									<p>
+										5. <span style="font-weight: bold"> DATOS SENSIBLES: </span> Que son facultativas las preguntas que me han hecho o me harán sobre datos personales sensibles,
+										de conformidad con la definición legal vigente. En consecuencia, no he sido obligado a responderlas, por lo que autorizo expresamente para que se lleve a cabo el tratamiento de mis datos sensibles,
+										en especial, los relativos a la salud y a los datos biométricos. En todo caso, para efectos del presente formulario de conocimiento se debe tener en consideración que el capítulo XI del Título I de la 
+										Circular Básica Jurídica de la Superintendencia Financiera de Colombia exige las mismas.
+									</p>
+									<p>
+										6. <span style="font-weight: bold"> DATOS PERSONALES DE NIÑAS, NIÑOS Y ADOLESCENTES: </span>Que son facultativas las respuestas a las preguntas sobre datos de niñas, niños y adolescentes.
+											En consecuencia, no he sido obligados a responerlas.
+									</p>
+									<p>
+										7. <span style="font-weight: bold"> DERECHOS DEL TITULAR DE LA INFORMACIÓN:</span> Que como titular de la información, me asisten los derechos previstos en la Ley 1266 de 2008.
+											En especial, el derecho a conocer, actualizar y rectificar las informaciones que se hayan recogido sobre mí.
+									</p>
+									<p>
+										8. <span style="font-weight: bold">RESPONSABLES Y ENCARGADOS DEL TRATAMIENTO DE LA INFORMACIÓN: </span>Que los responsables del tratamiento de la información son 
+										<span style="font-weight: bold"> LAS ASEGURADORAS Y/O LOS INTERMEDIARIOS,</span> cuyos datos de contacto se incluyeron en el encabezado de esta autorización.
+										En todo caso, los encargados del Tratamiento de los datos que se comparta, transfieran, transmitan, entreguen o divulguen, en desarrollo de lo previsto en el literal v) del numeral 3 anterior, seran:
+										<p >
+											a) FASECOLDA cuya dirección es Carrera 7 No. 26 - 20 Pisos 11 y 12, email: fasecolda@fasecolda.com Tel. 3443080 de la ciudad de Bogotá D.C.
+										</p>
+										<p>
+											b) INVERFAS S.A. cuya dirección es Carrera 7 No. 26 - 20 Piso 11, email: inverfas@fasecolda.com Tel. 3443080 de la ciudad de Bogotá D.C.
+										</p>
+										<p>
+											c) INIF - Instituto Nacional de Investigación y Prevención del Fraude al Seguro cuya dirección es Carrera 13 No. 37 - 43, piso 8, email: directoroperativo@inif.com.co Tel. 2320105 de la ciudad de Bogotá D.C.
+										</p>
+									</p>
+									<p>
+										Autorizo expresamente e inequivocamente a Fasecolda, inverfas S.A.e INIF, para que traten mis datos personales en términos descritos en el numeral v del numeral 3 denominado "usuarios de la información",
+										especialmente para efectos de prevención y control de fraudes, la selección de riesgos, y control de requisitos para acceder al Sistema General de Seguridad Social Integral, así como la elaboración de estudios estadísticos técnicos-actuariales	
+									</p>
+									<div style="display:flex;justify-content: center">
+										<div class="radio-custom radio-primary " style="margin-right: 20px">
+											<input value="si" type="radio" name="autorizacion" id="autSi" required  <!--4DIF [Sarlaft]Autorizacion_Usuario_Info=True)-->checked<!--4DENDIF-->/>
+											<label>Si</label>
+										</div>
+										<div class="radio-custom radio-primary" style="margin-left:20px">
+											<input value="no" type="radio" name="autorizacion" id="autNo" <!--4DIF [Sarlaft]Autorizacion_Usuario_Info=False)-->checked<!--4DENDIF-->/>
+											<label>No</label>
+										</div>    
+									</div>
+									<br>
+									<p>
+										Para efectos de la verificación especificada de las políticas internas sobre el tratamiento de datos personales, como titular de la información acudiré a las páginas web de los responsables 
+										y encargados que estoy autorizando en el presente escrito.
+									</p>
+									<p>
+										<span style="font-weight: bold">III. AUTORIZACIÓN:</span> De manera expresa, AUTORIZAMOS el Tratamiento de los datos y, de ser necesario, la transferencia nacional e internacional de los mismos,
+										por las personas, para las finalidades y en los términos que nos fueron informados en este documento.
+									</p>								
+									<br>
+									<div style="display: flex;justify-content: center;">
+										<button type="submit" id="submitButton"  class="btn ajg-button col-md-4">Validar Identidad</button>	
+									</div>
+									<!--data-toggle="modal" data-target="#loading"-->
+									<br>
+								</div>
+							</form>
+                        </section>
+						
+                        <div class="modal fade" id="loading" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+							aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-body">
+										<h4 style="text-align: center" class="ajg-title-dark">Cargando Sarlaft...</h4>
+									</div>
+									<img src="../img/loading.gif" class="load">																	
+								</div>
+							</div>
+						</div>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		<script src="natural7.js"></script>
+		<!--4DINCLUDE scripts.html-->			
+	</body>
+</html>

@@ -1,0 +1,111 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 style="font-weight: bold" class="modal-title" id="exampleModalLabel"></h3>             
+            </div>
+            <div class="modal-body">
+                <h4 style="text-align: center" class="ajg-title-dark">¿Esta seguro que desea salir?</h4>
+                <p  style="text-align: center">Es posible que no se guarden todos los cambios realizados. </p>
+            </div>
+            <div class="modal-footer" style="display: flex; justify-content: center;">
+                <button type="button" style="width:100px;" id="logOut" class="btn btn-primary ajg-dark-button">Si</button>
+                <button type="button" style="width:100px;" class="btn " data-dismiss="modal">No</button>
+            </div>
+        </div>
+    </div>
+</div>
+<aside id="sidebar-left" class="sidebar-left ajg-color-dark">
+        <div class="sidebar-header">
+            <div class="sidebar-title" style="color:white">
+                Navegación
+            </div>
+            <div class="sidebar-toggle hidden-xs" style="background-color: rgb(0,38,62);color:white;" data-toggle-class="sidebar-left-collapsed" data-target="html" data-fire-event="sidebar-left-toggle">
+                <i class="fa fa-bars" style="color:white" aria-label="Toggle sidebar"></i>
+            </div>
+        </div>
+    
+        <div class="nano">
+            <div class="nano-content ajg-color-dark">
+                <nav id="menu" class="nav-main" role="navigation">
+                    <ul class="nav nav-main">
+                        <li>
+                            <a class="ajg-dark-button">
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                                <span><!--4DTEXT [Users]UserName--></span>
+                            </a>
+                        </li>	
+                        <li>
+                            <a href="#" onclick="clickForm('nuevaSolicitud')" class="ajg-dark-button">
+                                <i class="fa fa-plus" aria-hidden="true"></i>
+                                <span>Nueva Solicitud</span>
+                            </a>
+                            <form action="/Consulta/Nueva_Solicitud" id="nuevaSolicitud"  method="POST" enctype="multipart/form-data">                                                              
+                            </form> 
+                        </li>	
+                        <li>
+                            <a href="#" onclick="clickForm('solicitudes')" class="ajg-dark-button">
+                                <i class="material-icons">archive</i>
+                                <span>Solicitudes</span>
+                            </a>
+                            <form action="/Consulta/Solicitudes" id="solicitudes"  method="POST" enctype="multipart/form-data">                                                              
+                            </form> 
+                        </li>	
+                        <li>
+                            <a href="#" onclick="clickForm('sarlaft')" class="ajg-dark-button">                                
+                                <i class="material-icons">folder</i>
+                                <span>Consulta Sarlaft</span>
+                            </a>
+                            <form action="/Consulta/Consulta_Sarlaft" id="sarlaft"  method="POST" enctype="multipart/form-data">                                                              
+                            </form> 
+                        </li>	
+                        
+                        <li class="nav-parent">
+                            <a class="ajg-dark-button">
+                                <i class="fa fa-play-circle-o" aria-hidden="true"></i>
+                                <span>Instructivo</span>
+                            </a>
+                            
+                            <ul class="nav nav-children" style="background-color: white">
+                                <li>                                           
+                                    <a href="../img/Instructivo Sarlaft Comercial.pdf" target="_blank" class="btn btn-link ajg-title-dark" style="background-color: white; color:rgb(0,38,62); margin-left: -210px;">
+                                        PDF
+                                    </a>
+                                </li> 
+                                <li>
+                                    <a href="../img/Video Instructivo Sarlaft Comercial.mp4" 
+                                        target="_blank" 
+                                        class="btn btn-link ajg-title-dark" 
+                                        style="background-color: white;color:rgb(0,38,62);margin-left: -200px;">
+                                        Video
+                                    </a>                                           
+                                </li>                               
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#"  data-toggle="modal" data-target="#exampleModal" class="ajg-dark-button" >
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                <span>Salir</span>
+                            </a>
+                        </li>	
+                        <script>
+                            document.getElementById("logOut").addEventListener("click",function(){
+                                console.log("Salir");
+                                document.getElementById("form-logOut").submit();
+                            });
+
+                            function clickForm(element){                                
+                                document.getElementById(element).submit();
+                            }
+                        </script>                      
+                        <li class="hidden">
+                            <form action="/LogOut" id="form-logOut" method="POST" enctype="multipart/form-data"></form> 
+                        </li>																																																																			
+                    </ul>
+                </nav>																															
+            </div>				
+        </div>	
+    
+    </aside>

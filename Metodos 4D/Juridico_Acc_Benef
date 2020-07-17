@@ -1,0 +1,49 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	QUERY([Acci_Benef_Finales];[Acci_Benef_Finales]No_Ident=[Sarlaft]Documento_Numero)
+	WEB SEND FILE("Juridico/juridico6.shtml")
+Else 
+	
+	options:=OB Get($obWebVars;"option")
+	
+	If (options="add")
+		CREATE RECORD([Perso_Expuest_Public])
+		[Perso_Expuest_Public]No_Ident:=[Sarlaft]Documento_Numero
+		[Perso_Expuest_Public]Vinculo_Relacion:=OB Get($obWebVars;"vinculo1")
+		[Perso_Expuest_Public]Nombre:=OB Get($obWebVars;"nombre1")
+		[Perso_Expuest_Public]Tipo_Ident:=OB Get($obWebVars;"tipoID1")
+		[Perso_Expuest_Public]No_ID:=OB Get($obWebVars;"numID1";Is real)
+		[Perso_Expuest_Public]Nacionalidad:=OB Get($obWebVars;"nacionalidad1")
+		[Perso_Expuest_Public]Entidad:=OB Get($obWebVars;"entidad1")
+		[Perso_Expuest_Public]Cargo:=OB Get($obWebVars;"cargo1")
+		[Perso_Expuest_Public]Fecha_Desvinculacion:=OB Get($obWebVars;"fechaDesvinculacion1";Is date)
+		
+		SAVE RECORD([Perso_Expuest_Public])
+		QUERY([Perso_Expuest_Public];[Perso_Expuest_Public]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico5.shtml")
+	End if 
+	
+	
+	If (options="delete")
+		
+		delete:=OB Get($obWebVars;"eliminarReg")
+		QUERY([Perso_Expuest_Public];[Perso_Expuest_Public]No_Ident=[Sarlaft]Documento_Numero)
+		QUERY SELECTION([Perso_Expuest_Public];[Perso_Expuest_Public]ID=delete)
+		If (Records in selection([Perso_Expuest_Public])=1)
+			DELETE RECORD([Perso_Expuest_Public])
+		End if 
+		QUERY([Perso_Expuest_Public];[Perso_Expuest_Public]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico5.shtml")
+	End if 
+	
+	
+	If (options="0")
+		
+		  //SAVE RECORD([Sarlaft])
+		QUERY([Acci_Benef_Finales];[Acci_Benef_Finales]No_Ident=[Sarlaft]Documento_Numero)
+		WEB SEND FILE("Juridico/juridico6.shtml")
+	End if 
+	
+End if 

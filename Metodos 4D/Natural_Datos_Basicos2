@@ -1,0 +1,45 @@
+$obWebVars:=WEB_Get_Vars 
+
+If (OB Get($obWebVars;"panel")="true")
+	WEB SEND FILE("Natural/natural3.shtml")
+Else 
+	
+	[Sarlaft]Primer_Apellido:=OB Get($obWebVars;"primerApellido")
+	[Sarlaft]Segundo_Apellido:=OB Get($obWebVars;"segundoApellido")
+	[Sarlaft]Nombres:=OB Get($obWebVars;"nombre")
+	[Sarlaft]Tipo_Documento:=OB Get($obWebVars;"tipoDocRep")
+	[Sarlaft]Documento_Numero:=OB Get($obWebVars;"numDocRep")
+	[Sarlaft]Fecha_Expedicion:=OB Get($obWebVars;"fechaExpedicion";Is date)
+	[Sarlaft]Lugar_Expedicion:=OB Get($obWebVars;"lugarExped")
+	[Sarlaft]Fecha_Nacimiento:=OB Get($obWebVars;"fechaNacim";Is date)
+	[Sarlaft]Lugar_Nacimiento:=OB Get($obWebVars;"lugarNacimiento")
+	[Sarlaft]Nacinalidad1:=OB Get($obWebVars;"nacionalidad1")
+	[Sarlaft]Nacionalidad2:=OB Get($obWebVars;"nacionalidad2")
+	[Sarlaft]EMail:=OB Get($obWebVars;"emailRep")
+	
+	[Sarlaft]Direccion:=OB Get($obWebVars;"dirResidencia")
+	[Sarlaft]Departamento:=OB Get($obWebVars;"deptoRep")
+	[Sarlaft]Ciudad:=OB Get($obWebVars;"ciudadRep")
+	[Sarlaft]Telefono:=OB Get($obWebVars;"telefonoRep")
+	[Sarlaft]Celular:=OB Get($obWebVars;"celularRep")
+	
+	[Sarlaft]Actividad_Principal:=OB Get($obWebVars;"actividadPrinc")
+	[Sarlaft]Sector:=OB Get($obWebVars;"sector")
+	[Sarlaft]CIIU_Codigo:=OB Get($obWebVars;"ciiu")
+	[Sarlaft]Tipo_Actividad:=OB Get($obWebVars;"tipoActividad")
+	[Sarlaft]Tipo_Actividad_Cual:=OB Get($obWebVars;"cualTipoAct")
+	[Sarlaft]Ocupacion:=OB Get($obWebVars;"ocupacion")
+	[Sarlaft]Cargo:=OB Get($obWebVars;"cargo")
+	[Sarlaft]Empresa_Trabaja:=OB Get($obWebVars;"empresaTrabaja")
+	
+	[Sarlaft]Direccin_Oficina:=OB Get($obWebVars;"dirOficina")
+	[Sarlaft]Ciudad_Oficina:=OB Get($obWebVars;"ciudadOficina")
+	[Sarlaft]Depto_Oficina:=OB Get($obWebVars;"deptoOficina")
+	[Sarlaft]Telefono_oficina:=OB Get($obWebVars;"telefonoOficina")
+	[Sarlaft]Actividad_Secundaria:=OB Get($obWebVars;"actividadSec")
+	[Sarlaft]CIIU_cod_Secundaria:=OB Get($obWebVars;"ciiuSecundario")
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Natural/natural3.shtml")
+	
+End if 

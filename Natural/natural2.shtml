@@ -1,0 +1,669 @@
+<!--DATOS BÁSICOS 1-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headIncludes.html-->        
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			        <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>								
+								</li>
+                                <li><span style="color:white;padding-right: 1cm">Información Básica</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <form class="form-bordered" id="formDat" method="POST" enctype="multipart/form-data" action="/Natural/datos_basicos2">
+                            <section class="panel" style="color:rgb(0,38,62);">
+                                <header class="panel-heading">                                        
+                                    <h2 class="panel-title text-center ajg-title-dark">Datos Básicos</h2>   
+                                </header>
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Nombre</label>
+                                            <div class="col-md-8">
+                                                <input name="nombre" type="text" class="form-control" 
+                                                placeholder="Nombre" data-container=".row" data-toggle="popover" 
+                                                data-trigger="hover" data-placement="top" 
+                                                data-content="Nombre del Representante Legal" onkeyup="upperCase(this,true)" onchange="validateNA(this)" required
+                                                value="<!--4DTEXT [Sarlaft]Nombres-->"> 
+                                            </div>    
+                                        </div> 
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="col-md-4 control-label" >Primer Apellido</label>                                                
+                                                <div class="col-md-8">
+                                                    <input name="primerApellido" type="text" class="form-control" 
+                                                    placeholder="Primer Apellido - Representante Legal" data-container=".row" 
+                                                    data-toggle="popover" data-trigger="hover" onkeyup="upperCase(this,true)" onchange="validateNA(this)" data-placement="top" 
+                                                    data-content="Primer Apellido del Representante Legal" required 
+                                                    value="<!--4DTEXT [Sarlaft]Primer_Apellido-->">                                                    
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Segundo Apellido</label>
+                                            <div class="col-md-8">
+                                                <input name="segundoApellido" type="text" class="form-control" 
+                                                placeholder="Segundo Apellido" data-container=".row" data-toggle="popover" 
+                                                data-trigger="hover" data-placement="top" onkeyup="upperCase(this,true)" onchange="validateNA(this)"
+                                                data-content="Segundo Apellido del Representante Legal" required
+                                                value="<!--4DTEXT [Sarlaft]Segundo_Apellido-->"> 
+                                            </div>    
+                                        </div>                                    
+                                    </div>
+                                    <br>                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <label class="col-md-4 control-label">Tipo de Documento</label>
+                                            <div class="col-md-8">
+                                                <select name="tipoDocRep" class="form-control mb-md" required>
+                                                    <option></option>
+                                                    <option <!--4DIF ([Sarlaft]Tipo_Documento="C.C.")--> selected<!--4DENDIF-->>C.C.</option>
+                                                    <option <!--4DIF ([Sarlaft]Tipo_Documento="C.E.")--> selected<!--4DENDIF-->>C.E.</option>
+                                                    <!--<option <!-4DIF ([Sarlaft]Tipo_Documento="NIT")-> selected<!-4DENDIF->>NIT</option>
+                                                    <option <!-4DIF ([Sarlaft]Tipo_Documento="NUIP")-> selected<!-4DENDIF->>NUIP</option>
+                                                    <option <!-4DIF ([Sarlaft]Tipo_Documento="T.I.")-> selected<!-4DENDIF->>T.I.</option>
+                                                    <option <!-4DIF ([Sarlaft]Tipo_Documento="Pasaporte")-> selected<!-4DENDIF->>Pasaporte</option>-->
+                                                </select>  
+                                            </div>                                 
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Número</label>
+                                                <div class="col-sm-8">
+                                                    <input name="numDocRep" type="number" class="form-control" readonly style="background-color:white" placeholder="Número" value="<!--4DTEXT [Sarlaft]Documento_Numero-->">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                    
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Fecha de Expedición</label>
+                                                <div class="col-sm-8">
+                                                    <input name="fechaExpedicion" type="date" class="form-control" value="<!--4DTEXT Substring(String([Sarlaft]Fecha_Expedicion;ISO date);1;10)-->">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>                                            
+                                    </div>
+                                    <br>                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Lugar de Expedición</label>
+                                                <div class="col-md-8">
+                                                    <input name="lugarExped" list="listado" onkeyup="upperCase(this,true)" onchange="validateNA(this)" type="text" class="form-control" value="<!--4DTEXT [Sarlaft]Lugar_Expedicion-->">
+                                                    <datalist id="listado">
+                                                        <!--4DINCLUDE ../listadoCiudades.shtml-->
+                                                    </datalist>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-sm-4 control-label">Fecha de Nacimiento</label>
+                                                <div class="col-sm-8">
+                                                    <input name="fechaNacim" type="date" class="form-control" value="<!--4DTEXT Substring(String([Sarlaft]Fecha_Nacimiento;ISO date);1;10)-->">
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div> 
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Lugar de Nacimiento</label>
+                                                <div class="col-md-8">
+                                                    <input name="lugarNacimiento" list="listado" onkeyup="upperCase(this,true)" onchange="validateNA(this)" type="text" class="form-control" required  value="<!--4DTEXT [Sarlaft]Lugar_Nacimiento-->">
+                                                </div>
+                                            </div>
+                                        </div>                                                                                                                    
+                                    </div>
+                                    <br> 
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Nacionalidad 1</label>
+                                                <div class="col-md-8">
+                                                    <input name="nacionalidad1" type="text" onkeyup="upperCase(this,true)" onchange="validateNA(this)" class="form-control" placeholder="Nacionalidad 1" required  value="<!--4DTEXT [Sarlaft]Nacinalidad1-->">
+                                                </div>
+                                            </div>
+                                        </div>       
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Nacionalidad 2</label>
+                                                <div class="col-md-8">
+                                                    <!--#4DIF ([Sarlaft]Nacionalidad2="")-->
+                                                        <input name="nacionalidad2" type="text" onkeyup="upperCase(this,false)" onchange="validateBlank(this)" class="form-control" placeholder="Nacionalidad 2"  value="">
+                                                    <!--#4DELSE-->                                                    
+                                                        <input name="nacionalidad2" type="text" onkeyup="upperCase(this,false)" onchange="validateBlank(this)" class="form-control" placeholder="Nacionalidad 2"  value="<!--4DTEXT [Sarlaft]Nacionalidad2-->">
+                                                    <!--#4DENDIF-->
+                                                </div>
+                                            </div>
+                                        </div>     
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">E-mail</label>
+                                                <div class="col-md-8">
+                                                    <input name="emailRep" type="email" class="form-control" placeholder="E-mail"  onchange="validateNA(this)" required value="<!--4DTEXT [Sarlaft]EMail-->">
+                                                </div>
+                                            </div>
+                                        </div>                                                                                                                         
+                                    </div>
+                                    <br>
+
+                                    <div class="row ">                                        
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-sm-2 control-label">Dirección</label>
+                                                <div class="col-sm-10 " style="transform: translateX(-5px)" >
+                                                    <div class="input-group">
+                                                        <input name="dirResidencia" type="text" id="dirResidencia" class="form-control"  
+                                                        data-container=".row" data-toggle="popover" data-trigger="hover" 
+                                                        style="background-color:white" onKeyPress="return false"
+                                                        data-placement="top" data-content="Dirección de Residencia"  placeholder="Dirección" required
+                                                        value="<!--4DTEXT [Sarlaft]Direccion-->">                                                        
+                                                        <span class="input-group-btn">
+                                                            <button class="btn ajg-dark-button" type="button" data-toggle="modal" data-target="#modalDireccion"><i class="fa fa-pencil"></i></button>
+                                                        </span>
+                                                    </div>                                                                                                 
+                                                </div>                                 
+                                            </div>                                                    
+                                        </div>  
+                                        <!-- Modal Dirección -->
+                                        <div class="modal fade" id="modalDireccion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                             aria-hidden="true">
+                                            <div class="modal-dialog" role="document" style="min-width:80%">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3 style="font-weight: bold" class="modal-title" id="exampleModalLabel">Generador de Dirección</h3>                                                                     
+                                                        <h5>Para realizar la separación entre números utilice un espacio en blanco.</h5>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="row" style="display:flex; align-items:flex-start ;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <h5 id="direccion">DIRECCIÓN: </h5>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <h6 id="fullDir"><!--4DTEXT [Sarlaft]Direccion--></h6>                                                                
+                                                            </div>
+                                                           
+                                                        </div>
+                                                        <br>
+                                                        <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <select id="select1" class="form-control" onchange="direccion('select','input','fullDir')">
+                                                                    <option value=""></option>
+                                                                    <!--4DINCLUDE ../nomenclatura.shtml-->                                                                  
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input1" onkeyup="direccion('select','input','fullDir')"  class="form-control">
+                                                            </div>
+                                                           
+                                                        </div>      
+                                                        <br> 
+                                                        <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <select id="select2" class="form-control" onchange="direccion('select','input','fullDir')">
+                                                                    <option value=""></option>
+                                                                    <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input2" onkeyup="direccion('select','input','fullDir')" class="form-control">
+                                                            </div>                                                            
+                                                        </div>
+                                                        <br>
+                                                        <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <select id="select3" class="form-control" onchange="direccion('select','input','fullDir')">
+                                                                    <option value=""></option>
+                                                                    <!--4DINCLUDE ../nomenclatura.shtml-->                                                                  
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input3" onkeyup="direccion('select','input','fullDir')" class="form-control">
+                                                            </div>                                                           
+                                                        </div>
+                                                        <br> 
+                                                        <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <select id="select4" class="form-control" onchange="direccion('select','input','fullDir')">
+                                                                    <option value=""></option>
+                                                                    <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input4" onkeyup="direccion('select','input','fullDir')" class="form-control">
+                                                            </div>                                                            
+                                                        </div>
+                                                        <br> 
+                                                        <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                            <div class="col-sm-3">
+                                                                <select id="select5" class="form-control" onchange="direccion('select','input','fullDir')">
+                                                                    <option value=""></option>
+                                                                    <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                                </select>
+                                                            </div>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" id="input5" onkeyup="direccion('select','input','fullDir')" class="form-control">
+                                                            </div>                                                            
+                                                        </div>
+                                                    </div>
+                                                    <br>
+                                                    <div class="modal-footer" style="display: flex; justify-content: center;">
+                                                        <button type="button" style="width:100px;" class="btn btn-primary ajg-dark-button" onclick="guardarDir('cancelar','fullDir','dirResidencia')">Guardar</button>
+                                                        <button type="button" style="width:100px;" class="btn " data-dismiss="modal" id="cancelar">Cancelar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>            
+                                        <!-- Fin Modal Dirección -->
+                                        
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Departamento</label>
+                                                <div class="col-md-8">
+                                                    <select name="deptoRep" class="form-control mb-md">
+                                                        <option><!--4DIF ([Sarlaft]Departamento="")--> <!--4DELSE--><!--4DTEXT [Sarlaft]Departamento--> <!--4DENDIF--></option>
+                                                        <!--#4DINCLUDE ../departamentos.shtml-->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Ciudad</label>
+                                                <div class="col-md-8">
+                                                    <input name="ciudadRep" list="listado" onkeyup="upperCase(this,false)" type="text" class="form-control" placeholder="País" required value="<!--4DTEXT [Sarlaft]Ciudad_RepLegal-->">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Teléfono</label>
+                                                <div class="col-md-8">
+                                                    <input name="telefonoRep" type="text" id="telefonoRep"
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        onfocusout="valMinLength(this,7,'notiTel')"
+                                                        onkeypress="this.style.borderColor='#cccccc'"
+                                                        class="form-control" placeholder="Télefono" 
+                                                        required value="<!--4DTEXT [Sarlaft]Telefono_RepLegal-->">
+                                                    <h6 style="color:red; display:none;" id="notiTel">Longitud mínima de 7 dígitos</h6>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Celular</label>
+                                                <div class="col-md-8">
+                                                    <input name="celularRep" type="text" class="form-control" id="celularRep"
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"
+                                                        onfocusout="valMinLength(this,10,'notiCel')"
+                                                        onkeypress="this.style.borderColor='#cccccc'"
+                                                        placeholder="Celular" required value="<!--4DTEXT [Sarlaft]Celular-->">
+                                                    <h6 style="color:red; display:none;" id="notiCel">Longitud mínima de 10 dígitos</h6>
+                                                </div>
+                                            </div>
+                                        </div>                                                                                                           
+                                    </div>                                                                        
+                                    <br>
+                                </div>
+                            </section>
+                            <section class="panel" style="color:rgb(0,38,62);">
+                                <header class="panel-heading">                                        
+                                    <h2 class="panel-title text-center ajg-title-dark"></h2>   
+                                </header>
+                                <div class="panel-body">
+                                    <div class="row ">
+                                        <div class="col-sm-6 "> 
+                                            <label class="col-md-4 control-label">Actividad Principal</label>
+                                            <div class="col-md-8" >
+                                                <select name="actividadPrinc"  class="form-control mb-md" required>
+                                                    <option ></option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Asalariado")--> selected<!--4DENDIF-->>Asalariado</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Comerciante")--> selected<!--4DENDIF-->>Comerciante</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Empleado Público")--> selected<!--4DENDIF-->>Empleado Público</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Estudiante")--> selected<!--4DENDIF-->>Estudiante</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Hogar")--> selected<!--4DENDIF-->>Hogar</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Independiente")--> selected<!--4DENDIF-->>Independiente</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Inversionista")--> selected<!--4DENDIF-->>Inversionista</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Pensionado")--> selected<!--4DENDIF-->>Pensionado</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Rentista")--> selected<!--4DENDIF-->>Rentista</option>
+                                                    <option  <!--4DIF ([Sarlaft]Actividad_Principal="Socio")--> selected<!--4DENDIF-->>Socio</option>
+                                                </select>
+                                            </div>                                                                                
+                                        </div>       
+                                        <div class="col-sm-6">                                            
+                                            <label class="col-md-4 control-label">Sector</label>
+                                            <div class="col-md-8">
+                                                <select name="sector"  class="form-control mb-md" required>
+                                                    <option ></option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Agropecuario")--> selected<!--4DENDIF-->>Agropecuario</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Comercio")--> selected<!--4DENDIF-->>Comercio</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Construcción")--> selected<!--4DENDIF-->>Construcción</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Financiero")--> selected<!--4DENDIF-->>Financiero</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Industrial")--> selected<!--4DENDIF-->>Industrial</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Minero y Energético")--> selected<!--4DENDIF-->>Minero y Energético</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Servicios")--> selected<!--4DENDIF-->>Servicios</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Solidario")--> selected<!--4DENDIF-->>Solidario</option>
+                                                    <option <!--4DIF ([Sarlaft]Sector="Transporte")--> selected<!--4DENDIF-->>Transporte</option>                                                        
+                                                </select>
+                                            </div>                                                                                    
+                                        </div> 
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-6 control-label ">CIIU 1 (cod)</label>
+                                                <div class="col-md-6 ">                                                    
+                                                    <input type="number" id="codCiiu1" class="form-control" name="ciiu" required style="margin-left:5px;"
+                                                        autocomplete=off value="<!--4DTEXT [Sarlaft]CIIU_Codigo-->"
+                                                        onKeyPress="if(this.value.length==4) return false;" min=1 max=9999
+                                                        onchange="validateCIIU(this,'ciiu1')" onkeyup="validateErase(this,'ciiu1')"
+                                                        onkeydown="return validateArrowKey(event)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-md-2 control-label">Descripción</label>
+                                                <div class="col-md-10">
+                                                    <input id="ciiu1" type="text" class="form-control" placeholder="" disabled style="background-color:white">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>  
+                                    <br>                                    
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-6 control-label ">Tipo de Actividad</label>
+                                                <div class="col-md-6" >
+                                                    <select name="tipoActividad"  style="margin-left:5px;" class="form-control mb-md" required>
+                                                        <option ><!--4DTEXT [Sarlaft]Tipo_Actividad--></option>
+                                                        <option >Agricola</option>
+                                                        <option >Campaña Política</option>
+                                                        <option >Alimentos</option>
+                                                        <option >Construcción</option>
+                                                        <option >Educación</option>
+                                                        <option >Farmacéutica</option>
+                                                        <option >Informática</option>
+                                                        <option >Metalmecánico</option>
+                                                        <option >Petroleo</option>
+                                                        <option >Químico</option>
+                                                        <option >Salud</option>
+                                                        <option >Servicios Financieros</option>
+                                                        <option >Telecomunicaciones</option>
+                                                        <option >Textiles</option>
+                                                        <option >Turismo</option>
+                                                        <option >Otro, cual?</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-md-2 control-label">¿Cual?</label>
+                                                <div class="col-md-10">
+                                                    <input name="cualTipoAct" type="text" class="form-control"  value="<!--4DTEXT [Sarlaft]Tipo_Actividad_Cual-->" >
+                                                </div>
+                                            </div>
+                                        </div>          
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Actividad Secundaria</label>
+                                                <div class="col-md-8">
+                                                    <input name="actividadSec" type="text" class="form-control" 
+                                                        placeholder="Actividad Secundaria"  
+                                                        onfocus="validateBlank(this)"
+                                                        value="<!--4DTEXT [Sarlaft]Actividad_Secundaria-->">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-4">
+                                            <div  class="form-group">
+                                                <label class="col-md-6 control-label ">CIIU 2 (cod)</label>
+                                                <div class="col-md-6 ">                                                        
+                                                    <input type="number" id="codCiiu2" class="form-control" name="ciiuSecundario" style="margin-left:5px;"
+                                                        autocomplete=off value="<!--4DTEXT [Sarlaft]CIIU_cod_Secundaria-->"
+                                                        onKeyPress="if(this.value.length==4) return false;" min=0 max=9999
+                                                        onchange="validateCIIU(this,'ciiu2')" onkeyup="validateErase(this,'ciiu2')"
+                                                        onkeydown="return validateArrowKey(event)">
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        <div class="col-sm-8">
+                                            <div  class="form-group">
+                                                <label class="col-md-2 control-label">Descripción</label>
+                                                <div class="col-md-10">
+                                                    <input id="ciiu2" type="text" class="form-control" placeholder="" disabled style="background-color:white">
+                                                </div>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Ocupación</label>
+                                                <div class="col-md-8" >                                                         
+                                                    <input name="ocupacion" type="text" onkeyup="upperCase(this,false)" required onfocus="validateBlank(this)" onchange="validateBlank(this)" class="form-control" placeholder="Ocupación"  value="<!--4DTEXT [Sarlaft]Ocupacion-->" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Cargo</label>
+                                                <div class="col-md-8">
+                                                    <input name="cargo" type="text" onfocus="validateBlank(this)" onkeyup="upperCase(this,false)" required onchange="validateBlank(this)" class="form-control" placeholder="Cargo"  value="<!--4DTEXT [Sarlaft]Cargo-->" >
+                                                </div>
+                                            </div>
+                                        </div>                                              
+                                    </div>
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Empresa Donde Trabaja</label>
+                                                <div class="col-md-8">
+                                                    <input name="empresaTrabaja" type="text" onfocus="validateBlank(this)" onkeyup="upperCase(this,false)" required onchange="validateBlank(this)" class="form-control" placeholder="Empresa Donde Trabaja"  value="<!--4DTEXT [Sarlaft]Empresa_Trabaja-->" >
+                                                </div>
+                                            </div>
+                                        </div>   
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Dirección (Oficina)</label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group">
+                                                        <input name="dirOficina" type="text" id="idOficina" class="form-control" onfocus="validateBlank(this)" onchange="validateBlank(this)" placeholder="Dirección de la Oficina"  value="<!--4DTEXT [Sarlaft]Direccin_Oficina-->" style="background-color:white" readonly>
+                                                        <span class="input-group-btn">
+                                                            <button class="btn ajg-dark-button" type="button" data-toggle="modal" data-target="#modalDireccionOficina"><i class="fa fa-pencil"></i></button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>                                               
+                                    </div>
+                                    <!-- Modal Dirección -->
+                                    <div class="modal fade" id="modalDireccionOficina" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                    aria-hidden="true">
+                                   <div class="modal-dialog" role="document" style="min-width:80%">
+                                       <div class="modal-content">
+                                           <div class="modal-header">
+                                               <h3 style="font-weight: bold" class="modal-title" id="exampleModalLabel">Generador de Dirección</h3>                                                                     
+                                               <h5>Para realizar la separación entre números utilice un espacio en blanco</h5>
+                                           </div>
+                                           <div class="modal-body">
+                                               <div class="row" style="display:flex; align-items:flex-start ;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <h5 id="direccion">DIRECCIÓN: </h5>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <h6 id="dirOfi"><!--4DTEXT [Sarlaft]Direccin_Oficina--></h6>                                                                
+                                                   </div>
+                                                  
+                                               </div>
+                                               <br>
+                                               <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <select id="selectOfi1" class="form-control" onchange="direccion('selectOfi','inputOfi','dirOfi')">
+                                                           <option value=""></option>
+                                                           <!--4DINCLUDE ../nomenclatura.shtml-->                                                                  
+                                                       </select>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <input type="text" id="inputOfi1" onkeyup="direccion('selectOfi','inputOfi','dirOfi')"  class="form-control">
+                                                   </div>
+                                                  
+                                               </div>      
+                                               <br> 
+                                               <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <select id="selectOfi2" class="form-control" onchange="direccion('selectOfi','inputOfi','dirOfi')">
+                                                           <option value=""></option>
+                                                           <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                       </select>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <input type="text" id="inputOfi2" onkeyup="direccion('selectOfi','inputOfi','dirOfi')" class="form-control">
+                                                   </div>                                                            
+                                               </div>
+                                               <br>
+                                               <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <select id="selectOfi3" class="form-control" onchange="direccion('selectOfi','inputOfi','dirOfi')">
+                                                           <option value=""></option>
+                                                           <!--4DINCLUDE ../nomenclatura.shtml-->                                                                  
+                                                       </select>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <input type="text" id="inputOfi3" onkeyup="direccion('selectOfi','inputOfi','dirOfi')" class="form-control">
+                                                   </div>                                                           
+                                               </div>
+                                               <br> 
+                                               <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <select id="selectOfi4" class="form-control" onchange="direccion('selectOfi','inputOfi','dirOfi')">
+                                                           <option value=""></option>
+                                                           <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                       </select>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <input type="text" id="inputOfi4" onkeyup="direccion('selectOfi','inputOfi','dirOfi')" class="form-control">
+                                                   </div>                                                            
+                                               </div>
+                                               <br> 
+                                               <div class="row" style="display:flex; align-items:center;justify-content:center">
+                                                   <div class="col-sm-3">
+                                                       <select id="selectOfi5" class="form-control" onchange="direccion('selectOfi','inputOfi','dirOfi')">
+                                                           <option value=""></option>
+                                                           <!--4DINCLUDE ../nomenclatura.shtml-->
+                                                       </select>
+                                                   </div>
+                                                   <div class="col-sm-3">
+                                                       <input type="text" id="inputOfi5" onkeyup="direccion('selectOfi','inputOfi','dirOfi')" class="form-control">
+                                                   </div>                                                            
+                                               </div>
+                                           </div>
+                                           <br>
+                                           <div class="modal-footer" style="display: flex; justify-content: center;">
+                                               <button type="button" style="width:100px;" class="btn btn-primary ajg-dark-button" onclick="guardarDir('cancela','dirOfi','idOficina')">Guardar</button>
+                                               <button type="button" style="width:100px;" class="btn " data-dismiss="modal" id="cancela">Cancelar</button>
+                                           </div>
+                                       </div>
+                                   </div>
+                               </div>            
+                               <!-- Fin Modal Dirección -->
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Departamento</label>
+                                                <div class="col-md-8">
+                                                    <select name="deptoOficina" class="form-control mb-md">
+                                                        <option><!--4DTEXT [Sarlaft]Depto_Oficina--></option>
+                                                        <!--#4DINCLUDE ../departamentos.shtml-->
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>  
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Ciudad</label>
+                                                <div class="col-md-8">
+                                                    <input name="ciudadOficina" list="listado" onkeyup="upperCase(this,true)" onchange="validateBlank(this)" type="text" class="form-control" placeholder="Ciudad de la Oficina"  value="<!--4DTEXT [Sarlaft]Ciudad_Oficina-->" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>                                    
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div  class="form-group">
+                                                <label class="col-md-4 control-label">Teléfono (Oficina)</label>
+                                                <div class="col-md-8">
+                                                    <input name="telefonoOficina" type="number" 
+                                                        onkeyup="replaceSpecialCharactersNumber(this)"                                                            
+                                                        onfocusout="valMinLength(this,7,'notiCel')"
+                                                        onkeypress="this.style.borderColor='#cccccc'"                                                    
+                                                        class="form-control" placeholder="Teléfono de la Oficina" 
+                                                        value="<!--4DTEXT [Sarlaft]Telefono_oficina-->">
+                                                    <h6 style="color:red; display:none;" id="notiTelOfi">Longitud mínima de 7 dígitos</h6>
+                                                </div>
+                                            </div>
+                                        </div>                                             
+                                    </div>
+                                    <br>
+                                </div>
+                            </section>
+                            <div style="display: flex;justify-content: center;">
+                                <button type="button" onclick="validateFields('telefonoRep-7','celularRep-10')" class="btn ajg-button col-md-4">Siguiente</button>
+                                <button type="submit" style="display:none" id="submitButton"></button>
+                            </div>
+                        </form>
+                        <br>
+                        <br>
+                    </div>  
+                    <!-- end: page -->
+                </section>
+			</div>
+
+			
+		</section>
+        <!--4DINCLUDE scripts.html-->
+        <script src="natural2.js"></script>
+	</body>
+</html>

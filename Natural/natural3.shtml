@@ -1,0 +1,205 @@
+<!--DATOS BÁSICOS 2-->
+
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+        <!--4DINCLUDE headIncludes.html-->
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+			        <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Información Básica</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+                                    <i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm">Información Básica</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" style="color:rgb(0,38,62);">
+                            <header class="panel-heading">                                        
+                                <h2 class="panel-title text-center ajg-title-dark">Datos Básicos</h2>   
+                            </header>
+                            <div class="panel-body">
+                                <form class="form-bordered" id="formOri" method="POST" enctype="multipart/form-data" action="/Natural/origen_fondos">                                    
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="col-md-4">¿Qué tipo de productos y/o servicio comercializa? (Independientes o Comerciales)</label>
+                                            <div class="col-md-8">
+                                                    <input name="productoServicio" value="<!--4DTEXT [Sarlaft]Prod_Serv_Comerc-->" type="text" class="form-control" onchange="validateBlank(this)" >
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <br>    
+                                    <div class="row">
+                                        <h5 class="col-sm-4" style="margin-left: 14px;font-weight: bold;">* Valores en miles de pesos</h5>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Ingresos Mensuales</label>
+                                            <div class="col-md-8">                                                                                                                                                
+                                                <input name="ingresosMensuales" id="ingresosMensuales" required value="<!--4DTEXT [Sarlaft]Ingresos_Mensuales-->" type="number" class="form-control" placeholder="Ingresos  Mensuales (Pesos)">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Egresos Mensuales</label>
+                                            <div class="col-md-8">
+                                                
+                                                <input name="egresosMensuales" id="egresosMensuales" required value="<!--4DTEXT [Sarlaft]Egresos_Mensuales-->" type="number" class="form-control" placeholder="Egresos  Mensuales (Pesos)">
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Activos</label>
+                                            <div class="col-md-8">
+                                                <input name="activos" required id="activos" value="<!--4DTEXT [Sarlaft]Activos-->" type="number" class="form-control" placeholder="Activos (Pesos)">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Pasivos</label>
+                                            <div class="col-md-8">
+                                                <input name="pasivos" required id="pasivos" value="<!--4DTEXT [Sarlaft]Pasivo-->" type="number" class="form-control" placeholder="Pasivos (Pesos)">
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                    <br>
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Patrimonio</label>
+                                            <div class="col-md-8">
+                                                <input name="patrimonio" id="patrimonio" required value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" class="form-control" placeholder="Patrimonio (Activos - Pasivos, Pesos)">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="col-md-4">Otros Ingresos</label>
+                                            <div class="col-md-8">
+                                                <input name="otrosIngresos" id="otrosIngresos" value="<!--4DTEXT [Sarlaft]Otros_Ingresos-->" type="number" class="form-control" placeholder="Otros Ingresos (Pesos)">
+                                            </div>
+                                        </div>
+                                    </div>                                   
+                                    <br>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <label class="col-md-4">Concepto Otros Ingresos Mensuales</label>
+                                            <div class="col-md-8">
+                                                <input name="conceptoIngresos" value="<!--4DTEXT [Sarlaft]Concepto_otros_Ingresos-->" type="text" class="form-control" placeholder="Concepto de Otros Ingresos Mensuales">
+                                            </div>
+                                        </div>                                       
+                                    </div>                                   
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" style="padding-right: 1cm" >
+                                            ¿Es usted una Pesona Públicamente Expuesta? 
+                                        </label>
+                                        <button class="btn btn-link" type="button" data-toggle="popover" 
+                                            data-content="i) Las personas expuestas políticamente-conforme al (Decreto 1674 de 2016), 
+                                            ii) Los representantes legales de organizaciones internacionales y 
+                                            iii) Las personas que gozan de reconocimiento público. Se entiene por persona políticamente expuesta (Decrerto 1674 /2016) 
+                                            los individuos que desempeñan o han desempeñado funciones públicas destacadas como jefes de Estado, políticos de alta jerarquía,
+                                            funcionarios gubernamentales, judiciales o militares de alta jerarquía, altos ejecutivos (directores y gerentes) de empresas sociales, 
+                                            inductriales y comerciales del estado y de sociedades de economía mixta, unidades administrativas especiales, y funcionarios 
+                                            importantes de partidos políticos" data-trigger="hover" >
+                                            <i class="fa fa-question-circle"></i>
+                                        </button>
+                                        <div class="radio-custom radio-primary col-sm-1"  >
+                                            <input value="si" type="radio" name="perPublic" required <!--4DIF ([Sarlaft]Persona_PPE=True)-->checked<!--4DENDIF-->/>
+                                            <label >Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="perPublic" <!--4DIF ([Sarlaft]Persona_PPE=False)-->checked<!--4DENDIF-->/>
+                                            <label >No</label>
+                                        </div>        
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" style="padding-right: 1cm" >
+                                            ¿Existe algún vínculo entre usted y una persona considerada públicamente expuesta?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="vinculoPerExp" required <!--4DIF ([Sarlaft]Vinculo_con_PPE=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="vinculoPerExp" <!--4DIF ([Sarlaft]Vinculo_con_PPE=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>        
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" style="padding-right: 1cm" >
+                                            ¿Por su cargo o actividad, administra recursos públicos?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="recursosPublicos" required <!--4DIF ([Sarlaft]Recursos_Publicos=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="recursosPublicos" <!--4DIF ([Sarlaft]Recursos_Publicos=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>        
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-sm-6 control-label" style="padding-right: 1cm" >
+                                            ¿Es usted sujeto de obligaciones tributarias en otro país o grupo de paises?
+                                        </label>
+                                        <div class="radio-custom radio-primary col-sm-1" >
+                                            <input value="si" type="radio" name="obligTribut" onclick="makeRequired('obligTribInd')" required <!--4DIF ([Sarlaft]Tributa_otro_Pais=True)-->checked<!--4DENDIF-->/>
+                                            <label>Si</label>
+                                        </div>
+                                        <div class="radio-custom radio-primary col-sm-1">
+                                            <input value="no" type="radio" name="obligTribut" onclick="unMakeRequired('obligTribInd')" <!--4DIF ([Sarlaft]Tributa_otro_Pais=False)-->checked<!--4DENDIF-->/>
+                                            <label>No</label>
+                                        </div>    
+                                        <div class="col-sm-4">                                        
+                                            <div  class="form-group">
+                                                <label class="col-md-3 control-label">Indique</label>
+                                                <div class="col-md-9">
+                                                    <input name="otroOblig" id="obligTribInd" value="<!--4DTEXT [Sarlaft]Tributa_Otro_pais_cual-->" type="text" class="form-control" placeholder="">
+                                                </div>
+                                            </div>                                            
+                                        </div>        
+                                    </div>
+                                    
+                                    <br>
+                                    <div style="display: flex;justify-content: center;">
+                                        <button type="button" onclick="validateCero('formOri','ingresosMensuales','egresosMensuales','activos','pasivos','patrimonio')"  class="btn ajg-button col-md-4">Siguiente</button>                                                                    
+                                    </div>
+                                </form>
+                            </div>
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+        <!--4DINCLUDE scripts.html-->
+        <script src="natural3.js"></script>
+	</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html class="fixed sidebar-left-collapsed">
+	<head>
+		<!--4DINCLUDE headIncludes.html-->	
+	</head>
+	<body>
+		<section class="body">
+
+			<!-- start: header -->
+                <!--4DINCLUDE ../header.html-->
+			<!-- end: header -->
+
+			<div class="inner-wrapper">
+				<!-- start: sidebar -->
+                    <!--#4DINCLUDE panelNatural.shtml-->
+				<!-- end: sidebar -->
+
+				<section role="main" class="content-body">
+					<header class="page-header  ajg-color-dark">
+                        <h2>Autenticación</h2>
+					
+						<div class="right-wrapper pull-right">
+							<ol class="breadcrumbs">
+								<li>									
+									<i class="fa fa-home title"></i>									
+								</li>
+                                <li><span style="color:white;padding-right: 1cm;">Autenticación</span></li>                                
+							</ol>
+												
+						</div>
+					</header>
+
+					<!-- start: page -->					
+                    <div>
+                        <br>
+                        <section class="panel" class="ajg-title-dark ">
+							<header class="panel-heading">                                        
+                                <h1 class="panel-title text-center ajg-title-dark">Ingrese el Código</h1>   
+                            </header>
+							<div class="panel-body ajg-title-dark" style="text-align: center">
+								
+								<!--4DIF (respuestas # 3)-->
+								<div style="background-color: rgba(255, 0, 0, 0.877); padding: 5px; margin: 10px 20%;border-radius: 10px;">
+									<h4 style="color: white; font-weight: bold"><!--4DTEXT Ob Get(response;"return_message")--></h4>
+								</div>
+								<!--4DENDIF-->
+								<form action="/Natural/autenticar_ingreso_otp" style="padding: 0% 20% 5% 20%;" method="POST" enctype="multipart/form-data" class="form-bordered ajg-title-dark">
+									<p>Cuenta con un total de 2 minutos para realizar el ingreso del código enviado al número 
+										<span style="font-weight: bold;"><!--4DTEXT Ob Get(response;"numero_seleccionado")--></span> vía 
+										<!--#4DIF (Ob Get(response;"metodo") = "vOICE")-->
+										<span style="font-weight: bold;">Mensaje de Voz</span>. 
+										<!--#4DELSE-->
+										<span style="font-weight: bold;"><!--4DTEXT Ob Get(response;"metodo")--></span>. 
+										<!--#4DENDIF-->
+									</p>
+									<div >
+										<div>
+											<div style="display: flex; justify-content: center;">
+												<h5 style="margin-right:20px ;">Tiempo: </h5>
+												<h5 id="time">2:00</h5>
+											</div>
+											<div style="display: flex; justify-content: center;">
+												<h5 style="margin-right:20px ;">Intentos: </h5>
+												<h5><!--4DTEXT respuestas--></h5>
+											</div>
+										</div>
+										<div style="display: flex; justify-content: center;align-items: center; flex-direction: column;">
+											<h5 for="codigo">Código</h5>
+											<input type="text" name="pinNumber" id="pinNumber" class="form-control" style="text-align: center;" required>
+										</div>
+									</div>
+									<br>
+									<input type="hidden" name="application_id" value="<!--4DTEXT Ob Get(response;"application_id")-->">
+									<input type="hidden" name="numeroSeleccionado" value="<!--4DTEXT Ob Get(response;"numero_seleccionado")-->">
+									<input type="hidden" name="metodo" value="<!--4DTEXT Ob Get(response;"metodo")-->">
+									<button type="submit" id="submitButton" data-toggle="modal" data-target="#loading" class="btn ajg-button col-md-4 col-md-offset-4">Enviar</button>	
+								</form>
+								<div style="padding: 0% 20% 5% 20%; display:none" id="mensajeVoz">
+									<!--#4DIF (Ob Get(response;"metodo")#"Voice")-->
+									<h4>¿No recibiste el código? Intenta con un mensaje de voz</h4>
+									<form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Natural/autenticar_reenvio_voz">
+										<input type="hidden" name="application_id" value="<!--4DTEXT Ob Get(response;"application_id")-->">
+										<input type="hidden" name="numeroSeleccionado" value="<!--4DTEXT Ob Get(response;"numero_seleccionado")-->">
+										<button type="submit"  class="btn ajg-button col-md-4 col-md-offset-4">Mensaje de Voz</button>	
+									</form>
+									<!--#4DENDIF-->
+								</div>
+
+								<div style="padding: 0% 10% 5% 10%; display:none" id="cuestionario">
+									<h4 style="color:red">¿No recibiste el código? Valida tu identidad a través de preguntas</h4>
+									<form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Natural/autenticar_cuestionario">
+										<input type="hidden" name="application_id" value="<!--4DTEXT Ob Get(response;"application_id")-->">
+										<button type="submit"  class="btn btn-danger col-md-4 col-md-offset-4">Ir al Cuestionario</button>	
+									</form>
+								</div>
+								
+								<p style="color: white;"><!--4DTEXT Ob Get(response;"otp_code")--></p>
+
+								<!--<div style="padding: 0% 20% 5% 20%;">
+									<p>En caso de no haber recibido ningún código puede volver a seleccionar el número con el siguiente botón.</p>
+									<form class="form-bordered ajg-title-dark" method="POST" enctype="multipart/form-data" action="/Natural/autenticar">
+										<button type="submit"  class="btn ajg-button col-md-4 col-md-offset-4">Regresar</button>	
+									</form>
+								</div>-->
+								
+							</div>
+							
+                        </section>
+                    </div>  
+					<!-- end: page -->
+				</section>
+			</div>
+
+			
+		</section>
+		
+		<!--4DINCLUDE scripts.html-->	
+		<script src="autenticar_ingreso_otp.js"></script>			
+	</body>
+</html>

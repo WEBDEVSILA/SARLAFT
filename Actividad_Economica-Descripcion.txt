@@ -1,0 +1,497 @@
+	111	Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas 
+	112	Cultivo de arroz 
+	113	Cultivo de hortalizas, raíces y tubérculos 
+	114	Cultivo de tabaco 
+	115	Cultivo de plantas textiles 
+	119	Otros cultivos transitorios n.c.p.
+	121	Cultivo de frutas tropicales y subtropicales
+	122	Cultivo de plátano y banano
+	123	Cultivo de café
+	124	Cultivo de caña de azúcar
+	125	Cultivo de flor de corte
+	126	Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos
+	127	Cultivo de plantas con las que se preparan bebidas
+	128	Cultivo de especias y de plantas aromáticas y medicinales 
+	129	Otros cultivos permanentes n.c.p.
+	130	Propagación de plantas (actividades de los viveros, excepto viveros forestales) 
+	141	Cr�a de ganado bovino y bufalino
+	142	Cr�a de caballos y otros equinos 
+	143	Cr�a de ovejas y cabras 
+	144	Cr�a de ganado porcino
+	145	Cr�a de aves de corral
+	149	Cr�a de otros animales n.c.p.
+	150	Explotaci�n mixta (agr�cola y pecuaria) 
+	161	Actividades de apoyo a la agricultura 
+	162	Actividades de apoyo a la ganader�a
+	163	Actividades posteriores a la cosecha 
+	164	Tratamiento de semillas para propagaci�n 
+	170	Caza ordinaria y mediante trampas y actividades de servicios conexas 
+	210	Silvicultura y otras actividades forestales
+	220	Extracci�n de madera 
+	230	Recolecci�n de productos forestales diferentes a la madera
+	240	Servicios de apoyo a la silvicultura 
+	311	Pesca mar�tima 
+	312	Pesca de agua dulce 
+	321	Acuicultura mar�tima 
+	322	Acuicultura de agua dulce
+	510	Extracci�n de hulla (carb�n de piedra)
+	520	Extracci�n de carb�n lignito
+	610	Extracci�n de petr�leo crudo
+	620	Extracci�n de gas natural
+	710	Extracci�n de minerales de hierro
+	721	Extracci�n de minerales de uranio y de torio
+	722	Extracci�n de oro y otros metales preciosos
+	723	Extracci�n de minerales de n�quel
+	729	Extracci�n de otros minerales metal�feros no ferrosos n.c.p.
+	811	Extracci�n de piedra, arena, arcillas comunes, yeso y anhidrita
+	812	Extracci�n de arcillas de uso industrial, caliza, caol�n y bentonitas
+	820	Extracci�n de esmeraldas, piedras preciosas y semipreciosas
+	891	Extracci�n de minerales para la fabricaci�n de abonos y productos qu�micos
+	892	Extracci�n de halita (sal)
+	899	Extracci�n de otros minerales no met�licos n.c.p.
+	910	Actividades de apoyo para la extracci�n de petr�leo y de gas natural
+	990	Actividades de apoyo para otras actividades de explotaci�n de minas y canteras
+	1011	Procesamiento y conservaci�n de carne y productos c�rnicos
+	1012	Procesamiento y conservaci�n de pescados, crust�ceos y moluscos
+	1020	Procesamiento y conservaci�n de frutas, legumbres, hortalizas y tub�rculos
+	1030	Elaboraci�n de aceites y grasas de origen vegetal y animal
+	1040	Elaboraci�n de productos l�cteos
+	1051	Elaboraci�n de productos de moliner�a
+	1052	Elaboraci�n de almidones y productos derivados del almid�n
+	1061	Trilla de caf�
+	1062	Descafeinado, tosti�n y molienda del caf�
+	1063	Otros derivados del caf�
+	1071	Elaboraci�n y refinaci�n de az�car
+	1072	Elaboraci�n de panela
+	1081	Elaboraci�n de productos de panader�a
+	1082	Elaboraci�n de cacao, chocolate y productos de confiter�a
+	1083	Elaboraci�n de macarrones, fideos, alcuzcuz y productos farin�ceos similares
+	1084	Elaboraci�n de comidas y platos preparados
+	1089	Elaboraci�n de otros productos alimenticios n.c.p.
+	1090	Elaboraci�n de alimentos preparados para animales
+	1101	Destilaci�n, rectificaci�n y mezcla de bebidas alcoh�licas
+	1102	Elaboraci�n de bebidas fermentadas no destiladas
+	1103	Producci�n de malta, elaboraci�n de cervezas y otras bebidas malteadas
+	1104	Elaboraci�n de bebidas no alcoh�licas, producci�n de aguas minerales y de otras aguas embotelladas
+	1200	Elaboraci�n de productos de tabaco
+	1311	Preparaci�n e hilatura de fibras textiles
+	1312	Tejedur�a de productos textiles
+	1313	Acabado de productos textiles
+	1391	Fabricaci�n de tejidos de punto y ganchillo
+	1392	Confecci�n de art�culos con materiales textiles, excepto prendas de vestir
+	1393	Fabricaci�n de tapetes y alfombras para pisos
+	1394	Fabricaci�n de cuerdas, cordeles, cables, bramantes y redes
+	1399	Fabricaci�n de otros art�culos textiles n.c.p.
+	1410	Confecci�n de prendas de vestir, excepto prendas de piel
+	1420	Fabricaci�n de art�culos de piel
+	1430	Fabricaci�n de art�culos de punto y ganchillo
+	1511	"Curtido y recurtido de cueros; recurtido y te�ido de pieles"
+	1512	Fabricaci�n de art�culos de viaje, bolsos de mano y art�culos similares elaborados en cuero, y fabricaci�n de art�culos de talabarter�a y guarnicioner�a
+	1513	"Fabricaci�n de art�culos de viaje, bolsos de mano y art�culos similares; art�culos de talabarter�a y guarnicioner�a elaborados en otros materiales"
+	1521	Fabricaci�n de calzado de cuero y piel, con cualquier tipo de suela
+	1522	Fabricaci�n de otros tipos de calzado, excepto calzado de cuero y piel
+	1523	Fabricaci�n de partes del calzado
+	1610	Aserrado, acepillado e impregnaci�n de la madera
+	1620	"Fabricaci�n de hojas de madera para enchapado; fabricaci�n de tableros contrachapados, tableros laminados, tableros de part�culas y otros tableros y paneles"
+	1630	Fabricaci�n de partes y piezas de madera, de carpinter�a y ebanister�a para la construcci�n
+	1640	Fabricaci�n de recipientes de madera
+	1690	"Fabricaci�n de otros productos de madera; fabricaci�n de art�culos de corcho, cester�a y esparter�a"
+	1701	"Fabricaci�n de pulpas (pastas) celul�sicas; papel y cart�n"
+	1702	"Fabricaci�n de papel y cart�n ondulado (corrugado); fabricaci�n de envases, empaques y de embalajes de papel y cart�n."
+	1709	Fabricaci�n de otros art�culos de papel y cart�n
+	1811	Actividades de impresi�n
+	1812	Actividades de servicios relacionados con la impresi�n
+	1820	Producci�n de copias a partir de grabaciones originales 
+	1910	Fabricaci�n de productos de hornos de coque
+	1921	Fabricaci�n de productos de la refinaci�n del petr�leo
+	1922	Actividad de mezcla de combustibles
+	2011	Fabricaci�n de sustancias y productos qu�micos b�sicos
+	2012	Fabricaci�n de abonos y compuestos inorg�nicos nitrogenados
+	2013	Fabricaci�n de pl�sticos en formas primarias
+	2014	Fabricaci�n de caucho sint�tico en formas primarias
+	2021	Fabricaci�n de plaguicidas y otros productos qu�micos de uso agropecuario
+	2022	Fabricaci�n de pinturas, barnices y revestimientos similares, tintas para impresi�n y masillas
+	2023	"Fabricaci�n de jabones y detergentes, preparados para limpiar y pulir; perfumes y preparados de tocador"
+	2029	Fabricaci�n de otros productos qu�micos n.c.p.
+	2030	Fabricaci�n de fibras sint�ticas y artificiales
+	2100	Fabricaci�n de productos farmac�uticos, sustancias qu�micas medicinales y productos bot�nicos de uso farmac�utico
+	2211	Fabricaci�n de llantas y neum�ticos de caucho
+	2212	Reencauche de llantas usadas
+	2219	Fabricaci�n de formas b�sicas de caucho y otros productos de caucho n.c.p.
+	2221	Fabricaci�n de formas b�sicas de pl�stico
+	2229	Fabricaci�n de art�culos de pl�stico n.c.p.
+	2310	Fabricaci�n de vidrio y productos de vidrio
+	2391	Fabricaci�n de productos refractarios
+	2392	Fabricaci�n de materiales de arcilla para la construcci�n
+	2393	Fabricaci�n de otros productos de cer�mica y porcelana
+	2394	Fabricaci�n de cemento, cal y yeso
+	2395	Fabricaci�n de art�culos de hormig�n, cemento y yeso
+	2396	Corte, tallado y acabado de la piedra
+	2399	Fabricaci�n de otros productos minerales no met�licos n.c.p.
+	2410	Industrias b�sicas de hierro y de acero
+	2421	Industrias b�sicas de metales preciosos
+	2429	Industrias b�sicas de otros metales no ferrosos
+	2431	Fundici�n de hierro y de acero
+	2432	Fundici�n de metales no ferrosos 
+	2511	Fabricaci�n de productos met�licos para uso estructural
+	2512	Fabricaci�n de tanques, dep�sitos y recipientes de metal, excepto los utilizados para el envase o transporte de mercanc�as
+	2513	Fabricaci�n de generadores de vapor, excepto calderas de agua caliente para calefacci�n central
+	2520	Fabricaci�n de armas y municiones
+	2591	"Forja, prensado, estampado y laminado de metal; pulvimetalurgia"
+	2592	"Tratamiento y revestimiento de metales; mecanizado"
+	2593	Fabricaci�n de art�culos de cuchiller�a, herramientas de mano y art�culos de ferreter�a
+	2599	Fabricaci�n de otros productos elaborados de metal n.c.p.
+	2610	Fabricaci�n de componentes y tableros electr�nicos
+	2620	Fabricaci�n de computadoras y de equipo perif�rico
+	2630	Fabricaci�n de equipos de comunicaci�n
+	2640	Fabricaci�n de aparatos electr�nicos de consumo
+	2651	Fabricaci�n de equipo de medici�n, prueba, navegaci�n y control
+	2652	Fabricaci�n de relojes
+	2660	Fabricaci�n de equipo de irradiaci�n y equipo electr�nico de uso m�dico y terap�utico
+	2670	Fabricaci�n de instrumentos �pticos y equipo fotogr�fico
+	2680	Fabricaci�n de medios magn�ticos y �pticos para almacenamiento de datos
+	2711	Fabricaci�n de motores, generadores y transformadores el�ctricos
+	2712	Fabricaci�n de aparatos de distribuci�n y control de la energ�a el�ctrica
+	2720	Fabricaci�n de pilas, bater�as y acumuladores el�ctricos
+	2731	Fabricaci�n de hilos y cables el�ctricos y de fibra �ptica
+	2732	Fabricaci�n de dispositivos de cableado
+	2740	Fabricaci�n de equipos el�ctricos de iluminaci�n
+	2750	Fabricaci�n de aparatos de uso dom�stico
+	2790	Fabricaci�n de otros tipos de equipo el�ctrico n.c.p.
+	2811	Fabricaci�n de motores, turbinas, y partes para motores de combusti�n interna
+	2812	Fabricaci�n de equipos de potencia hidr�ulica y neum�tica
+	2813	Fabricaci�n de otras bombas, compresores, grifos y v�lvulas
+	2814	Fabricaci�n de cojinetes, engranajes, trenes de engranajes y piezas de transmisi�n
+	2815	Fabricaci�n de hornos, hogares y quemadores industriales
+	2816	Fabricaci�n de equipo de elevaci�n y manipulaci�n
+	2817	Fabricaci�n de maquinaria y equipo de oficina (excepto computadoras y equipo perif�rico)
+	2818	Fabricaci�n de herramientas manuales con motor
+	2819	Fabricaci�n de otros tipos de maquinaria y equipo de uso general n.c.p.
+	2821	Fabricaci�n de maquinaria agropecuaria y forestal
+	2822	Fabricaci�n de m�quinas formadoras de metal y de m�quinas herramienta
+	2823	Fabricaci�n de maquinaria para la metalurgia
+	2824	Fabricaci�n de maquinaria para explotaci�n de minas y canteras y para obras de construcci�n
+	2825	Fabricaci�n de maquinaria para la elaboraci�n de alimentos, bebidas y tabaco
+	2826	Fabricaci�n de maquinaria para la elaboraci�n de productos textiles, prendas de vestir y cueros
+	2829	Fabricaci�n de otros tipos de maquinaria y equipo de uso especial n.c.p.
+	2910	Fabricaci�n de veh�culos automotores y sus motores
+	2920	"Fabricaci�n de carrocer�as para veh�culos automotores; fabricaci�n de remolques y semirremolques "
+	2930	Fabricaci�n de partes, piezas (autopartes) y accesorios (lujos) para veh�culos automotores
+	3011	Construcci�n de barcos y de estructuras flotantes
+	3012	Construcci�n de embarcaciones de recreo y deporte
+	3020	Fabricaci�n de locomotoras y de material rodante para ferrocarriles
+	3030	Fabricaci�n de aeronaves, naves espaciales y de maquinaria conexa
+	3040	Fabricaci�n de veh�culos militares de combate
+	3091	Fabricaci�n de motocicletas
+	3092	Fabricaci�n de bicicletas y de sillas de ruedas para personas con discapacidad
+	3099	Fabricaci�n de otros tipos de equipo de transporte n.c.p.
+	3110	Fabricaci�n de muebles 
+	3120	Fabricaci�n de colchones y somieres
+	3210	Fabricaci�n de joyas, bisuter�a y art�culos conexos
+	3220	Fabricaci�n de instrumentos musicales
+	3230	Fabricaci�n de art�culos y equipo para la pr�ctica del deporte
+	3240	Fabricaci�n de juegos, juguetes y rompecabezas
+	3250	Fabricaci�n de instrumentos, aparatos y materiales m�dicos y odontol�gicos (incluido mobiliario)
+	3290	Otras industrias manufactureras n.c.p.
+	3311	Mantenimiento y reparaci�n especializado de productos elaborados en metal
+	3312	Mantenimiento y reparaci�n especializado de maquinaria y equipo
+	3313	Mantenimiento y reparaci�n especializado de equipo electr�nico y �ptico
+	3314	Mantenimiento y reparaci�n especializado de equipo el�ctrico
+	3315	Mantenimiento y reparaci�n especializado de equipo de transporte, excepto los veh�culos automotores, motocicletas y bicicletas
+	3319	Mantenimiento y reparaci�n de otros tipos de equipos y sus componentes n.c.p.
+	3320	Instalaci�n especializada de maquinaria y equipo industrial 
+	3511	Generaci�n de energ�a el�ctrica
+	3512	Transmisi�n de energ�a el�ctrica
+	3513	Distribuci�n de energ�a el�ctrica
+	3514	Comercializaci�n de energ�a el�ctrica
+	3520	"Producci�n de gas; distribuci�n de combustibles gaseosos por tuber�as"
+	3530	Suministro de vapor y aire acondicionado
+	3600	Captaci�n, tratamiento y distribuci�n de agua
+	3700	Evacuaci�n y tratamiento de aguas residuales
+	3811	Recolecci�n de desechos no peligrosos
+	3812	Recolecci�n de desechos peligrosos
+	3821	Tratamiento y disposici�n de desechos no peligrosos
+	3822	Tratamiento y disposici�n de desechos peligrosos
+	3830	Recuperaci�n de materiales
+	3900	Actividades de saneamiento ambiental y otros servicios de gesti�n de desechos
+	4111	Construcci�n de edificios residenciales
+	4112	Construcci�n de edificios no residenciales
+	4210	Construcci�n de carreteras y v�as de ferrocarril
+	4220	Construcci�n de proyectos de servicio p�blico
+	4290	Construcci�n de otras obras de ingenier�a civil
+	4311	Demolici�n
+	4312	Preparaci�n del terreno
+	4321	Instalaciones el�ctricas
+	4322	Instalaciones de fontaner�a, calefacci�n y aire acondicionado
+	4329	Otras instalaciones especializadas
+	4330	Terminaci�n y acabado de edificios y obras de ingenier�a civil
+	4390	Otras actividades especializadas para la construcci�n de edificios y obras de ingenier�a civil
+	4511	Comercio de veh�culos automotores nuevos
+	4512	Comercio de veh�culos automotores usados
+	4520	Mantenimiento y reparaci�n de veh�culos automotores
+	4530	Comercio de partes, piezas (autopartes) y accesorios (lujos) para veh�culos automotores
+	4541	Comercio de motocicletas y de sus partes, piezas y accesorios
+	4542	Mantenimiento y reparaci�n de motocicletas y de sus partes y piezas
+	4610	Comercio al por mayor a cambio de una retribuci�n o por contrata
+	4620	"Comercio al por mayor de materias primas agropecuarias; animales vivos"
+	4631	Comercio al por mayor de productos alimenticios
+	4632	Comercio al por mayor de bebidas y tabaco
+	4641	Comercio al por mayor de productos textiles, productos confeccionados para uso dom�stico
+	4642	Comercio al por mayor de prendas de vestir
+	4643	Comercio al por mayor de calzado
+	4644	Comercio al por mayor de aparatos y equipo de uso dom�stico
+	4645	Comercio al por mayor de productos farmac�uticos, medicinales, cosm�ticos y de tocador
+	4649	Comercio al por mayor de otros utensilios dom�sticos n.c.p.
+	4651	Comercio al por mayor de computadores, equipo perif�rico y programas de inform�tica
+	4652	Comercio al por mayor de equipo, partes y piezas electr�nicos y de telecomunicaciones
+	4653	Comercio al por mayor de maquinaria y equipo agropecuarios
+	4659	Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.
+	4661	Comercio al por mayor de combustibles s�lidos, l�quidos, gaseosos y productos conexos
+	4662	Comercio al por mayor de metales y productos metal�feros
+	4663	Comercio al por mayor de materiales de construcci�n, art�culos de ferreter�a, pinturas, productos de vidrio, equipo y materiales de fontaner�a y calefacci�n
+	4664	Comercio al por mayor de productos qu�micos b�sicos, cauchos y pl�sticos en formas primarias y productos qu�micos de uso agropecuario
+	4665	Comercio al por mayor de desperdicios, desechos y chatarra
+	4669	Comercio al por mayor de otros productos n.c.p.
+	4690	Comercio al por mayor no especializado
+	4711	Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos, bebidas o tabaco
+	4719	Comercio al por menor en establecimientos no especializados, con surtido compuesto principalmente por productos diferentes de alimentos (v�veres en general), bebidas y tabaco
+	4721	Comercio al por menor de productos agr�colas para el consumo en establecimientos especializados
+	4722	Comercio al por menor de leche, productos l�cteos y huevos, en establecimientos especializados
+	4723	Comercio al por menor de carnes (incluye aves de corral), productos c�rnicos, pescados y productos de mar, en establecimientos especializados
+	4724	Comercio al por menor de bebidas y productos del tabaco, en establecimientos especializados
+	4729	Comercio al por menor de otros productos alimenticios n.c.p., en establecimientos especializados
+	4731	Comercio al por menor de combustible para automotores
+	4732	Comercio al por menor de lubricantes (aceites, grasas), aditivos y productos de limpieza para veh�culos automotores
+	4741	Comercio al por menor de computadores, equipos perif�ricos, programas de inform�tica y equipos de telecomunicaciones en establecimientos especializados
+	4742	Comercio al por menor de equipos y aparatos de sonido y de video, en establecimientos especializados
+	4751	Comercio al por menor de productos textiles en establecimientos especializados
+	4752	Comercio al por menor de art�culos de ferreter�a, pinturas y productos de vidrio en establecimientos especializados
+	4753	Comercio al por menor de tapices, alfombras y cubrimientos para paredes y pisos en establecimientos especializados
+	4754	Comercio al por menor de electrodom�sticos y gasodom�sticos de uso dom�stico, muebles y equipos de iluminaci�n
+	4755	Comercio al por menor de art�culos y utensilios de uso dom�stico
+	4759	Comercio al por menor de otros art�culos dom�sticos en establecimientos especializados
+	4761	Comercio al por menor de libros, peri�dicos, materiales y art�culos de papeler�a y escritorio, en establecimientos especializados
+	4762	Comercio al por menor de art�culos deportivos, en establecimientos especializados 
+	4769	Comercio al por menor de otros art�culos culturales y de entretenimiento n.c.p. en establecimientos especializados
+	4771	Comercio al por menor de prendas de vestir y sus accesorios (incluye art�culos de piel) en establecimientos especializados
+	4772	Comercio al por menor de todo tipo de calzado y art�culos de cuero y suced�neos del cuero en establecimientos especializados.
+	4773	Comercio al por menor de productos farmac�uticos y medicinales, cosm�ticos y art�culos de tocador en establecimientos especializados
+	4774	Comercio al por menor de otros productos nuevos en establecimientos especializados
+	4775	Comercio al por menor de art�culos de segunda mano
+	4781	Comercio al por menor de alimentos, bebidas y tabaco, en puestos de venta m�viles
+	4782	Comercio al por menor de productos textiles, prendas de vestir y calzado, en puestos de venta m�viles
+	4789	Comercio al por menor de otros productos en puestos de venta m�viles
+	4791	Comercio al por menor realizado a trav�s de Internet
+	4792	Comercio al por menor realizado a trav�s de casas de venta o por correo
+	4799	Otros tipos de comercio al por menor no realizado en establecimientos, puestos de venta o mercados.
+	4911	Transporte f�rreo de pasajeros
+	4912	Transporte f�rreo de carga 
+	4921	Transporte de pasajeros
+	4922	Transporte mixto
+	4923	Transporte de carga por carretera
+	4930	Transporte por tuber�as
+	5011	Transporte de pasajeros mar�timo y de cabotaje 
+	5012	Transporte de carga mar�timo y de cabotaje 
+	5021	Transporte fluvial de pasajeros
+	5022	Transporte fluvial de carga
+	5111	Transporte a�reo nacional de pasajeros 
+	5112	Transporte a�reo internacional de pasajeros 
+	5121	Transporte a�reo nacional de carga 
+	5122	Transporte a�reo internacional de carga 
+	5210	Almacenamiento y dep�sito
+	5221	Actividades de estaciones, v�as y servicios complementarios para el transporte terrestre
+	5222	Actividades de puertos y servicios complementarios para el transporte acu�tico
+	5223	Actividades de aeropuertos, servicios de navegaci�n a�rea y dem�s actividades conexas al transporte a�reo
+	5224	Manipulaci�n de carga
+	5229	Otras actividades complementarias al transporte
+	5310	Actividades postales nacionales
+	5320	Actividades de mensajer�a
+	5511	Alojamiento en hoteles 
+	5512	Alojamiento en apartahoteles
+	5513	Alojamiento en centros vacacionales 
+	5514	Alojamiento rural
+	5519	Otros tipos de alojamientos para visitantes
+	5520	Actividades de zonas de camping y parques para veh�culos recreacionales
+	5530	Servicio por horas 
+	5590	Otros tipos de alojamiento n.c.p.
+	5611	Expendio a la mesa de comidas preparadas
+	5612	Expendio por autoservicio de comidas preparadas
+	5613	Expendio de comidas preparadas en cafeter�as
+	5619	Otros tipos de expendio de comidas preparadas n.c.p.
+	5621	Catering para eventos
+	5629	Actividades de otros servicios de comidas
+	5630	Expendio de bebidas alcoh�licas para el consumo dentro del establecimiento
+	5811	Edici�n de libros
+	5812	Edici�n de directorios y listas de correo
+	5813	Edici�n de peri�dicos, revistas y otras publicaciones peri�dicas
+	5819	Otros trabajos de edici�n
+	5820	Edici�n de programas de inform�tica (software)
+	5911	Actividades de producci�n de pel�culas cinematogr�ficas, videos, programas, anuncios y comerciales de televisi�n
+	5912	Actividades de posproducci�n de pel�culas cinematogr�ficas, videos, programas, anuncios y comerciales de televisi�n
+	5913	Actividades de distribuci�n de pel�culas cinematogr�ficas, videos, programas, anuncios y comerciales de televisi�n
+	5914	Actividades de exhibici�n de pel�culas cinematogr�ficas y videos
+	5920	Actividades de grabaci�n de sonido y edici�n de musica
+	6010	Actividades de programaci�n y transmisi�n en el servicio de radiodifusi�n sonora
+	6020	Actividades de programaci�n y transmisi�n de televisi�n
+	6110	Actividades de telecomunicaciones al�mbricas
+	6120	Actividades de telecomunicaciones inal�mbricas
+	6130	Actividades de telecomunicaci�n satelital
+	6190	Otras actividades de telecomunicaciones
+	6201	Actividades de desarrollo de sistemas inform�ticos (planificaci�n, an�lisis, dise�o, programaci�n, pruebas)
+	6202	Actividades de consultor�a inform�tica y actividades de administraci�n de instalaciones inform�ticas
+	6209	Otras actividades de tecnolog�as de informaci�n y actividades de servicios inform�ticos
+	6311	Procesamiento de datos, alojamiento (hosting) y actividades relacionadas
+	6312	Portales web
+	6391	Actividades de agencias de noticias
+	6399	Otras actividades de servicio de informaci�n n.c.p.
+	6411	Banco Central
+	6412	Bancos comerciales
+	6421	Actividades de las corporaciones financieras
+	6422	Actividades de las compa��as de financiamiento
+	6423	Banca de segundo piso
+	6424	Actividades de las cooperativas financieras
+	6431	Fideicomisos, fondos y entidades financieras similares
+	6432	Fondos de cesant�as
+	6491	Leasing financiero (arrendamiento financiero)
+	6492	Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario
+	6493	Actividades de compra de cartera o factoring
+	6494	Otras actividades de distribuci�n de fondos
+	6495	Instituciones especiales oficiales
+	6499	Otras actividades de servicio financiero, excepto las de seguros y pensiones n.c.p.
+	6511	Seguros generales 
+	6512	Seguros de vida
+	6513	Reaseguros
+	6514	Capitalizaci�n
+	6521	Servicios de seguros sociales de salud
+	6522	Servicios de seguros sociales de riesgos profesionales
+	6531	R�gimen de prima media con prestaci�n definida (RPM)
+	6532	R�gimen de ahorro individual (RAI)
+	6611	Administraci�n de mercados financieros
+	6612	Corretaje de valores y de contratos de productos b�sicos
+	6613	Otras actividades relacionadas con el mercado de valores
+	6614	Actividades de las casas de cambio
+	6615	Actividades de los profesionales de compra y venta de divisas
+	6619	Otras actividades auxiliares de las actividades de servicios financieros n.c.p.
+	6621	Actividades de agentes y corredores de seguros
+	6629	Evaluaci�n de riesgos y da�os, y otras actividades de servicios auxiliares
+	6630	Actividades de administraci�n de fondos
+	6810	Actividades inmobiliarias realizadas con bienes propios o arrendados
+	6820	Actividades inmobiliarias realizadas a cambio de una retribuci�n o por contrata 
+	6910	Actividades jur�dicas
+	6920	Actividades de contabilidad, tenedur�a de libros, auditor�a financiera y asesor�a tributaria
+	7010	Actividades de administraci�n empresarial
+	7020	Actividades de consultar�a de gesti�n
+	7110	Actividades de arquitectura e ingenier�a y otras actividades conexas de consultor�a t�cnica
+	7120	Ensayos y an�lisis t�cnicos
+	7210	Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingenier�a 
+	7220	Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades
+	7310	Publicidad
+	7320	Estudios de mercado y realizaci�n de encuestas de opini�n p�blica
+	7410	Actividades especializadas de dise�o 
+	7420	Actividades de fotograf�a
+	7490	Otras actividades profesionales, cient�ficas y t�cnicas n.c.p.
+	7500	Actividades veterinarias
+	7710	Alquiler y arrendamiento de veh�culos automotores
+	7721	Alquiler y arrendamiento de equipo recreativo y deportivo
+	7722	Alquiler de videos y discos 
+	7729	Alquiler y arrendamiento de otros efectos personales y enseres dom�sticos n.c.p.
+	7730	Alquiler y arrendamiento de otros tipos de maquinaria, equipo y bienes tangibles n.c.p.
+	7740	Arrendamiento de propiedad intelectual y productos similares, excepto obras protegidas por derechos de autor
+	7810	Actividades de agencias de empleo
+	7820	Actividades de agencias de empleo temporal
+	7830	Otras actividades de suministro de recurso humano
+	7911	Actividades de las agencias de viaje
+	7912	Actividades de operadores tur�sticos
+	7990	Otros servicios de reserva y actividades relacionadas
+	8010	Actividades de seguridad privada
+	8020	Actividades de servicios de sistemas de seguridad
+	8030	Actividades de detectives e investigadores privados
+	8110	Actividades combinadas de apoyo a instalaciones
+	8121	Limpieza general interior de edificios
+	8129	Otras actividades de limpieza de edificios e instalaciones industriales
+	8130	Actividades de paisajismo y servicios de mantenimiento conexos
+	8211	Actividades combinadas de servicios administrativos de oficina
+	8219	Fotocopiado, preparaci�n de documentos y otras actividades especializadas de apoyo a oficina
+	8220	Actividades de centros de llamadas (Call center)
+	8230	Organizaci�n de convenciones y eventos comerciales
+	8291	Actividades de agencias de cobranza y oficinas de calificaci�n crediticia
+	8292	Actividades de envase y empaque
+	8299	Otras actividades de servicio de apoyo a las empresas n.c.p.
+	8411	Actividades legislativas de la administraci�n p�blica
+	8412	Actividades ejecutivas de la administraci�n p�blica
+	8413	Regulaci�n de las actividades de organismos que prestan servicios de salud, educativos, culturales y otros servicios sociales, excepto servicios de seguridad social 
+	8414	Actividades reguladoras y facilitadoras de la actividad econ�mica
+	8415	Actividades de los otros �rganos de control
+	8421	Relaciones exteriores 
+	8422	Actividades de defensa
+	8423	Orden p�blico y actividades de seguridad
+	8424	Administraci�n de justicia
+	8430	Actividades de planes de seguridad social de afiliaci�n obligatoria
+	8511	Educaci�n de la primera infancia
+	8512	Educaci�n preescolar
+	8513	Educaci�n b�sica primaria
+	8521	Educaci�n b�sica secundaria 
+	8522	Educaci�n media acad�mica
+	8523	Educaci�n media t�cnica y de formaci�n laboral
+	8530	Establecimientos que combinan diferentes niveles de educaci�n 
+	8541	Educaci�n t�cnica profesional
+	8542	Educaci�n tecnol�gica
+	8543	Educaci�n de instituciones universitarias o de escuelas tecnol�gicas
+	8544	Educaci�n de universidades
+	8551	Formaci�n acad�mica no formal 
+	8552	Ense�anza deportiva y recreativa
+	8553	Ense�anza cultural
+	8559	Otros tipos de educaci�n n.c.p.
+	8560	Actividades de apoyo a la educaci�n
+	8610	Actividades de hospitales y cl�nicas, con internaci�n
+	8621	Actividades de la pr�ctica m�dica, sin internaci�n
+	8622	Actividades de la pr�ctica odontol�gica
+	8691	Actividades de apoyo diagn�stico
+	8692	Actividades de apoyo terap�utico
+	8699	Otras actividades de atenci�n de la salud humana
+	8710	Actividades de atenci�n residencial medicalizada de tipo general
+	8720	Actividades de atenci�n residencial, para el cuidado de pacientes con retardo mental, enfermedad mental y consumo de sustancias psicoactivas
+	8730	Actividades de atenci�n en instituciones para el cuidado de personas mayores y/o discapacitadas
+	8790	Otras actividades de atenci�n en instituciones con alojamiento
+	8810	Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas
+	8890	Otras actividades de asistencia social sin alojamiento
+	9001	Creaci�n literaria
+	9002	Creaci�n musical
+	9003	Creaci�n teatral
+	9004	Creaci�n audiovisual
+	9005	Artes pl�sticas y visuales
+	9006	Actividades teatrales
+	9007	Actividades de espect�culos musicales en vivo
+	9008	Otras actividades de espect�culos en vivo
+	9101	Actividades de bibliotecas y archivos
+	9102	Actividades y funcionamiento de museos, conservaci�n de edificios y sitios hist�ricos
+	9103	Actividades de jardines bot�nicos, zool�gicos y reservas naturales
+	9200	Actividades de juegos de azar y apuestas
+	9311	Gesti�n de instalaciones deportivas
+	9312	Actividades de clubes deportivos
+	9319	Otras actividades deportivas
+	9321	Actividades de parques de atracciones y parques tem�ticos
+	9329	Otras actividades recreativas y de esparcimiento n.c.p.
+	9411	Actividades de asociaciones empresariales y de empleadores
+	9412	Actividades de asociaciones profesionales
+	9420	Actividades de sindicatos de empleados
+	9491	Actividades de asociaciones religiosas
+	9492	Actividades de asociaciones pol�ticas
+	9499	Actividades de otras asociaciones n.c.p.
+	9511	Mantenimiento y reparaci�n de computadores y de equipo perif�rico
+	9512	Mantenimiento y reparaci�n de equipos de comunicaci�n
+	9521	Mantenimiento y reparaci�n de aparatos electr�nicos de consumo
+	9522	Mantenimiento y reparaci�n de aparatos y equipos dom�sticos y de jardiner�a 
+	9523	Reparaci�n de calzado y art�culos de cuero
+	9524	Reparaci�n de muebles y accesorios para el hogar
+	9529	Mantenimiento y reparaci�n de otros efectos personales y enseres dom�sticos
+	9601	Lavado y limpieza, incluso la limpieza en seco, de productos textiles y de piel
+	9602	Peluquer�a y otros tratamientos de belleza
+	9603	Pompas f�nebres y actividades relacionadas
+	9609	Otras actividades de servicios personales n.c.p.
+	9700	Actividades de los hogares individuales como empleadores de personal dom�stico
+	9810	Actividades no diferenciadas de los hogares individuales como productores de bienes para uso propio
+	9820	Actividades no diferenciadas de los hogares individuales como productores de servicios para uso propio
+	9900	Actividades de organizaciones y entidades extraterritoriales
+	
+	

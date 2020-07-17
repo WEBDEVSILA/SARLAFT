@@ -1,0 +1,42 @@
+$obWebVars:=WEB_Get_Vars 
+
+
+If (OB Get($obWebVars;"panel")="true")
+	
+	WEB SEND FILE("Juridico/juridico12.shtml")
+Else 
+	
+	
+	If (OB Get($obWebVars;"lecturaACabalidad")="si")
+		[Sarlaft]Autorizacion_Uso_Datos:=True
+	Else 
+		[Sarlaft]Autorizacion_Uso_Datos:=False
+	End if 
+	
+	If (OB Get($obWebVars;"lecturaACabalidad")="si")
+		[Sarlaft]Autorizacion_Usuario_Info:=True
+	Else 
+		[Sarlaft]Autorizacion_Usuario_Info:=False
+	End if 
+	
+	SAVE RECORD([Sarlaft])
+	  //** GENERACIÓN DOCUMENTO PDF **//
+	If ([Sarlaft]UUID_PDF="")
+		[Sarlaft]UUID_PDF:=Generate UUID
+	End if 
+	
+	$nomPDF:=[Sarlaft]UUID_PDF+"-"+[Sarlaft]Documento_Numero+".pdf"
+	[Sarlaft]Ruta_PDF:="/PDF/"+$nomPDF
+	$rutaPDF:=Get 4D folder(HTML Root folder)+"PDF"+Folder separator+$nomPDF
+	  //$rutaPDF:=Get 4D folder(HTML Root folder)+$nomPDF
+	$pdfprintername:="Microsoft Print to PDF"
+	
+	SET CURRENT PRINTER($pdfprintername)
+	SET PRINT OPTION(Destination option;2;$rutaPDF)
+	FORM SET OUTPUT([Sarlaft];"Formulario_Persona_Juridica")
+	PRINT RECORD([Sarlaft];*)
+	SET CURRENT PRINTER("")
+	
+	SAVE RECORD([Sarlaft])
+	WEB SEND FILE("Juridico/juridico12.shtml")
+End if 
