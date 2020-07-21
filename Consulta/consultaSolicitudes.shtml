@@ -64,6 +64,7 @@
 											<th>Fecha Creación</th>
 											<th>Usuario Creación</th>
 											<th>¿Ingresó al Sistema?</th>
+											<th>Estado</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -82,8 +83,14 @@
 											<td><!--4DTEXT [Clientes]Usuario_Creacion--></td>
 											<!--#4DIF ([Clientes]Finalizado=True)-->
 											<td>SI</td>
+											<!--#4DIF ([Clientes]Estado#"")-->
+											<td><!--4DTEXT [Clientes]Estado--></td>
+											<!--#4DELSE-->
+											<td>En Proceso</td>
+											<!--#4DENDIF-->
 											<!--#4DELSE-->
 											<td>NO</td>
+											<td></td>
 											<!--#4DENDIF-->
 										</tr>					
 										<!--4DENDLOOP-->		

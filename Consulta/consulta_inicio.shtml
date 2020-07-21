@@ -86,12 +86,13 @@
 									<thead>
 										<tr>
 											<th>Nombre Razón Social</th>
-											<th>Nivel de Riesgo</th>
+											<!--<th>Nivel de Riesgo</th>-->
 											<th>Documento</th>
 											<th>Dirección<span style="color:white">_____________________</span></th>
 											<th>Tipo</th>
 											<th>Teléfono</th>
 											<th>Fecha</th>
+											<th>Estado</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -107,7 +108,7 @@
 													<!--4DTEXT  [Sarlaft]Nombre_Razon_Social-->
 												</a>
 											</td>
-											<td><!--4DTEXT [Sarlaft]Nivel_Riesgo--></td>
+											<!--<td><!-4DTEXT [Sarlaft]Nivel_Riesgo-></td>-->
 											<td><!--4DTEXT [Sarlaft]Tipo_Documento--> : <!--4DTEXT [Sarlaft]Documento_numero--> <!--4DTEXT [Sarlaft]DV--></td>
 											<!--#4DIF ([Sarlaft]Juridico_Natural = True)-->
 											<td><!--4DTEXT [Sarlaft]Direccin_Oficina--></td>	
@@ -119,6 +120,11 @@
 											<td>Natural</td>
 											<td><!--4DTEXT [Sarlaft]Telefono--></td>
 											<td><!--4DTEXT [Sarlaft]Fecha_Diligenciamiento--></td>
+											<!--#4DENDIF-->
+											<!--#4DIF ([Sarlaft]Estado#"")-->
+											<td><!--4DTEXT [Sarlaft]Estado--></td>
+											<!--#4DELSE-->
+											<td>En Proceso</td>
 											<!--#4DENDIF-->
 										</tr>					
 										<!--4DENDLOOP-->		
