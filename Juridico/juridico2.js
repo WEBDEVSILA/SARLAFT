@@ -1,17 +1,35 @@
 var codCiiu = new Map();
 var ciiu1 = document.getElementById("codCiiu1");
 fill();
-validateCIIU(ciiu1,"ciiu1");
+validateCIIUOnStart(ciiu1,"ciiu1");
 enableFields(document.getElementById('sucursalOficina'),'departamento','ciudadSucursal','telefono')
 
 function validateCIIU(element,ciiu){
    
-    if(element.value != NaN){
+    if(element.value !=""){
         var description = codCiiu.get(element.value.toString());
         console.log(description);
         if(description != undefined){
             console.log("aca"+element.value);
             document.getElementById(ciiu).value=description;
+        }else{
+            document.getElementById(ciiu).value="";       
+            alert('El código ingresado no se encuentra por favor verifiquelo!');
+            element.value = "";     
+        }
+    }else{
+        document.getElementById(ciiu).value="";        
+    }
+}
+
+function validateCIIUOnStart(element,ciiu){
+    if(element.value != ""){
+        var description = codCiiu.get(element.value.toString());
+        console.log(description);
+
+        if(description != undefined){
+            console.log("aca"+element.value);
+            document.getElementById(ciiu).value=description;                        
         }else{
             document.getElementById(ciiu).value="";            
         }
@@ -22,11 +40,7 @@ function validateCIIU(element,ciiu){
 
 
 function validateErase(element,ciiu){
-    validateCIIU(element,ciiu);
-    if(isNaN(parseInt(element.value)) || parseInt(element.value)<=0 ){
-        element.value = "";        
-    }
-
+    validateCIIUOnStart(element,ciiu);
     if(element.value == ""){
         document.getElementById(ciiu).value="";     
     }
@@ -53,59 +67,60 @@ function enableFields(e,...opt){
 }
 
 function fill(){
-    codCiiu.set('111','Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas');
-    codCiiu.set('112','Cultivo de arroz ');
-    codCiiu.set('113','Cultivo de hortalizas, raíces y tubérculos ');
-    codCiiu.set('114','Cultivo de tabaco ');
-    codCiiu.set('115','Cultivo de plantas textiles ');
-    codCiiu.set('119','Otros cultivos transitorios n.c.p.');
-    codCiiu.set('121','Cultivo de frutas tropicales y subtropicales');
-    codCiiu.set('122','Cultivo de plátano y banano');
-    codCiiu.set('123','Cultivo de café');
-    codCiiu.set('124','Cultivo de caña de azúcar');
-    codCiiu.set('125','Cultivo de flor de corte');
-    codCiiu.set('126','Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos');
-    codCiiu.set('127','Cultivo de plantas con las que se preparan bebidas');
-    codCiiu.set('128','Cultivo de especias y de plantas aromáticas y medicinales ');
-    codCiiu.set('129','Otros cultivos permanentes n.c.p.');
-    codCiiu.set('130','Propagación de plantas (actividades de los viveros, excepto viveros forestales) ');
-    codCiiu.set('141','Cría de ganado bovino y bufalino');
-    codCiiu.set('142','Cría de caballos y otros equinos ');
-    codCiiu.set('143','Cría de ovejas y cabras ');
-    codCiiu.set('144','Cría de ganado porcino');
-    codCiiu.set('145','Cría de aves de corral');
-    codCiiu.set('149','Cría de otros animales n.c.p.');
-    codCiiu.set('150','Explotación mixta (agrícola y pecuaria) ');
-    codCiiu.set('161','Actividades de apoyo a la agricultura ');
-    codCiiu.set('162','Actividades de apoyo a la ganadería');
-    codCiiu.set('163','Actividades posteriores a la cosecha ');
-    codCiiu.set('164','Tratamiento de semillas para propagación ');
-    codCiiu.set('170','Caza ordinaria y mediante trampas y actividades de servicios conexas ');
-    codCiiu.set('210','Silvicultura y otras actividades forestales');
-    codCiiu.set('220','Extracción de madera ');
-    codCiiu.set('230','Recolección de productos forestales diferentes a la madera');
-    codCiiu.set('240','Servicios de apoyo a la silvicultura ');
-    codCiiu.set('311','Pesca marítima ');
-    codCiiu.set('312','Pesca de agua dulce ');
-    codCiiu.set('321','Acuicultura marítima ');
-    codCiiu.set('322','Acuicultura de agua dulce');
-    codCiiu.set('510','Extracción de hulla (carbón de piedra)');
-    codCiiu.set('520','Extracción de carbón lignito');
-    codCiiu.set('610','Extracción de petróleo crudo');
-    codCiiu.set('620','Extracción de gas natural');
-    codCiiu.set('710','Extracción de minerales de hierro');
-    codCiiu.set('721','Extracción de minerales de uranio y de torio');
-    codCiiu.set('722','Extracción de oro y otros metales preciosos');
-    codCiiu.set('723','Extracción de minerales de níquel');
-    codCiiu.set('729','Extracción de otros minerales metalíferos no ferrosos n.c.p.');
-    codCiiu.set('811','Extracción de piedra, arena, arcillas comunes, yeso y anhidrita');
-    codCiiu.set('812','Extracción de arcillas de uso industrial, caliza, caolón y bentonitas');
-    codCiiu.set('820','Extracción de esmeraldas, piedras preciosas y semipreciosas');
-    codCiiu.set('891','Extracción de minerales para la fabricación de abonos y productos químicos');
-    codCiiu.set('892','Extracción de halita (sal)');
-    codCiiu.set('899','Extracción de otros minerales no metálicos n.c.p.');
-    codCiiu.set('910','Actividades de apoyo para la extracción de petróleo y de gas natural');
-    codCiiu.set('990','Actividades de apoyo para otras actividades de explotación de minas y canteras');
+    codCiiu.set('0010','Empleado');
+    codCiiu.set('0111','Cultivo de cereales (excepto arroz), legumbres y semillas oleaginosas');
+    codCiiu.set('0112','Cultivo de arroz ');
+    codCiiu.set('0113','Cultivo de hortalizas, raíces y tubérculos ');
+    codCiiu.set('0114','Cultivo de tabaco ');
+    codCiiu.set('0115','Cultivo de plantas textiles ');
+    codCiiu.set('0119','Otros cultivos transitorios n.c.p.');
+    codCiiu.set('0121','Cultivo de frutas tropicales y subtropicales');
+    codCiiu.set('0122','Cultivo de plátano y banano');
+    codCiiu.set('0123','Cultivo de café');
+    codCiiu.set('0124','Cultivo de caña de azúcar');
+    codCiiu.set('0125','Cultivo de flor de corte');
+    codCiiu.set('0126','Cultivo de palma para aceite (palma africana) y otros frutos oleaginosos');
+    codCiiu.set('0127','Cultivo de plantas con las que se preparan bebidas');
+    codCiiu.set('0128','Cultivo de especias y de plantas aromáticas y medicinales ');
+    codCiiu.set('0129','Otros cultivos permanentes n.c.p.');
+    codCiiu.set('0130','Propagación de plantas (actividades de los viveros, excepto viveros forestales) ');
+    codCiiu.set('0141','Cría de ganado bovino y bufalino');
+    codCiiu.set('0142','Cría de caballos y otros equinos ');
+    codCiiu.set('0143','Cría de ovejas y cabras ');
+    codCiiu.set('0144','Cría de ganado porcino');
+    codCiiu.set('0145','Cría de aves de corral');
+    codCiiu.set('0149','Cría de otros animales n.c.p.');
+    codCiiu.set('0150','Explotación mixta (agrícola y pecuaria) ');
+    codCiiu.set('0161','Actividades de apoyo a la agricultura ');
+    codCiiu.set('0162','Actividades de apoyo a la ganadería');
+    codCiiu.set('0163','Actividades posteriores a la cosecha ');
+    codCiiu.set('0164','Tratamiento de semillas para propagación ');
+    codCiiu.set('0170','Caza ordinaria y mediante trampas y actividades de servicios conexas ');
+    codCiiu.set('0210','Silvicultura y otras actividades forestales');
+    codCiiu.set('0220','Extracción de madera ');
+    codCiiu.set('0230','Recolección de productos forestales diferentes a la madera');
+    codCiiu.set('0240','Servicios de apoyo a la silvicultura ');
+    codCiiu.set('0311','Pesca marítima ');
+    codCiiu.set('0312','Pesca de agua dulce ');
+    codCiiu.set('0321','Acuicultura marítima ');
+    codCiiu.set('0322','Acuicultura de agua dulce');
+    codCiiu.set('0510','Extracción de hulla (carbón de piedra)');
+    codCiiu.set('0520','Extracción de carbón lignito');
+    codCiiu.set('0610','Extracción de petróleo crudo');
+    codCiiu.set('0620','Extracción de gas natural');
+    codCiiu.set('0710','Extracción de minerales de hierro');
+    codCiiu.set('0721','Extracción de minerales de uranio y de torio');
+    codCiiu.set('0722','Extracción de oro y otros metales preciosos');
+    codCiiu.set('0723','Extracción de minerales de níquel');
+    codCiiu.set('0729','Extracción de otros minerales metalíferos no ferrosos n.c.p.');
+    codCiiu.set('0811','Extracción de piedra, arena, arcillas comunes, yeso y anhidrita');
+    codCiiu.set('0812','Extracción de arcillas de uso industrial, caliza, caolón y bentonitas');
+    codCiiu.set('0820','Extracción de esmeraldas, piedras preciosas y semipreciosas');
+    codCiiu.set('0891','Extracción de minerales para la fabricación de abonos y productos químicos');
+    codCiiu.set('0892','Extracción de halita (sal)');
+    codCiiu.set('0899','Extracción de otros minerales no metálicos n.c.p.');
+    codCiiu.set('0910','Actividades de apoyo para la extracción de petróleo y de gas natural');
+    codCiiu.set('0990','Actividades de apoyo para otras actividades de explotación de minas y canteras');
     codCiiu.set('1011','Procesamiento y conservación de carne y productos cárnicos');
     codCiiu.set('1012','Procesamiento y conservación de pescados, crustáceos y moluscos');
     codCiiu.set('1020','Procesamiento y conservación de frutas, legumbres, hortalizas y tubérculos');

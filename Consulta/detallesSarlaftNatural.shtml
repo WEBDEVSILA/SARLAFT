@@ -55,6 +55,9 @@
 								<h5 class="ajg-title-dark" >Estado: <span class="bold"><!--4DTEXT [Sarlaft]Estado--></span></h5> 
 								<!--#4DELSE-->
                                 <h5 class="ajg-title-dark" >Estado: <span class="bold">En Proceso</span></h5> 
+								<!--#4DENDIF-->
+								<!--#4DIF ([Sarlaft]Estado="Error Validación") & ([Sarlaft]Razon_Error#"")-->
+                                <h5 class="ajg-title-dark">Razón: <span class="bold"><!--4DTEXT [Sarlaft]Razon_Error--></span></h5>
                                 <!--#4DENDIF-->
 								
 							</div>										

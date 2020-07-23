@@ -27,6 +27,7 @@ function validateTipoESect(e){
         document.getElementById('PrimerNombre').required = true;
         document.getElementById('PrimerApellido').required = true;
         document.getElementById('SegundoApellido').required = true;
+        document.getElementById('numDoc').maxLength = 10;
     }else{
         document.getElementById('TipoEmpSector').style.display = 'block';
         document.getElementById('Nombres').style.display = 'none';
@@ -34,6 +35,7 @@ function validateTipoESect(e){
         document.getElementById('PrimerNombre').required = false;
         document.getElementById('PrimerApellido').required = false;
         document.getElementById('SegundoApellido').required = false;
+        document.getElementById('numDoc').maxLength = 9;
     }
 
 }
@@ -55,4 +57,21 @@ function showLoader(){
         document.getElementById('modal').click();
     }
     
+}
+
+function validateTipoCLiente(e){
+    var tipo = document.getElementById('tipoCliente').value;
+    console.log(e.maxLength);
+    /*if(tipo == 'NATURAL'){
+        if(e.value.length == 10) {
+            e.maxLength = 10;
+        }
+    }
+    if(tipo == 'JURÍDICO'){
+        if(e.value.length == 9){ 
+            e.maxLength = 9;
+        }
+    }*/
+    
+
 }

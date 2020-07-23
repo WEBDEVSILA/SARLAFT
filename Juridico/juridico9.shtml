@@ -157,8 +157,9 @@
                                                     </td>
                                                     <td>
                                                         <input name="moneda1" id="moneda" 
-                                                        onkeyup="replaceSpecialCharactersNumber(this)"
-                                                        type="number" class="form-control">
+                                                        onkeyup="upperCase(this,true)"
+                                                        onchange="validateNA(this)"
+                                                        type="text" class="form-control">
                                                     </td>
                                                     <td><button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px" 
                                                         <!--4DIF (Records in Selection([Operaciones_Inter])>=4)-->disabled<!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>

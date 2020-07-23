@@ -144,9 +144,9 @@
                                             <div  class="form-group">
                                                 <label class="col-md-4 control-label ">CIIU (cod)</label>
                                                 <div class="col-md-8 ">                                                    
-                                                    <input type="number" id="codCiiu1" class="form-control" name="ciiuCodigo" required 
+                                                    <input type="text" id="codCiiu1" class="form-control" name="ciiuCodigo" required 
                                                     onchange="validateCIIU(this,'ciiu1')" onkeyup="validateErase(this,'ciiu1')"
-                                                    onKeyPress="if(this.value.length==4) return false;" min=1 max=9999
+                                                    onKeyPress="if(this.value.length==4) return false;" 
                                                     onkeydown="return validateArrowKey(event)"    
                                                     value=<!--4DTEXT Number([Sarlaft]CIIU_Codigo)-->>
                                                 </div>

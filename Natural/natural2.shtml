@@ -382,9 +382,9 @@
                                             <div  class="form-group">
                                                 <label class="col-md-6 control-label ">CIIU 1 (cod)</label>
                                                 <div class="col-md-6 ">                                                    
-                                                    <input type="number" id="codCiiu1" class="form-control" name="ciiu" required style="margin-left:5px;"
+                                                    <input type="text" id="codCiiu1" class="form-control" name="ciiu" required style="margin-left:5px;"
                                                         autocomplete=off value="<!--4DTEXT [Sarlaft]CIIU_Codigo-->"
-                                                        onKeyPress="if(this.value.length==4) return false;" min=1 max=9999
+                                                        onKeyPress="if(this.value.length==4) return false;" 
                                                         onchange="validateCIIU(this,'ciiu1')" onkeyup="validateErase(this,'ciiu1')"
                                                         onkeydown="return validateArrowKey(event)">
                                                 </div>
@@ -456,9 +456,9 @@
                                             <div  class="form-group">
                                                 <label class="col-md-6 control-label ">CIIU 2 (cod)</label>
                                                 <div class="col-md-6 ">                                                        
-                                                    <input type="number" id="codCiiu2" class="form-control" name="ciiuSecundario" style="margin-left:5px;"
+                                                    <input type="text" id="codCiiu2" class="form-control" name="ciiuSecundario" style="margin-left:5px;"
                                                         autocomplete=off value="<!--4DTEXT [Sarlaft]CIIU_cod_Secundaria-->"
-                                                        onKeyPress="if(this.value.length==4) return false;" min=0 max=9999
+                                                        onKeyPress="if(this.value.length==4) return false;" 
                                                         onchange="validateCIIU(this,'ciiu2')" onkeyup="validateErase(this,'ciiu2')"
                                                         onkeydown="return validateArrowKey(event)">
                                                 </div>

@@ -24,7 +24,7 @@ function replaceSpecialCharacters(e){
 }
 
 function replaceSpecialCharactersNumber(e){
-    e.value = e.value.split(/[`~!@#$%^&*()_|+\-¿¡=?°¬;:'e",.<>\{\}\[\]\\\/]/gi).join(""); 
+    e.value = e.value.split(/[`~!@#$%^&*()_|+\-¿¡=?°¬;:'eabcdefghijklmnñopqrstwvxz",.<>\{\}\[\]\\\/]/gi).join(""); 
     e.value = e.value.split(" ").join("");
     
 }

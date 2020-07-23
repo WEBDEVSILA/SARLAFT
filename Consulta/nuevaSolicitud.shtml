@@ -59,7 +59,7 @@
 										<div class="form-group">
 											<label class="col-md-4 control-label">Tipo de Cliente</label>
 											<div class="col-md-8">
-												<select name="tipoCliente" class="form-control mb-md" onchange="validateTipoESect(this)" required>
+												<select name="tipoCliente" class="form-control mb-md" onchange="validateTipoESect(this)" required id="tipoCliente">
 													<option></option>
 													<option value="JURÍDICO">JURÍDICO</option>
 													<option value="NATURAL" >NATURAL</option>
@@ -180,8 +180,7 @@
 										<div class="form-group">
 											<label class="col-md-4 control-label" >Número</label>                                                
 											<div class="col-md-8">
-												<input name="identificacion" type="number" class="form-control" id="numDoc"
-												onkeypress="if(this.value.length == 10) return false" 
+												<input name="identificacion" type="text" maxlength="10" class="form-control" id="numDoc"
 												onkeyup="replaceSpecialCharactersNumber(this)"                                                    
 												onfocusout="valMinLength(this,5,'notiNumero')"
 												value="" required>
