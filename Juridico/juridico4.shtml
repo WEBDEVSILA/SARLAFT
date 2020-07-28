@@ -127,7 +127,7 @@
                                                                 <input name="tributOtroPais1" id="tributOtroPais" type="text" class="form-control" autocomplete="off" >
                                                             </td>    
                                                             <td><button type="button" id="add" class="btn ajg-button col-md-4 col-md-offset-4" style="width:40px" 
-                                                                <!--4DIF (Records in Selection([Accionistas])>=5)-->disabled<!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>
+                                                                <!--4DIF (Records in Selection([Accionistas])>=5)--><!--4DENDIF-->><i class="fa fa-plus"></i></button> </td>
                                                         </tr>
                                                         <input type="hidden" id="eliminarReg" name="eliminarReg">
                                                         <!--4DLOOP [Accionistas]-->

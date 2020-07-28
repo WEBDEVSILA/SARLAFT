@@ -1117,6 +1117,26 @@
                                 <br>
                                 <div class="row">
                                     <div class="col-md-6">
+                                        <p>- Composición Accionaria</p>                                                
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="col-md-4">
+                                            <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"composicion")--></h5>
+                                        </div>                
+                                        <div class="col-md-8">						
+                                            <!--#4DIF (OB Get([Sarlaft]Nombre_Adjuntos;"composicion")#"")-->
+                                            <a class="btn ajg-button col-md-4 col-md-offset-4" target="_blank"  rel="noopener noreferrer"  
+                                            href="<!--4DTEXT OB Get([Sarlaft]Ruta_Parcial_PDF;"composicion")-->">Ver</a>
+                                            <!--#4DELSE-->
+                                            <a class="btn ajg-button col-md-4 col-md-offset-4" target="_blank"  rel="noopener noreferrer"  disabled
+                                            href="#">Ver</a>
+                                            <!--#4DENDIF-->
+                                        </div> 
+                                    </div>   
+                                </div>
+                                <br>
+                                <div class="row">
+                                    <div class="col-md-6">
                                         <p>- Sarlaft Firmado</p>
                                         <p><span style="font-weight: bold">Nota:</span> Para visualizar la firma electrónica se recomienda hacer uso de un software de lectura de PDF como "Adobe Reader"</p>
                                     </div>

@@ -86,7 +86,7 @@
                                             <div  class="form-group">
                                                 <label class="col-sm-3 control-label">Patrimonio</label>
                                                 <div class="col-sm-9">
-                                                    <input name="patrimonio" id="patrimonio" value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" required class="form-control" placeholder="Patrimonio"  autocomplete="off" onkeyup="validateNum(this)">
+                                                    <input name="patrimonio" id="patrimonio" value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" required class="form-control" placeholder="Patrimonio"  autocomplete="off" onchange="validateNum(this)">
                                                 </div>                                 
                                             </div>                                                    
                                         </div>                                    
@@ -119,7 +119,7 @@
                         
                         <script>
                             function validateNum(e){
-                                if(isNaN(parseInt(e.value)) || parseInt(e.value)<0 ){
+                                if(isNaN(parseInt(e.value))){
                                     e.value = "";        
                                 }
                             }

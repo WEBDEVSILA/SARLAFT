@@ -97,7 +97,7 @@
                                     <br>
                                     <script>
                                         function validateNum(e){
-                                            if(isNaN(parseInt(e.value)) || parseInt(e.value)<0 ){
+                                            if(isNaN(parseInt(e.value))){
                                                 e.value = "";        
                                             }
                                         }
@@ -106,7 +106,7 @@
                                         <div class="col-md-6">
                                             <label class="col-md-4">Patrimonio</label>
                                             <div class="col-md-8">
-                                                <input name="patrimonio" id="patrimonio" required value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" class="form-control" placeholder="Patrimonio (Activos - Pasivos, Pesos)" onkeyup="validateNum(this)">
+                                                <input name="patrimonio" id="patrimonio" required value="<!--4DTEXT [Sarlaft]Patrimonio-->" type="number" class="form-control" placeholder="Patrimonio (Activos - Pasivos, Pesos)" onchange="validateNum(this)">
                                             </div>
                                         </div>
                                         <div class="col-md-6">

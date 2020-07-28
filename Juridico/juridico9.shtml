@@ -291,9 +291,29 @@
                                                 <!--4DENDIF-->
                                                 
                                             </div>
+                                        </div> 
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>- Composición Accionaria</p>
+                                            </div>
+                                            <div class="col-md-6">                                                
+                                                <!--4DIF (OB Get([Sarlaft]Ruta_Adjuntos;"composicion")="")-->
+                                                <input type="file" class="form-control-file " name="composicion"  onchange="ValidateSingleInput(this);">
+                                                <!--4DELSE-->                              
+                                                    <div class="col-md-4">
+                                                            <h5><!--4DTEXT OB Get([Sarlaft]Nombre_Adjuntos;"composicion")--></h5>
+                                                    </div>                
+                                                    <div class="col-md-8">
+                                                        <input type="file" class="form-control-file " name="composicion"  onchange="ValidateSingleInput(this);">
+                                                    </div>                      
+                                                <!--4DENDIF-->
+                                                
+                                            </div>
                                         </div>                                        
                                     </div>
                                     <br>
+                                    
                                     <div style="display: flex;justify-content: center;">
                                         <button type="button" class="btn ajg-button col-md-4" onclick="operInter('documentoIdentidad','certificado','rut')">Siguiente</button>
                                         <button disabled style="display:none" type="submit" id="submitButton" data-toggle="modal" data-target="#loading" ></button>

@@ -28,6 +28,7 @@ function validateTipoESect(e){
         document.getElementById('PrimerApellido').required = true;
         document.getElementById('SegundoApellido').required = true;
         document.getElementById('numDoc').maxLength = 10;
+        document.getElementById('numDoc').minLength = 5;
     }else{
         document.getElementById('TipoEmpSector').style.display = 'block';
         document.getElementById('Nombres').style.display = 'none';
@@ -36,6 +37,7 @@ function validateTipoESect(e){
         document.getElementById('PrimerApellido').required = false;
         document.getElementById('SegundoApellido').required = false;
         document.getElementById('numDoc').maxLength = 9;
+        document.getElementById('numDoc').minLength = 9;
     }
 
 }
